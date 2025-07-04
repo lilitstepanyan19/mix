@@ -1,0 +1,72 @@
+<<<<<<< HEAD
+{% extends 'base.html' %}
+=======
+{% extends 'main/base/html' %}
+>>>>>>> f1e1a7313c7dfd7c49c7f052a377d50f49b42579
+{% load static %}
+
+{% block title %}Payment process{% endblock title %}
+
+{% block content %}
+    <div class="window">
+        <h2 class="pay-title">Payment</h2>
+<<<<<<< HEAD
+        <button id="checkout-button">Оплатить</button>
+        <script>
+          var stripe = Stripe("{{ stripe_public_key }}");
+          document.getElementById("checkout-button").addEventListener("click", function () {
+            fetch("/create-checkout-session/", {
+              method: "POST",
+            })
+            .then(response => response.json())
+            .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
+            .catch(error => console.error("Error:", error));
+          });
+        </script>
+=======
+        <div class="pay-card d-flex">
+            <div class="cart-cardsproc">
+                {% for item in orders.items.all %}
+                    {% with product=item.product %}
+                        <div class="cart-card d-flex">
+                            <div class="cart-card-img">
+                                <img src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="{{ product.name }}">
+                            </div>
+                            <div class="cart-card-info">
+                                <div class="cart-card-name">
+                                    <p>{{ product.name}}</p>
+                                </div>
+                                <div class="cart-card-q">
+                                    <p>Quantity: {{ item.quantity}}</p>
+                                </div>
+                            </div>
+                            <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                               <input type="submit" value="Remove" class="remove-btn">
+                               {% csrf_token %}
+                            </form>
+                            <div class="cart-card price">
+                                {% if product.discount %}
+                                    <div class="cart-price">
+                                        <p class="line opas">$ {{product.price}}</p>
+                                        <p class="cart-total-price-ots">$ {{product.sell_price}}</p>
+                                    </div>
+                                {% else %}
+                                    <p class="cart-total-price">$ {{product.price}}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+
+                <form action="{% url 'payment:process' %}" class="payform" method="post">
+                    <input type="submit" value="Pay now" class="paynow">
+                    {% csrf_token %}
+                </form>
+            </div>
+            <div class="castle-div">
+                <img src="{% static 'img/castle.png' %}" alt="castle" class="castlep">
+            </div>
+        </div>
+>>>>>>> f1e1a7313c7dfd7c49c7f052a377d50f49b42579
+    </div>
+{% endblock content %}

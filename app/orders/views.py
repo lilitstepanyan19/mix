@@ -63,9 +63,13 @@ class CreateOrderView(LoginRequiredMixin, FormView):
 
                     # Очистить корзину пользователя после создания заказа
                     cart_items.delete()
+                    
 
                     messages.success(self.request, 'Заказ оформлен!')
-                    return redirect('user:profile')
+                    return redirect('payment:process', order_id=order.id)
+                else:
+                    messages.warning(self.request, 'Корзина пуста. Невозможно оформить заказ.')
+                return redirect('orders:create_order')
         except ValidationError as e:
             messages.success(self.request, str(e))
             return redirect('orders:create_order')

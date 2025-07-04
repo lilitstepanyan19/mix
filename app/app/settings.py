@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'carts',
     'orders',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -169,3 +170,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = '/'
+
+
+
+
+
+STRIPE_WEBHOOK_SECRET = ''
+STRIPE_PUBLISHABLE_KEY = ''
+STRIPE_SECRET_KEY = ''
+STRIPE_API_VERSION = '2022-08-01'

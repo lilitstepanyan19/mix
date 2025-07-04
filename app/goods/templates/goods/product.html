@@ -37,6 +37,11 @@
         </div>
         <!-- Описание товара -->
         <div class="card-body">
+            {% if product.quantity == 0 %}
+                <p>Нет в наличии.</p>
+            {% else %}
+                <p>В наличии: {{ product.quantity }} штук</p>   
+            {% endif %}
             <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">{{ product.description }}</p>
