@@ -35,7 +35,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name="Заказ")
+    order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name='items',verbose_name="Заказ")
     product = models.ForeignKey(to=Products, on_delete=models.SET_DEFAULT, null=True, verbose_name="Продукт", default=None)
     name = models.CharField(max_length=150, verbose_name="Название")
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name="Цена")
