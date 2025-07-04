@@ -1,0 +1,72 @@
+[
+    {
+        "model": "goods.products",
+        "pk": 1,
+        "fields": {
+            "name": "Чайный столик и три стула",
+            "slug": "chajnyj-stolik-i-tri-stula",
+            "description": "Комплект из трёх стульев и дизайнерский столик для гостинной комнаты.",
+            "image": "goods_images/img-3.jpg",
+            "price": "150.00",
+            "discount": "20.00",
+            "quantity": 1,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 2,
+        "fields": {
+            "name": "Чайный столик и два стула",
+            "slug": "chajnyj-stolik-i-dva-stula",
+            "description": "Набор из стола и двух стульев в минималистическом стиле.",
+            "image": "goods_images/img-1.jpg",
+            "price": "93.00",
+            "discount": "5.00",
+            "quantity": 2,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 3,
+        "fields": {
+            "name": "овать двухспальная с надголовником и вообще очень ортопедичная.',          'price': 670.00",
+            "slug": "ovat-dvuhspalnaya-s-nadgolovnikom-i-voobshe-ochen-ortopedichnaya-price-67000",
+            "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная",
+            "image": "goods_images/img-5.jpg",
+            "price": "670.00",
+            "discount": "25.00",
+            "quantity": 4,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 4,
+        "fields": {
+            "name": "Кухонный стол с раковиной",
+            "slug": "kuhonnyj-stol-s-rakovinoj",
+            "description": "Кухонный стол для обеда с встроенной раковиной и стульями.",
+            "image": "goods_images/img-2.jpg",
+            "price": "365.00",
+            "discount": "0.00",
+            "quantity": 0,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 5,
+        "fields": {
+            "name": "cat",
+            "slug": "cat",
+            "description": "bla",
+            "image": "",
+            "price": "50.00",
+            "discount": "0.00",
+            "quantity": 1,
+            "category": 6
+        }
+    }
+]
