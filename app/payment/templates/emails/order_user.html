@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Заказ подтверждён{% endblock title %}
+
+{% block content %}
+<div style="max-width: 600px; margin: auto; background: white; border-radius: 8px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h2 style="color: #343a40;">Здравствуйте, {{ order.first_name }}!</h2>
+
+    <p>Спасибо за ваш заказ №<strong>{{ order.id }}</strong>. Мы успешно получили оплату.</p>
+
+    <h4>Детали заказа:</h4>
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th align="left" style="padding: 8px; background: #e9ecef;">Товар</th>
+          <th align="center" style="padding: 8px; background: #e9ecef;">Кол-во</th>
+          <th align="right" style="padding: 8px; background: #e9ecef;">Цена</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order.items.all %}
+          <tr>
+            <td style="padding: 8px;">{{ item.product.name }}</td>
+            <td align="center" style="padding: 8px;">{{ item.quantity }}</td>
+            <td align="right" style="padding: 8px;">${{ item.price }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p><strong>Сумма: ${{ order.get_total_cost }}</strong></p>
+
+    <p style="margin-top: 20px;">Ваш вами по телефону: <strong>{{ order.phone_number }}</strong>.</p>
+
+    {% if order.requires_delivery %}
+      <p>Адрес доставки: <em>{{ order.delivery_address }}</em></p>
+    {% else %}
+      <p>Вы выбрали самовывоз.</p>
+    {% endif %}
+
+    <p style="color: #6c757d; font-size: 14px;">Спасибо, что выбрали нас!</p>
+  </div>
+{% endblock content %}
