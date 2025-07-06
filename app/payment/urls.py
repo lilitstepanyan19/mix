@@ -8,5 +8,6 @@ urlpatterns = [
     path('process/<int:order_id>/', views.payment_process, name='process'),
     path('completed/', views.payment_completed, name='completed'),
     path('canceled/', views.payment_canceled, name='canceled'),
+    path('create-checkout-session/', views.create_checkout_session, name='create_checkout_session'),
     # path('webhook/', views.payment_webhooks, name='webhooks'),
 ]

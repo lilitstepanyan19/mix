@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 from django.http import HttpResponseNotFound
+
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,10 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ld)8k$gfoow^#9-6mm@palg6l9d)&l!5ng#m2@=msxhq353g#2'
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -97,11 +101,11 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'home',
-#         'USER': 'home',
-#         'PASSWORD': 'home',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
+#         'NAME': os.getenv('DB_NAME'),
+#         'USER': os.getenv('DB_USER'),
+#         'PASSWORD': os.getenv('DB_PASSWORD'),
+#         'HOST': os.getenv('DB_HOST'),
+#         'PORT': os.getenv('DB_PORT'),
 #     }
 # }
 
@@ -173,9 +177,6 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
-
-
-# STRIPE_WEBHOOK_SECRET = ''
-STRIPE_SECRET_KEY = 'sk_test_...'  # ← секретный ключ Stripe
-STRIPE_PUBLIC_KEY = 'pk_test_...'  
-STRIPE_API_VERSION = '2022-08-01'
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
+STRIPE_API_VERSION = os.getenv('STRIPE_API_VERSION')
