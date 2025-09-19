@@ -1,6 +1,97 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}Оплата заказа{% endblock title %}
+
+{% block content %}
+<div class="window">
+    <h2 class="pay-title">Оплата заказа</h2>
+
+    <div class="pay-card d-flex">
+        <!-- Корзина -->
+        <div class="cart-cardsproc">
+            {% for item in order.items.all %}
+                {% with product=item.product %}
+                    <div class="cart-card d-flex">
+                        <div class="cart-card-img">
+                            <img src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="{{ product.name }}">
+                        </div>
+                        <div class="cart-card-info">
+                            <div class="cart-card-name">
+                                <p>{{ product.name }}</p>
+                            </div>
+                            <div class="cart-card-q">
+                                <p>Количество: {{ item.quantity }}</p>
+                            </div>
+                        </div>
+                        <div class="cart-card price">
+                            {% if product.discount %}
+                                <div class="cart-price">
+                                    <p class="line opas">$ {{ product.price }}</p>
+                                    <p class="cart-total-price-ots">$ {{ product.sell_price }}</p>
+                                </div>
+                            {% else %}
+                                <p class="cart-total-price">$ {{ product.price }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+
+            <p class="cart-total">Итого: $ {{ order.get_total_cost }}</p>
+
+            <!-- Выбор способа оплаты -->
+            <h3>Выберите способ оплаты:</h3>
+            <div class="payment-options">
+                <label><input type="radio" name="payment_method" value="stripe" checked> Stripe (картой онлайн)</label><br>
+                <label><input type="radio" name="payment_method" value="unitpay"> UnitPay</label><br>
+                <label><input type="radio" name="payment_method" value="idram"> Idram</label><br>
+            </div>
+
+            <button type="button" id="pay-button" class="paynow">Оплатить</button>
+        </div>
+
+        <!-- Картинка справа -->
+        <div class="castle-div">
+            <img src="{% static 'img/castle.png' %}" alt="castle" class="castlep">
+        </div>
+    </div>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+document.getElementById('pay-button').addEventListener('click', function() {
+    const method = document.querySelector('input[name="payment_method"]:checked').value;
+    const orderId = '{{ order.id }}';
+
+    if (method === 'stripe') {
+        fetch("{% url 'payment:create_checkout_session' %}", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({order_id: orderId})
+        })
+        .then(res => res.json())
+        .then(session => Stripe("{{ stripe_public_key }}").redirectToCheckout({ sessionId: session.id }))
+        .catch(err => console.error(err));
+
+    } else if (method === 'unitpay') {
+        window.location.href = "{% url 'payment:unitpay_start' order.id %}";
+
+    } else if (method === 'idram') {
+        window.location.href = "{% url 'payment:idram_start' order.id %}";
+
+    }
+});
+</script>
+{% endblock content %}
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}Payment process{% endblock title %}
 
@@ -63,4 +154,4 @@
             </div>
         </div>
     </div>
-{% endblock content %}
+{% endblock content %} {% endcomment %}
