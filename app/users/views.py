@@ -99,7 +99,7 @@ class UserProfileView(LoginRequiredMixin, CacheMixin , UpdateView):
         # Можно вынести сам запрос в отдельный метод этого класса контроллера
         orders = Order.objects.filter(user=self.request.user).prefetch_related(
                 Prefetch(
-                    "orderitem_set",
+                    "items",
                     queryset=OrderItem.objects.select_related("product"),
                 )
             ).order_by("-id")

@@ -20,6 +20,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static "deps/favicon/favicon-32x32.png" %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static "deps/favicon/favicon-16x16.png" %}">
     <link rel="manifest" href="{% static "deps/favicon/site.webmanifest" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>{{ title }}</title>
 </head>
 
@@ -47,11 +48,11 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  text-white" href="{% url "user:users_cart" %}">Корзина</a>
+                            <a class="nav-link  text-white" href="{% url "user:users_cart" %}">Корзина <i class="fa-solid fa-cart-shopping"></i></a>
                         </li>
                         {% if not user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link  text-white" href="{% url "user:login" %}">Войти</a>
+                                <a class="nav-link  text-white" href="{% url "user:login" %}">Войти <i class="fa-solid fa-left-from-bracket"></i></a>
                             </li>
                         {% else %}
                             <li class="nav-item dropdown ">
@@ -60,8 +61,8 @@
                                     Мой профиль
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item  text-white" href=" {% url 'user:users_cart' %}">Корзина</a></li>
-                                    <li><a class="dropdown-item  text-white" href="{% url "user:profile" %}">Личный кабинет</a>
+                                    <li><a class="dropdown-item  text-white" href=" {% url 'user:users_cart' %}">Корзина <i class="fa-solid fa-cart-shopping"></i></a></li>
+                                    <li><a class="dropdown-item  text-white" href="{% url "user:profile" %}">Личный кабинет <i class="fa-solid fa-user"></i></a>
                                     </li>
                                     {% if user.is_admin or user.is_staff %}
                                         <li><a class="dropdown-item  text-white" href="{% url "admin:index" %}">Админ панель</a></li>
@@ -69,16 +70,21 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item  text-white" href="{% url "user:logout" %}">Выйти</a></li>
+                                    <li><a class="dropdown-item  text-white" href="{% url "user:logout" %}">Выйти <i class="fa-solid fa-right-from-bracket"></i></a></li>
                                 </ul>
                             </li>
                         {% endif %}
                     </ul>
                     <form class="d-flex" role="search" action="{% url "catalog:search" %}" method="get">
-                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
+                        <div class="input-group">
+                            <span class="input-group-text border-end-0">
+                              <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
+                        </div>
                     </form>
-                </div>
+                </div> 
             </div>
         </nav>
     </header>
@@ -123,13 +129,36 @@
             </div>
         </div>
     </section>
-
     {% block footer %}
-        <footer class="py-4 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023 - 2024</p>
-            </div>
-        </footer>
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <div class="d-flex align-items-center gap-4 flex-wrap">
+                <!-- Facebook -->
+                <a href="#" class="text-decoration-none text-primary fs-4 d-flex align-items-center">
+                  <i class="fa-brands fa-facebook me-2"></i>
+                  <span>Facebook</span>
+                </a>
+              
+                <!-- Email -->
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-envelope me-2 text-danger"></i>
+                  <a href="mailto:you@example.com" class="fw-semibold text-decoration-none">you@example.com</a>
+                </div>
+              
+                <!-- Телефон -->
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-phone me-2 text-success"></i>
+                  <a href="tel:+37400000000" class="fw-semibold text-decoration-none">+374 00 00 00 00</a>
+                </div>
+              
+                <!-- Адрес -->
+                <div class="d-flex align-items-center">
+                  <i class="fa-solid fa-location-dot me-2 text-warning"></i>
+                  <span style="color:#fff">Yerevan, Armenia</span>
+                </div>
+              </div>
+        </div>
+    </footer>
     {% endblock %}
 
     <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
