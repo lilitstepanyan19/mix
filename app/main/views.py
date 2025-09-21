@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from goods.models import Categories
-
+from goods.models import Products
 
 
 class IndexView(TemplateView):
@@ -12,7 +12,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Home - Главная'
-        context['content'] = "Магазин мебели HOME"
+        context['products'] = Products.objects.all() 
         return context
 
 

@@ -9,7 +9,7 @@
             "image": "goods_images/img-3.jpg",
             "price": "150.00",
             "discount": "20.00",
-            "quantity": 1,
+            "quantity": 0,
             "category": 8
         }
     },
@@ -23,7 +23,7 @@
             "image": "goods_images/img-1.jpg",
             "price": "93.00",
             "discount": "5.00",
-            "quantity": 2,
+            "quantity": 0,
             "category": 7
         }
     },
@@ -31,13 +31,13 @@
         "model": "goods.products",
         "pk": 3,
         "fields": {
-            "name": "овать двухспальная с надголовником и вообще очень ортопедичная.',          'price': 670.00",
-            "slug": "ovat-dvuhspalnaya-s-nadgolovnikom-i-voobshe-ochen-ortopedichnaya-price-67000",
+            "name": "овать двухспальная с надголовником и вообще очень ортопедичная.'",
+            "slug": "ovat-dvuhspalnaya-s-nadgolovnikom-i-voobshe-ochen-ortopedichnaya",
             "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная",
             "image": "goods_images/img-5.jpg",
             "price": "670.00",
             "discount": "25.00",
-            "quantity": 4,
+            "quantity": 1,
             "category": 7
         }
     },
@@ -50,8 +50,8 @@
             "description": "Кухонный стол для обеда с встроенной раковиной и стульями.",
             "image": "goods_images/img-2.jpg",
             "price": "365.00",
-            "discount": "0.00",
-            "quantity": 0,
+            "discount": "0.01",
+            "quantity": 11,
             "category": 8
         }
     },
@@ -65,8 +65,36 @@
             "image": "",
             "price": "50.00",
             "discount": "0.00",
-            "quantity": 1,
+            "quantity": 11,
             "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 7,
+        "fields": {
+            "name": "Прикроватный столик",
+            "slug": "prikrovatnyj-stolik",
+            "description": "Прикроватный столик с двумя выдвижными ящиками (цветок не входит в комплект).",
+            "image": "goods_images/bedside_table.jpg",
+            "price": "55.00",
+            "discount": "0.00",
+            "quantity": 39,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 8,
+        "fields": {
+            "name": "Прикроватный столик 2",
+            "slug": "prikrovatnyj-stolik-2",
+            "description": "Столик, довольно странный на вид, но подходит для размещения рядом с кроватью.",
+            "image": "goods_images/strange_table.jpg",
+            "price": "25.00",
+            "discount": "90.00",
+            "quantity": 9,
+            "category": 8
         }
     }
 ]

@@ -11,7 +11,7 @@ class CatalogView(ListView):
     template_name = "goods/catalog.html"
     context_object_name = "goods"
     paginate_by = 3
-    allow_empty = False
+    allow_empty = True
     # чтоб удобно передать в методы
     slug_url_kwarg = "category_slug"
 
