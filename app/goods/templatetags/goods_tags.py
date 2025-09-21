@@ -1,6 +1,6 @@
 from django import template
 from django.utils.http import urlencode
-
+import re
 
 from goods.models import Categories
 
@@ -23,3 +23,14 @@ def change_params(context, **kwargs):
     # print([product.name for product in context['goods']])
     query.update(kwargs)
     return urlencode(query)
+
+@register.filter
+def highlight(text, query):
+    if not query:
+        return text
+    words = query.split()  # разбиваем по пробелам
+    for word in words:
+        escaped = re.escape(word)
+        pattern = re.compile(escaped, re.IGNORECASE)
+        text = pattern.sub(lambda m: f'<mark style="background-color: #ff6; color: red;">{m.group(0)}</mark>', text)
+    return text

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load goods_tags %}
 
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
@@ -23,7 +24,9 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="imageModal1Label">{{ product.name }}</h5>
+                            <h5 class="modal-title" id="imageModal1Label">
+                                {% autoescape off %}{{ product.name|highlight:query|safe }}{% endautoescape %}
+                            </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Закрыть"></button>
                         </div>
@@ -44,7 +47,10 @@
             {% endif %}
             <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
             <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">
+                {% autoescape off %}{{ product.description|highlight:query|safe }}{% endautoescape %}
+            </p>
+            {% autoescape off %}{{ product.description|highlight:query|safe }}{% endautoescape %}
             <a href="{% url "cart:cart_add" %}" class="btn btn-dark add-to-cart"
             data-product-id="{{ product.id }}">
             {% csrf_token %}

@@ -3,7 +3,7 @@ from django.views.generic import DetailView, ListView
 
 from goods.models import Products
 from goods.utils import q_search
-
+from django.db.models import Q
 
 class CatalogView(ListView):
     model = Products
@@ -19,20 +19,30 @@ class CatalogView(ListView):
         category_slug = self.kwargs.get(self.slug_url_kwarg)
         on_sale = self.request.GET.get("on_sale")
         order_by = self.request.GET.get("order_by")
-        query = self.request.GET.get("q")
+        query = self.request.GET.get("q", "").strip()
 
-        if category_slug == "all":
-            goods = super().get_queryset()
-        elif query:
-            goods = q_search(query)
-        else:
-            goods = super().get_queryset().filter(category__slug=category_slug)
-            if not goods.exists():
-                raise Http404()
+        # Базовый queryset
+        goods = super().get_queryset()
 
+        # Фильтр по категории
+        if category_slug and category_slug != "all":
+            goods = goods.filter(category__slug=category_slug)
+
+        # Поиск по неполному слову
+        if query:
+            goods = goods.filter(
+                Q(name__icontains=query) | Q(description__icontains=query)
+            )
+
+        # Если после фильтров товаров нет — 404
+        if not goods.exists():
+            raise Http404()
+
+        # Фильтр по акции
         if on_sale:
             goods = goods.filter(discount__gt=0)
 
+        # Сортировка
         if order_by and order_by != "default":
             goods = goods.order_by(order_by)
 
@@ -42,6 +52,7 @@ class CatalogView(ListView):
         context = super().get_context_data(**kwargs)
         context["title"] = "Home - Каталог"
         context["slug_url"] = self.kwargs.get(self.slug_url_kwarg)
+        context['query'] = self.request.GET.get("q", "").strip()
         return context
 
 
@@ -61,6 +72,7 @@ class ProductView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = self.object.name
+        context['query'] = self.request.GET.get("q", "").strip()
         return context
 
 
