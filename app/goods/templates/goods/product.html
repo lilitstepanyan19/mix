@@ -2,6 +2,12 @@
 {% load static %}
 {% load goods_tags %}
 
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/product.css" %}">
+{% endblock %}
+
+
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
 {% endblock  %}
@@ -41,9 +47,9 @@
         <!-- Описание товара -->
         <div class="card-body">
             {% if product.quantity == 0 %}
-                <p>Нет в наличии.</p>
+                <p class="product-quantity">Нет в наличии.</p>
             {% else %}
-                <p>В наличии: {{ product.quantity }} штук</p>   
+                <p class="product-quantity">В наличии: {{ product.quantity }} штук</p>   
             {% endif %}
             <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
             <h5 class="card-title">{{ product.name }}</h5>

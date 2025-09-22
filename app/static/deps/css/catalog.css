@@ -1,0 +1,94 @@
+/* Колонка для 5 карточек в ряд */
+.col-4-card {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .col-4-card {
+    flex: 0 0 33.3333%;
+    /* 3 товара в ряд на средних экранах */
+    max-width: 33.3333%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-4-card {
+    flex: 0 0 50%;
+    /* 2 товара в ряд на планшетах */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-4-card {
+    flex: 0 0 100%;
+    /* 1 товар в ряд на мобильных */
+    max-width: 100%;
+  }
+}
+
+.card.custom-shadow {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+  height: 360px;    /* фиксированная высота */
+}
+
+.card.custom-shadow:hover {
+  transform: translateY(-3px);
+}
+
+/* Картинка — занимает 2/3 фиксированной высоты */
+.card-img-top {
+  height: 66.66%;  /* 2/3 от высоты карточки */
+  width: 100%;
+  object-fit: cover;  /* обрезает лишнее, не искажает */
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;    /* предотвращает вылезание */
+}
+
+/* Текст + кнопка — оставшиеся 1/3 */
+.card-body {
+  height: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Кнопка "Добавить в корзину" */
+.card-body .add-to-cart {
+  margin-top: auto;
+}
+
+/* Ограничиваем текст */
+.card-title,
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* сколько строк показывать */
+  -webkit-box-orient: vertical;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.product-quantity {
+  font-size: 0.85rem;
+  margin: 2px 0 2px 0;
+}
+
+.product-id {
+  font-size: 15px;
+  margin: 2px 0 2px 0;
+}
+
+/* Бейдж со скидкой */
+.badge.bg-warning {
+  font-size: 0.75rem;
+  padding: 0.3em 0.5em;
+}

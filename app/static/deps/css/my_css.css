@@ -11,14 +11,7 @@ body {
   content: none;
 }
 
-.custom-shadow {
-  box-shadow: 5px 5px 25px 19px #000000;
-}
 
-.product_id {
-  color: gray;
-  font-size: 15px;
-}
 
 .badge.bg-warning.text-dark {
   position: absolute;
@@ -35,4 +28,16 @@ body {
   top: 80%;
   border-radius: 15px;
   font-size: 0.7rem;
+}
+
+.card.custom-shadow {
+  min-height: 500px;
+  /* одинаковая высота карточки */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-to-cart {
+  margin-top: auto;
 }

@@ -2,6 +2,10 @@
 {% load static %}
 {% load goods_tags %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/catalog.css" %}">
+{% endblock %}
+
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
 {% endblock  %}
@@ -61,7 +65,7 @@
     {% endif %}
     {% for product in goods %}
         <!-- Карта товара -->
-        <div class="col-lg-4 col-md-6 p-4">
+        <div class="col-4-card ">
             <div class="card border-primary rounded custom-shadow">
                 {% if product.image %}
                     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
@@ -89,11 +93,11 @@
                             {% endif %}
                         {% endautoescape %}
                     </p>
-                    <p class="product_id">id: {{ product.display_id }}</p>
+                    <p class="product-id">id: {{ product.display_id }}</p>
                     {% if product.quantity == 0 %}
-                        <p>Нет в наличии.</p>
+                        <p class="product-quantity">Нет в наличии.</p>
                     {% else %}
-                        <p>В наличии: {{ product.quantity }} штук</p>   
+                        <p class="product-quantity">В наличии: <strong>{{ product.quantity }}</strong> штук</p>   
                     {% endif %}
 
                     <div class="d-flex justify-content-between">
@@ -131,7 +135,7 @@
                 </li>
 
                 {% for page in page_obj.paginator.page_range %}
-                {% if page >= page_obj.number|add:-2 and page <= page_obj.number|add:2 %}
+                {% if page >= page_obj.number|add:-4 and page <= page_obj.number|add:4 %}
                     <li class="page-item {% if page_obj.number == page %} active {% endif %}">
                         <a class="page-link" href="?{% change_params page=page %}">{{ page }}</a>
                     </li>
