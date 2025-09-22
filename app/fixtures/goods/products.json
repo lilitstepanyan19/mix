@@ -96,5 +96,103 @@
             "quantity": 9,
             "category": 8
         }
+    },
+    {
+        "model": "goods.products",
+        "pk": 9,
+        "fields": {
+            "name": "Чайный столик",
+            "slug": "chajnyj-stolik",
+            "description": "Комплект из трёх стульев и дизайнерский столик для гостинной комнаты.",
+            "image": "goods_images/img-3.jpg",
+            "price": "150.00",
+            "discount": "20.00",
+            "quantity": 0,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 10,
+        "fields": {
+            "name": "два стула",
+            "slug": "dva-stula",
+            "description": "Набор из стола и двух стульев в минималистическом стиле.",
+            "image": "goods_images/img-1.jpg",
+            "price": "93.00",
+            "discount": "5.00",
+            "quantity": 0,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 11,
+        "fields": {
+            "name": "вообще очень ортопедичная.'",
+            "slug": "voobshe-ochen-ortopedichnaya",
+            "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная",
+            "image": "goods_images/img-5.jpg",
+            "price": "670.00",
+            "discount": "25.00",
+            "quantity": 1,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 12,
+        "fields": {
+            "name": "Кухонный стол",
+            "slug": "kuhonnyj-stol",
+            "description": "Кухонный стол для обеда с встроенной раковиной и стульями.",
+            "image": "goods_images/img-2.jpg",
+            "price": "365.00",
+            "discount": "0.01",
+            "quantity": 11,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 13,
+        "fields": {
+            "name": "cat 1",
+            "slug": "cat-1",
+            "description": "bla",
+            "image": "",
+            "price": "50.00",
+            "discount": "0.00",
+            "quantity": 11,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 14,
+        "fields": {
+            "name": "Прикроватный столик 25",
+            "slug": "prikrovatnyj-stolik-25",
+            "description": "Прикроватный столик с двумя выдвижными ящиками (цветок не входит в комплект).",
+            "image": "goods_images/bedside_table.jpg",
+            "price": "55.00",
+            "discount": "0.00",
+            "quantity": 39,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 15,
+        "fields": {
+            "name": "Прикроватный столик 22",
+            "slug": "prikrovatnyj-stolik-22",
+            "description": "Столик, довольно странный на вид, но подходит для размещения рядом с кроватью.",
+            "image": "goods_images/strange_table.jpg",
+            "price": "25.00",
+            "discount": "90.00",
+            "quantity": 9,
+            "category": 8
+        }
     }
 ]

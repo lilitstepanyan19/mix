@@ -11,8 +11,6 @@ body {
   content: none;
 }
 
-
-
 .badge.bg-warning.text-dark {
   position: absolute;
   top: 10px;
@@ -28,16 +26,4 @@ body {
   top: 80%;
   border-radius: 15px;
   font-size: 0.7rem;
-}
-
-.card.custom-shadow {
-  min-height: 500px;
-  /* одинаковая высота карточки */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.add-to-cart {
-  margin-top: auto;
 }

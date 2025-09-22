@@ -56,7 +56,6 @@
             <p class="card-text">
                 {% autoescape off %}{{ product.description|highlight:query|safe }}{% endautoescape %}
             </p>
-            {% autoescape off %}{{ product.description|highlight:query|safe }}{% endautoescape %}
             <a href="{% url "cart:cart_add" %}" class="btn btn-dark add-to-cart"
             data-product-id="{{ product.id }}">
             {% csrf_token %}
