@@ -3,9 +3,7 @@
 {% load goods_tags %}
 
 
-{% block css %}
-    <link rel="stylesheet" href="{% static "deps/css/product.css" %}">
-{% endblock %}
+
 
 
 {% block modal_cart %}
@@ -14,15 +12,39 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="card mb-4 custom-shadow">
+    <div class="card mb-4 custom-shadow position-relative">
+
+        
+        <!-- Кнопка закрытия карточки -->
+        <div class="top-right-btn position-absolute top-0 end-0 m-2">
+            <a href="{% url 'catalog:index' 'all' %}" class="btn-close" aria-label="Закрыть"></a>
+        </div>
         <div class="row">
             <!-- Миниатюры -->
             <div class="col-md-4">
                 <img src="{{ product.image.url }}"
                     class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
             </div>
+            <!-- Описание товара -->
             <div class="col-md-4 ">
                 <p class="product_id mt-3">id: {{ product.display_id }}</p>
+                {% if product.quantity == 0 %}
+                    <p class="product-quantity">Нет в наличии.</p>
+                {% else %}
+                    <p class="product-quantity">В наличии: {{ product.quantity }} штук</p>   
+                {% endif %}
+                <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                {% autoescape off %}{{ product.description|highlight:query|safe }}{% endautoescape %}
+            </p>
+          
+                {% if product.quantity > 0 %}
+                <a href="{% url "cart:cart_add" %}" class="btn btn-dark add-to-cart"
+                data-product-id="{{ product.id }}">
+                {% csrf_token %}
+                Добавить в корзину</a>
+                {% endif %}
             </div>
             <!-- Увеличить изображение в модальном окне -->
             <div class="modal fade" id="imageModal1" tabindex="-1"
@@ -43,24 +65,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Описание товара -->
-        <div class="card-body">
-            {% if product.quantity == 0 %}
-                <p class="product-quantity">Нет в наличии.</p>
-            {% else %}
-                <p class="product-quantity">В наличии: {{ product.quantity }} штук</p>   
-            {% endif %}
-            <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">
-                {% autoescape off %}{{ product.description|highlight:query|safe }}{% endautoescape %}
-            </p>
-            <a href="{% url "cart:cart_add" %}" class="btn btn-dark add-to-cart"
-            data-product-id="{{ product.id }}">
-            {% csrf_token %}
-            Добавить в корзину</a>
-        </div>
+        
+        
+        
+    </div>
     </div>
 </div>
 {% endblock  %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.btn-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.card').remove();
+        });
+    });
+});
+</script>
+{% endblock %}
