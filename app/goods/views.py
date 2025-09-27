@@ -73,6 +73,8 @@ class ProductView(DetailView):
         context = super().get_context_data(**kwargs)
         context["title"] = self.object.name
         context['query'] = self.request.GET.get("q", "").strip()
+        # Фильтруем картинки, чтобы убрать пустые
+        context['images'] = self.object.images.exclude(image__isnull=True).exclude(image__exact='')
         return context
 
 

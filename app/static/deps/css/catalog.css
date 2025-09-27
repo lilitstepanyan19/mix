@@ -106,7 +106,7 @@
   width: 100%;
   height: 300px;
   /* фиксированная высота */
-  object-fit: cover;
+  object-fit: contain;
   /* обрезает лишнее, не искажает */
   border-radius: 5px;
 }
