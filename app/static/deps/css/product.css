@@ -1,0 +1,112 @@
+.custom-shadow {
+  box-shadow: 5px 5px 25px 19px #000000;
+}
+
+
+/* Описание товара */
+.product_id {
+  color: gray;
+  font-size: 15px;
+}
+
+.product-quantity {
+  font-size: 0.85rem;
+  color: gray;
+  margin: 0;
+}
+
+/* .card-title, .card-text  */
+
+/* Изображения */
+
+.product-images {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+/*  Миниатюры */
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnails img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.thumbnails img.active {
+  border-color: #333;
+  transform: scale(1.05);
+}
+
+.img-thumbnail {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.img-thumbnail:hover {
+  box-shadow: none !important;
+  border-color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* Главное изображение */
+
+.main-image {
+    display: flex;
+    align-items: center;
+    /* центр вертикально */
+    justify-content: center;
+    flex: 1;
+    /* занимает оставшееся место */
+}
+
+.main-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/* Увеличить изображение в модальном окне */
+#modalImage {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+    max-height: 80vh;
+    /* чтобы не вылезало за экран */
+    object-fit: contain; 
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* Адаптив: на мобилках миниатюры под изображением */
+@media (max-width: 768px) {
+    .product-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thumbnails {
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+
+    .thumbnails img {
+        width: 40px;
+        height: 40px;
+    }
+}

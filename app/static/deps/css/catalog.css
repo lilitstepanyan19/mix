@@ -111,6 +111,13 @@
   border-radius: 5px;
 }
 
+.swiper-slide-img, .img-fluid-swiper {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .custom-shadow.product {
   box-shadow: 5px 5px 25px 19px #000000;
 }

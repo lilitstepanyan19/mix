@@ -2,115 +2,111 @@
 {% load static %}
 {% load goods_tags %}
 
-{% block modal_cart %}
-{% include "includes/cart_button.html" %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'deps/css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-  <div class="card mb-4 custom-shadow position-relative">
+    <div class="card mb-4 custom-shadow position-relative">
 
-    <!-- Кнопка закрытия карточки -->
-    <div class="top-right-btn position-absolute top-0 end-0 m-2">
-      <a href="{% url 'catalog:index' 'all' %}" class="btn-close" aria-label="Закрыть"></a>
-    </div>
+        <!-- Кнопка закрытия карточки -->
+        <div class="top-right-btn position-absolute top-0 end-0 m-2">
+            <a href="{% url 'catalog:index' 'all' %}" class="btn-close" aria-label="Закрыть"></a>
+        </div>
 
-    <div class="row">
-      <!-- Слайдер картинок -->
-      <div class="col-md-6">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            {% if product.images.all %}
-                {% for img in product.images.all %}
-                  <div class="swiper-slide">
-                    
-                    <img src="{{ img.image.url }}" class="img-thumbnail img-fluid" 
-                      data-bs-toggle="modal" data-bs-target="#imageModal1" alt="{{ product.name }}">
-                  </div>
-                {% endfor %}
-            {% else %}
-                <div class="swiper-slide">
-                  <img src="{{ product.image.url }}" class="img-thumbnail" 
-                      data-bs-toggle="modal" data-bs-target="#imageModal1" alt="{{ product.name }}">
+        <div class="row">
+            <!-- Изображения -->
+            <div class="col-md-6 product-images">
+                <!-- Миниатюры -->
+                <div class="thumbnails">
+                    {% for img in images %}
+                        <img src="{{ img.image.url }}" class="img-thumbnail" alt="{{ product.name }}" onclick="changeMain(this)">
+                    {% endfor %}
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="img-thumbnail" alt="{{ product.name }}" onclick="changeMain(this)">
+                    {% endif %}
+                    {% if not images and not product.image %}
+                        <img src="{% static 'images/no-image.png' %}" class="img-thumbnail" alt="Нет изображения">
+                    {% endif %}
                 </div>
-            {% endif %}
-          </div>
 
-          <!-- Кнопки и пагинация -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
+                <!-- Главное изображение -->
+                <div class="main-image">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="img-thumbnail" 
+                            data-bs-toggle="modal" data-bs-target="#imageModal1"
+                            id="mainProductImage" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{% static 'images/no-image.png' %}" class="img-thumbnail" 
+                        data-bs-toggle="modal" data-bs-target="#imageModal" 
+                        id="mainProductImage" alt="Нет изображения">
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Описание товара -->
+            <div class="col-md-6">
+                <p class="product_id mt-3">id: {{ product.display_id }}</p>
+                {% if product.quantity == 0 %}
+                <p class="product-quantity text-danger">Нет в наличии</p>
+                {% else %}
+                <p class="product-quantity text-success">В наличии: {{ product.quantity }} шт.</p>
+                {% endif %}
+
+                <h3 class="card-title">{{ product.name }}</h3>
+                <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
+                
+                <p class="card-text">
+                    {% autoescape off %}
+                        {{ product.description|highlight:query|safe }}
+                    {% endautoescape %}
+                </p>
+
+                {% if product.quantity > 0 %}
+                <a href="{% url 'cart:cart_add' %}" 
+                   class="btn btn-dark add-to-cart"
+                   data-product-id="{{ product.id }}">
+                    {% csrf_token %}
+                    Добавить в корзину
+                </a>
+                {% endif %}
+            </div>
+            <!-- Увеличить изображение в модальном окне -->
+            <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="imageModal1Label">
+                                {% autoescape off %}{{ product.name|highlight:query|safe }}{% endautoescape %}
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Закрыть"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img id="modalImage" src="{{ product.image.url }}" class="img-fluid" alt="Изображение 1">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Миниатюры -->
-        <div class="swiper mySwiperThumbs mt-2">
-          <div class="swiper-wrapper">
-            {% for img in images %}
-              <div class="swiper-slide" style="width: 60px;">
-                <img src="{{ img.image.url }}" class="img-fluid" alt="{{ product.name }}">
-              </div>
-            {% endfor %}
-          
-            {% if product.image %}
-              <div class="swiper-slide" style="width: 60px;">
-                <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
-              </div>
-            {% endif %}
-          </div>
-        </div>
-</div>
-
-      </div>
-
-      <!-- Описание товара -->
-      <div class="col-md-6">
-        <p class="product_id mt-3">id: {{ product.display_id }}</p>
-
-        {% if product.quantity == 0 %}
-          <p class="product-quantity text-danger">Нет в наличии</p>
-        {% else %}
-          <p class="product-quantity text-success">В наличии: {{ product.quantity }} шт.</p>
-        {% endif %}
-
-        <h3 class="card-title">{{ product.name }}</h3>
-        <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
-        
-        <p class="card-text">
-          {% autoescape off %}
-            {{ product.description|highlight:query|safe }}
-          {% endautoescape %}
-        </p>
-
-        {% if product.quantity > 0 %}
-        <a href="{% url 'cart:cart_add' %}" 
-           class="btn btn-dark add-to-cart"
-           data-product-id="{{ product.id }}">
-          {% csrf_token %}
-          Добавить в корзину
-        </a>
-        {% endif %}
-      </div>
     </div>
-  </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<!-- Подключаем Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <script>
-  var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+    function changeMain(imgElement) {
+        const mainImg = document.getElementById('mainProductImage');
+        const modalImg = document.getElementById('modalImage');
+    
+        mainImg.src = imgElement.src;
+        modalImg.src = imgElement.src;
+    
+        document.querySelectorAll('.thumbnails img').forEach(el => el.classList.remove('active'));
+        imgElement.classList.add('active');
+    }
+
 </script>
 {% endblock %}
