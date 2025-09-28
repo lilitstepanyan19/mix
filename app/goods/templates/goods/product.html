@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
 {% endblock %}
 
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
+
 {% block content %}
 <div class="container mt-5">
     <div class="card mb-4 custom-shadow position-relative">

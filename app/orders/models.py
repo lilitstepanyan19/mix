@@ -30,6 +30,9 @@ class Order(models.Model):
         verbose_name_plural = "Заказы"
         ordering = ("id",)
 
+    def get_total_cost(self):
+        return sum(item.products_price() for item in self.items.all())
+    
     def __str__(self):
         return f"Заказ № {self.pk} | Покупатель {self.user.first_name} {self.user.last_name}"
 
@@ -50,7 +53,8 @@ class OrderItem(models.Model):
         ordering = ("id",)
 
     objects = OrderitemQueryset.as_manager()
-
+    
+    
     def products_price(self):
         return round(self.product.sell_price() * self.quantity, 2)
 

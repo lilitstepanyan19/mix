@@ -3,6 +3,11 @@
 
 {% block title %}Оплата заказа{% endblock title %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'deps/css/payment_process.css' %}">
+{% endblock %}
+
+
 {% block content %}
 <div class="window">
     <h2 class="pay-title">Оплата заказа</h2>
@@ -14,31 +19,32 @@
                 {% with product=item.product %}
                     <div class="cart-card d-flex">
                         <div class="cart-card-img">
-                            <img src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="{{ product.name }}">
+                            <img src="{% if product.image %}{{ product.image.url }}{% endif %}" 
+                            class="process-img" alt="{{ product.name }}">
                         </div>
                         <div class="cart-card-info">
                             <div class="cart-card-name">
                                 <p>{{ product.name }}</p>
                             </div>
                             <div class="cart-card-q">
-                                <p>Количество: {{ item.quantity }}</p>
+                                <p>Количество: <span>{{ item.quantity }}</span></p>
                             </div>
                         </div>
                         <div class="cart-card price">
                             {% if product.discount %}
                                 <div class="cart-price">
                                     <p class="line opas">$ {{ product.price }}</p>
-                                    <p class="cart-total-price-ots">$ {{ product.sell_price }}</p>
+                                    <p class="cart-total-price-ots">$ <span>{{ product.sell_price }}</span></p>
                                 </div>
                             {% else %}
-                                <p class="cart-total-price">$ {{ product.price }}</p>
+                                <p class="cart-total-price">$ <span>{{ product.price }}</span></p>
                             {% endif %}
                         </div>
                     </div>
                 {% endwith %}
             {% endfor %}
 
-            <p class="cart-total">Итого: $ {{ order.get_total_cost }}</p>
+            <p class="cart-total">Итого: $ <span>{{ order.get_total_cost }}</span></p>
 
             <!-- Выбор способа оплаты -->
             <h3>Выберите способ оплаты:</h3>
@@ -51,10 +57,10 @@
             <button type="button" id="pay-button" class="paynow">Оплатить</button>
         </div>
 
-        <!-- Картинка справа -->
+        {% comment %} <!-- Картинка справа -->
         <div class="castle-div">
             <img src="{% static 'img/castle.png' %}" alt="castle" class="castlep">
-        </div>
+        </div> {% endcomment %}
     </div>
 </div>
 
@@ -82,12 +88,19 @@ document.getElementById('pay-button').addEventListener('click', function() {
 
     }
 });
+fetch("{% url 'payment:create_checkout_session' %}", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": "{{ csrf_token }}"
+    },
+    body: JSON.stringify({ order_id: orderId })
+});
 </script>
 {% endblock content %}
 
 
-
-
+{% block footer %}{% endblock  %}
 
 {% comment %} {% extends 'base.html' %}
 {% load static %}

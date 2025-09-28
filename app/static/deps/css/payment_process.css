@@ -1,0 +1,26 @@
+.process-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 20px 20px 0;
+}
+
+.cart-card-name p{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.cart-card-q p {
+    font-size: 16px;
+    margin: 5px;
+}
+
+.cart-card-q span, 
+p.cart-total span{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
