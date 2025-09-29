@@ -1,0 +1,13 @@
+.category-link {
+    text-decoration: none;
+    font-weight: 40px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-link:hover {
+    background-color: #474b50;
+    /* синий фон при наведении */
+    color: #fff;
+}

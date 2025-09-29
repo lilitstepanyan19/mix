@@ -1,14 +1,24 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} 
+{% load static %} {% load goods_tags %} 
 
+{% block modal_cart %} 
+{% include "includes/cart_button.html" %} 
+{% endblock %} 
 
+{% block css %} 
+    <link rel="stylesheet" href="{% static "deps/css/my_css.css" %}"> 
+    <link rel="stylesheet" href="{% static 'deps/css/index.css' %}"> 
+    <link rel="stylesheet" href="{% static "deps/css/footer.css" %}"> 
+{% endblock %} 
 
-{% block modal_cart %}
-{% include "includes/cart_button.html" %}
-{% endblock  %}
-
-{% block content %}
-    <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+{% block content %} 
+    <div class="d-flex flex-wrap gap-3 mb-3"> 
+        {% tag_categories as categories %}
+        {% for category in categories %} 
+            <a class="btn btn-secondary btn-dark category-link" href="{% url "catalog:index" category.slug %}"> 
+            {{category.name}}</a> 
+        {% endfor %} 
+    </div> 
+    <a href="{% url 'goods:category_all' %}">bla</a>
+    {% include "goods:catalog.html" %}
 {% endblock %}
-
-
