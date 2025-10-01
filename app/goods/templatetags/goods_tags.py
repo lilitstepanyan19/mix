@@ -34,3 +34,7 @@ def highlight(text, query):
         pattern = re.compile(escaped, re.IGNORECASE)
         text = pattern.sub(lambda m: f'<mark style="background-color: #ff6; color: red;">{m.group(0)}</mark>', text)
     return text
+
+@register.filter
+def filter_by_category(products, category_id):
+    return [p for p in products if p.category_id == category_id][:2]  # первые 5 товаров категории

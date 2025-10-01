@@ -1,24 +1,56 @@
-{% extends "base.html" %} 
-{% load static %} {% load goods_tags %} 
+{% extends "base.html" %}
+{% load static %}
+{% load goods_tags %}
 
-{% block modal_cart %} 
-{% include "includes/cart_button.html" %} 
-{% endblock %} 
+{% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+{% endblock %}
 
-{% block css %} 
-    <link rel="stylesheet" href="{% static "deps/css/my_css.css" %}"> 
-    <link rel="stylesheet" href="{% static 'deps/css/index.css' %}"> 
-    <link rel="stylesheet" href="{% static "deps/css/footer.css" %}"> 
-{% endblock %} 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'deps/css/my_css.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'deps/css/product.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'deps/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
+{% endblock %}
 
-{% block content %} 
-    <div class="d-flex flex-wrap gap-3 mb-3"> 
-        {% tag_categories as categories %}
-        {% for category in categories %} 
-            <a class="btn btn-secondary btn-dark category-link" href="{% url "catalog:index" category.slug %}"> 
-            {{category.name}}</a> 
-        {% endfor %} 
-    </div> 
-    <a href="{% url 'goods:category_all' %}">bla</a>
-    {% include "goods:catalog.html" %}
+{% block content %}
+<div class="products-container">
+
+    {% tag_categories as categories %}
+
+    {% for category in categories %}
+<div class="category-block">
+    <a class="category-name" href="{% url 'catalog:index' category.slug %}">
+        {{ category.name }}
+    </a>
+
+    <div class="category-products">
+        {% for product in products|filter_by_category:category.id|slice:":5" %}
+            <div class="card product-card-index">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                {% else %}
+                    <img src="{% static 'images/no-image.png' %}" class="card-img-top" alt="Нет изображения">
+                {% endif %}
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-truncate">{{ product.name }}</h5>
+                    {% if product.discount %}
+                        <p class="card-text"><s>{{ product.price }}$</s> <strong>{{ product.sell_price }}$</strong></p>
+                        <span class="badge bg-warning text-dark">-{{ product.discount }}%</span>
+                    {% else %}
+                        <p class="card-text"><strong>{{ product.price }}$</strong></p>
+                    {% endif %}
+                    <a href="{% url 'catalog:product' product.slug %}" class="btn btn-dark mt-auto">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+
+</div>
 {% endblock %}
