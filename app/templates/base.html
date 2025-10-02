@@ -95,52 +95,53 @@
             </div>
         </nav>
     </header>
-    <section>
-        <div class="container">
-            <!-- Каталог и корзина с фиксированным расположением на странице -->
-            <div class="row mt-1 position-fixed z-3">
-                <!-- Каталог -->
-                <div class="dropdown mb-2">
-                    <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Каталог
-                        <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
-                            height="16">
-                    </button>
-                    <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        {% cache 60 catalog_categories %}
-                        {% tag_categories as categories %}
-                        {% for category in categories %}
-                            <li><a class="dropdown-item text-white" 
-                                href="{% url "catalog:index" category.slug %}">
-                                    {{category.name}}
-                                </a>
-                            </li>
-                        {% endfor %}
-                        {% endcache %}
-
-                    </ul>
-                </div>
-                <!-- Значек корзины, вызывает модальное окно -->
-                {% block modal_cart %}{% endblock  %}
-                <!-- Закончилась разметка модального окна -->
-            </div>
-        </div>
-        <!-- Контент -->
-        <div class="container">
-            <div class="row mt-1">
-                <div class="col-lg-2">
-                    <!-- Пустой блок на Ваше усмотрение -->
-                </div>
-                <div class="col-lg-10">
-                    <!-- Контент на странице -->
-                    {% include "includes/notifications.html" %}
-                    {% block content %}{% endblock %}
+    <main class="flex-grow-1">
+        <section>
+            <div class="container">
+                <!-- Каталог и корзина с фиксированным расположением на странице -->
+                <div class="row mt-1 position-fixed z-3">
+                    <!-- Каталог -->
+                    <div class="dropdown mb-2">
+                        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Каталог
+                            <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
+                                height="16">
+                        </button>
+                        <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+                            {% cache 60 catalog_categories %}
+                            {% tag_categories as categories %}
+                            {% for category in categories %}
+                                <li><a class="dropdown-item text-white" 
+                                    href="{% url "catalog:index" category.slug %}">
+                                        {{category.name}}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            {% endcache %}
+                            
+                        </ul>
+                    </div>
+                    <!-- Значек корзины, вызывает модальное окно -->
+                    {% block modal_cart %}{% endblock  %}
+                    <!-- Закончилась разметка модального окна -->
                 </div>
             </div>
-        </div>
-    </section>
-    
+            <!-- Контент -->
+            <div class="container">
+                <div class="row mt-1">
+                    <div class="col-lg-2">
+                        <!-- Пустой блок на Ваше усмотрение -->
+                    </div>
+                    <div class="col-lg-10">
+                        <!-- Контент на странице -->
+                        {% include "includes/notifications.html" %}
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     {% block footer %}
     <footer class="py-4 bg-dark">
         <div class="container">

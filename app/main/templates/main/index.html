@@ -7,10 +7,8 @@
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'deps/css/my_css.css' %}">
-    {% comment %} <link rel="stylesheet" href="{% static 'deps/css/product.css' %}"> {% endcomment %}
-    <link rel="stylesheet" href="{% static 'deps/css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "deps/css/index.css" %} ">
 {% endblock %}
 
 {% block content %}
@@ -25,7 +23,7 @@
     </a>
 
     <div class="category-products">
-        {% for product in products|filter_by_category:category.id|slice:":5" %}
+        {% for product in products|filter_by_category:category.id %}
             <div class="card product-card-index">
                 {% if product.image %}
                     <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
@@ -48,6 +46,9 @@
             </div>
         {% endfor %}
     </div>
+    <a href="{% url 'catalog:index' category.slug %}" class="btn btn-secondary btn-sm mt-2 float-end">
+        Показать все
+    </a>
 </div>
 {% endfor %}
 

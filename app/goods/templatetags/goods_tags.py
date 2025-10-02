@@ -37,4 +37,4 @@ def highlight(text, query):
 
 @register.filter
 def filter_by_category(products, category_id):
-    return [p for p in products if p.category_id == category_id][:2]  # первые 5 товаров категории
+    return [p for p in products if p.category_id == category_id][:3]  # первые 5 товаров категории

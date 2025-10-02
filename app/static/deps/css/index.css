@@ -3,24 +3,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    padding-bottom: 70px;
-    /* пространство под футер */
 }
 
 .category-block {
-    margin-bottom: 2rem; /* отступ между категориями */
-}
-
-.category-products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding-bottom: 1rem; /* отступ перед футером */
+    margin-bottom: 1rem; /* отступ между категориями */
 }
 
 .category-name {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 1rem;
     padding: 0.3rem 0.6rem;
@@ -35,14 +26,16 @@
 }
 
 .product-card-index {
+    /* flex: 1 0 calc(20% - 1rem);  5 в ряд по умолчанию */
     width: 14rem;
-    min-height: 300px; /* одинаковая высота */
+    min-height: 200px; /* одинаковая высота */
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .product-card-index img {
-    height: 200px;
+    height: 150px;
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
@@ -61,8 +54,7 @@
 
 .card-title {
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    margin-left: 5px;
+    margin-bottom: 5px ;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -70,7 +62,9 @@
 
 .card-text {
     text-align: center;
+    margin-bottom: 5px;
 }
+
 
 /* Адаптивность */
 @media (max-width: 1199px) { .product-card-index { flex: 1 0 25%; max-width: 25%; } }

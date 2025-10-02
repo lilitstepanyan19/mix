@@ -3,6 +3,7 @@
 {% load goods_tags %}
 
 {% block css %}
+    <link rel="stylesheet" href="{% static 'deps/css/my_css.css' %}">
     <link rel="stylesheet" href="{% static 'deps/css/product.css' %}">
     <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
 {% endblock %}
@@ -17,7 +18,7 @@
 
         <!-- Кнопка закрытия карточки -->
         <div class="top-right-btn position-absolute top-0 end-0 m-2">
-            <a href="{% url 'catalog:index' 'all' %}" class="btn-close" aria-label="Закрыть"></a>
+            <a href="{{ request.GET.next|default:request.META.HTTP_REFERER }}" class="btn-close" aria-label="Закрыть"></a>
         </div>
 
         <div class="row">
