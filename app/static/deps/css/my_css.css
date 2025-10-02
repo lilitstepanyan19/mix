@@ -22,6 +22,16 @@ main {
   flex: 1;
   /* main занимает всё свободное место */
 }
+
+.logo-img {
+  height: 60px;
+  width: 60px;
+  margin: 30px;
+  position: fixed;
+  z-index: 1;
+}
+
+
 .dropdown-toggle::after {
   content: none;
 }
