@@ -3,9 +3,8 @@
 {% load goods_tags %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'deps/css/my_css.css' %}">
+    {{ block.super }}
     <link rel="stylesheet" href="{% static 'deps/css/product.css' %}">
-    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
 {% endblock %}
 
 {% block modal_cart %}

@@ -4,6 +4,7 @@
 {% block title %}Оплата заказа{% endblock title %}
 
 {% block css %}
+    {{ block.super }}
     <link rel="stylesheet" href="{% static 'deps/css/payment_process.css' %}">
 {% endblock %}
 
