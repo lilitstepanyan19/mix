@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-03 22:16+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: goods/templates/goods/catalog.html:24
+msgid "Фильтры"
+msgstr "Filters"
+
+#: goods/templates/goods/catalog.html:34
+msgid "Товары по акции"
+msgstr "Sale Items"
+
+#: goods/templates/goods/catalog.html:37
+msgid "Сортировать:"
+msgstr "Sort by:"
+
+#: goods/templates/goods/catalog.html:42
+msgid "По умолчанию"
+msgstr "Default"
+
+#: goods/templates/goods/catalog.html:49
+msgid "От дешевых к дорогим"
+msgstr "Price: Low to High"
+
+#: goods/templates/goods/catalog.html:56
+msgid "От дорогих к дешевым"
+msgstr "Price: High to Low"
+
+#: goods/templates/goods/catalog.html:59
+msgid "Применить"
+msgstr "Apply"
+
+#: goods/templates/goods/catalog.html:64
+#, fuzzy, python-format
+#| msgid "Результаты поиска по запросу %(query)s"
+msgid "Результаты поиска по запросу %(request.GET.q)s"
+msgstr "Search results for %(query)s"
+
+#: goods/templates/goods/catalog.html:67
+msgid "По запросу ничего не найдено"
+msgstr "No results found"
+
+#: goods/templates/goods/catalog.html:78
+msgid "Изображение не найдено"
+msgstr "Image not found"
+
+#: goods/templates/goods/catalog.html:101
+#, python-format
+msgid "id: %(product.display_id)s"
+msgstr ""
+
+#: goods/templates/goods/catalog.html:103
+msgid "Нет в наличии."
+msgstr "Out of stock"
+
+#: goods/templates/goods/catalog.html:105
+#, fuzzy
+#| msgid "В наличии: %(quantity)s штук"
+msgid "В наличии: {{ product.quantity }} штук"
+msgstr "In stock: %(quantity)s pcs"
+
+#: goods/templates/goods/catalog.html:120 goods/templates/goods/product.html:78
+msgid "Добавить в корзину"
+msgstr "Add to cart"
+
+#: goods/templates/goods/catalog.html:138
+msgid "Назад"
+msgstr "Previous"
+
+#: goods/templates/goods/catalog.html:149
+msgid "Следующая"
+msgstr "Next"
+
+#: goods/templates/goods/product.html:22 goods/templates/goods/product.html:92
+msgid "Закрыть"
+msgstr "Close"
+
+#: goods/templates/goods/product.html:37 goods/templates/goods/product.html:50
+msgid "Нет изображения"
+msgstr "No image"
+
+#: goods/templates/goods/product.html:57
+msgid "id"
+msgstr "ID"
+
+#: goods/templates/goods/product.html:59
+msgid "Нет в наличии"
+msgstr "Out of stock"
+
+#: goods/templates/goods/product.html:61
+#, fuzzy, python-format
+#| msgid "В наличии: %(quantity)s шт."
+msgid "В наличии: %(product.quantity)s шт."
+msgstr "In stock: %(quantity)s pcs"
+
+#: goods/templates/goods/product.html:65
+msgid "Цена"
+msgstr "Price"
+
+#: goods/templates/goods/product.html:95
+msgid "Изображение"
+msgstr "Image"
+
+#~ msgid "id: %(id)s"
+#~ msgstr "id: %(id)s"

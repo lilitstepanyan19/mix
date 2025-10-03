@@ -1,188 +1,180 @@
 {% load static %}
+{% load i18n %}
 {% load cache %}
 {% load goods_tags %}
 
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "deps/css/bootstrap/bootstrap.min.css" %}">
-
-    {% comment %} slider for images {% endcomment %}
+    <link rel="stylesheet" href="{% static 'deps/css/bootstrap/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <!-- Стиль CSS для главной страницы -->
+    
     {% block css %}
-        <link rel="stylesheet" href="{% static "deps/css/my_css.css" %}">
-        <link rel="stylesheet" href="{% static "deps/css/footer.css" %}">
+        <link rel="stylesheet" href="{% static 'deps/css/my_css.css' %}">
+        <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
     {% endblock %}
 
-
-    <!-- Favicons for different platforms -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static "deps/favicon/apple-touch-icon.png" %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static "deps/favicon/favicon-32x32.png" %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static "deps/favicon/favicon-16x16.png" %}">
-    <link rel="manifest" href="{% static "deps/favicon/site.webmanifest" %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'deps/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'deps/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'deps/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'deps/favicon/site.webmanifest' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>{{ title }}</title>
 </head>
 
 <body>
-    <header>
-        <a class="navbar-brand" href="{% url "main:index" %}">
-            <img class="logo-img" src=" {% static '/deps/favicon/favicon.ico' %}" alt="LOGOIMG"></a>
-        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-            <div class="container">
-                <a class="navbar-brand" href="{% url "main:index" %}">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+<header>
+    <a class="navbar-brand" href="{% url 'main:index' %}">
+        <img class="logo-img" src="{% static 'deps/favicon/favicon.ico' %}" alt="LOGOIMG">
+    </a>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'main:index' %}">{% trans "Home" %}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown ">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans "Информация" %}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-white" href="{% url 'main:delivery' %}">{% trans "Доставка и оплата" %}</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'main:contact' %}">{% trans "Контактная информация" %}</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'main:about' %}">{% trans "Про нас" %}</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'user:users_cart' %}">{% trans "Корзина" %} <i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+
+                    {% if not user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'user:login' %}">{% trans "Войти" %} <i class="fa-solid fa-left-from-bracket"></i></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Информация
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans "Мой профиль" %}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="{% url "main:delivery" %}">Доставка и оплата</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url "main:contact" %}">Контактная информация</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url "main:about" %}">Про нас</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url 'user:users_cart' %}">{% trans "Корзина" %} <i class="fa-solid fa-cart-shopping"></i></a></li>
+                                <li><a class="dropdown-item text-white" href="{% url 'user:profile' %}">{% trans "Личный кабинет" %} <i class="fa-solid fa-user"></i></a></li>
+                                {% if user.is_admin or user.is_staff %}
+                                    <li><a class="dropdown-item text-white" href="{% url 'admin:index' %}">{% trans "Админ панель" %}</a></li>
+                                {% endif %}
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-white" href="{% url 'user:logout' %}">{% trans "Выйти" %} <i class="fa-solid fa-right-from-bracket"></i></a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="{% url "user:users_cart" %}">Корзина <i class="fa-solid fa-cart-shopping"></i></a>
-                        </li>
-                        {% if not user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link  text-white" href="{% url "user:login" %}">Войти <i class="fa-solid fa-left-from-bracket"></i></a>
-                            </li>
-                        {% else %}
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Мой профиль
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item  text-white" href=" {% url 'user:users_cart' %}">Корзина <i class="fa-solid fa-cart-shopping"></i></a></li>
-                                    <li><a class="dropdown-item  text-white" href="{% url "user:profile" %}">Личный кабинет <i class="fa-solid fa-user"></i></a>
-                                    </li>
-                                    {% if user.is_admin or user.is_staff %}
-                                        <li><a class="dropdown-item  text-white" href="{% url "admin:index" %}">Админ панель</a></li>
-                                    {% endif %}
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item  text-white" href="{% url "user:logout" %}">Выйти <i class="fa-solid fa-right-from-bracket"></i></a></li>
-                                </ul>
-                            </li>
-                        {% endif %}
-                    </ul>
-                    <form class="d-flex" role="search" action="{% url "catalog:search" %}" method="get">
-                        <div class="input-group">
-                            <span class="input-group-text border-end-0">
-                              <i class="fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
-                        </div>
-                    </form>
-                </div> 
-            </div>
-        </nav>
-    </header>
-    <main class="flex-grow-1">
-        <section>
-            <div class="container">
-                <!-- Каталог и корзина с фиксированным расположением на странице -->
-                <div class="row mt-1 position-fixed z-3">
-                    <!-- Каталог -->
-                    <div class="dropdown mb-2">
-                        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Каталог
-                            <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
-                                height="16">
-                        </button>
-                        <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                            {% cache 60 catalog_categories %}
-                            {% tag_categories as categories %}
-                            {% for category in categories %}
-                                <li><a class="dropdown-item text-white" 
-                                    href="{% url "catalog:index" category.slug %}">
-                                        {{category.name}}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                            {% endcache %}
-                            
-                        </ul>
+                    {% endif %}
+                </ul>
+
+                <!-- Форма поиска -->
+                <form class="d-flex" role="search" action="{% url 'catalog:search' %}" method="get">
+                    <div class="input-group">
+                        <span class="input-group-text border-end-0"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input class="form-control me-2" type="search" name="q" placeholder="{% trans 'Search' %}" aria-label="Search">
+                        <button class="btn btn-outline-success text-white" type="submit">{% trans "Поиск" %}</button>
                     </div>
-                    <!-- Значек корзины, вызывает модальное окно -->
-                    {% block modal_cart %}{% endblock  %}
-                    <!-- Закончилась разметка модального окна -->
-                </div>
+                </form>
+
+                <!-- Переключатель языка -->
+                <form action="{% url 'set_language' %}" method="post" class="ms-3">
+                    {% csrf_token %}
+                    <select name="language" onchange="this.form.submit()">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% for lang_code, lang_name in LANGUAGES %}
+                            <option value="{{ lang_code }}"{% if lang_code == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ lang_name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
             </div>
-            <!-- Контент -->
-            <div class="container">
-                <div class="row mt-1">
-                    <div class="col-lg-2">
-                        <!-- Пустой блок на Ваше усмотрение -->
-                    </div>
-                    <div class="col-lg-10">
-                        <!-- Контент на странице -->
-                        {% include "includes/notifications.html" %}
-                        {% block content %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    {% block footer %}
-    <footer class="py-4 bg-dark">
-        <div class="container">
-            <div class="d-flex align-items-center gap-4 flex-wrap">
-                <!-- Facebook -->
-                <a href="#" class="text-decoration-none text-primary fs-4 d-flex align-items-center">
-                  <i class="fa-brands fa-facebook me-2"></i>
-                  <span>Facebook</span>
-                </a>
-              
-                <!-- Email -->
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-envelope me-2 text-danger"></i>
-                  <a href="mailto:you@example.com" class="fw-semibold text-decoration-none">you@example.com</a>
-                </div>
-              
-                <!-- Телефон -->
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-phone me-2 text-success"></i>
-                  <a href="tel:+37400000000" class="fw-semibold text-decoration-none">+374 00 00 00 00</a>
-                </div>
-              
-                <!-- Адрес -->
-                <div class="d-flex align-items-center">
-                  <i class="fa-solid fa-location-dot me-2 text-warning"></i>
-                  <span style="color:#fff">Yerevan, Armenia</span>
-                </div>
-              </div>
         </div>
-    </footer>
-    {% endblock %}
+    </nav>
+</header>
 
-    {% block scripts %}
-    
-    {% endblock  %}
+<main class="flex-grow-1">
+    <section>
+        <div class="container">
+            <div class="row mt-1 position-fixed z-3">
+                <div class="dropdown mb-2">
+                    <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        {% trans "Каталог" %}
+                        <img class="mx-1" src="{% static 'deps/icons/grid-fill.svg' %}" alt="Catalog Icon" width="16" height="16">
+                    </button>
+                    <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+                        {% cache 60 catalog_categories %}
+                        {% tag_categories as categories %}
+                        {% for category in categories %}
+                            <li><a class="dropdown-item text-white" href="{% url 'catalog:index' category.slug %}">{{ category.name }}</a></li>
+                        {% endfor %}
+                        {% endcache %}
+                    </ul>
+                </div>
 
-    <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
-    <script src="{% static "deps/js/jquery-ajax.js" %}"></script>
-    <script src="{% static "deps/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
+                {% block modal_cart %}{% endblock %}
+            </div>
+        </div>
 
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-10">
+                    {% include "includes/notifications.html" %}
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% block footer %}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <div class="d-flex align-items-center gap-4 flex-wrap">
+            <a href="#" class="text-decoration-none text-primary fs-4 d-flex align-items-center">
+                <i class="fa-brands fa-facebook me-2"></i>
+                <span>Facebook</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-envelope me-2 text-danger"></i>
+                <a href="mailto:you@example.com" class="fw-semibold text-decoration-none">you@example.com</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-phone me-2 text-success"></i>
+                <a href="tel:+37400000000" class="fw-semibold text-decoration-none">+374 00 00 00 00</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-location-dot me-2 text-warning"></i>
+                <span style="color:#fff">{% trans "Yerevan, Armenia" %}</span>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+<script src="{% static 'deps/js/jquery/jquery-3.7.0.min.js' %}"></script>
+<script src="{% static 'deps/js/jquery-ajax.js' %}"></script>
+<script src="{% static 'deps/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 </body>
-
 </html>

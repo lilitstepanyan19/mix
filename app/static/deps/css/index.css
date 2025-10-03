@@ -65,12 +65,17 @@
     margin-bottom: 5px;
 }
 
+.details-btn {
+    text-overflow: ellipsis;
+}
+
 .show-all-btn {
     background-color: #2a3a4b;
     color: white;
     text-decoration: none;
     padding: 0.3rem 0.6rem;
     border-radius: 5px;
+    text-overflow: ellipsis;
 }
 
 /* Адаптивность */

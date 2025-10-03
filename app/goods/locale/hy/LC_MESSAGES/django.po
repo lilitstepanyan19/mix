@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-03 22:15+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: goods/templates/goods/catalog.html:24
+msgid "Фильтры"
+msgstr "Ֆիլտրեր"
+
+#: goods/templates/goods/catalog.html:34
+msgid "Товары по акции"
+msgstr "Զեղչված ապրանքներ"
+
+#: goods/templates/goods/catalog.html:37
+msgid "Сортировать:"
+msgstr "Տեսակավորել:"
+
+#: goods/templates/goods/catalog.html:42
+msgid "По умолчанию"
+msgstr "Առաջնային"
+
+#: goods/templates/goods/catalog.html:49
+msgid "От дешевых к дорогим"
+msgstr "Ցածրից բարձր"
+
+#: goods/templates/goods/catalog.html:56
+msgid "От дорогих к дешевым"
+msgstr "Բարձրից ցածր"
+
+#: goods/templates/goods/catalog.html:59
+msgid "Применить"
+msgstr "Կիրառել"
+
+#: goods/templates/goods/catalog.html:64
+#, fuzzy, python-format
+#| msgid "Результаты поиска по запросу %(query)s"
+msgid "Результаты поиска по запросу %(request.GET.q)s"
+msgstr "Որոնման արդյունքները՝ %(query)s"
+
+#: goods/templates/goods/catalog.html:67
+msgid "По запросу ничего не найдено"
+msgstr "Որոնման արդյունք չկա"
+
+#: goods/templates/goods/catalog.html:78
+msgid "Изображение не найдено"
+msgstr "Պատկերը չի գտնվել"
+
+#: goods/templates/goods/catalog.html:101
+#, python-format
+msgid "id: %(product.display_id)s"
+msgstr ""
+
+#: goods/templates/goods/catalog.html:103
+msgid "Нет в наличии."
+msgstr "Առկա չէ"
+
+#: goods/templates/goods/catalog.html:105
+#, fuzzy
+#| msgid "В наличии: %(quantity)s штук"
+msgid "В наличии: {{ product.quantity }} штук"
+msgstr "Առկա է: %(quantity)s հատ"
+
+#: goods/templates/goods/catalog.html:120 goods/templates/goods/product.html:78
+msgid "Добавить в корзину"
+msgstr "Ավելացնել զամբյուղում"
+
+#: goods/templates/goods/catalog.html:138
+msgid "Назад"
+msgstr "Հետ"
+
+#: goods/templates/goods/catalog.html:149
+msgid "Следующая"
+msgstr "Հաջորդը"
+
+#: goods/templates/goods/product.html:22 goods/templates/goods/product.html:92
+msgid "Закрыть"
+msgstr "Փակել"
+
+#: goods/templates/goods/product.html:37 goods/templates/goods/product.html:50
+msgid "Нет изображения"
+msgstr "Պատկերը չկա"
+
+#: goods/templates/goods/product.html:57
+msgid "id"
+msgstr "համար"
+
+#: goods/templates/goods/product.html:59
+#, fuzzy
+#| msgid "Нет в наличии."
+msgid "Нет в наличии"
+msgstr "Առկա չէ"
+
+#: goods/templates/goods/product.html:61
+#, fuzzy, python-format
+#| msgid "В наличии: %(quantity)s штук"
+msgid "В наличии: %(product.quantity)s шт."
+msgstr "Առկա է: %(quantity)s հատ"
+
+#: goods/templates/goods/product.html:65
+msgid "Цена"
+msgstr "Գին"
+
+#: goods/templates/goods/product.html:95
+msgid "Изображение"
+msgstr "Պատկեր"
+
+#~ msgid "id: %(id)s"
+#~ msgstr "համար: %(id)s"

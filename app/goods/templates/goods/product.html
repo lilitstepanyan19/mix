@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% load goods_tags %}
+
 
 {% block css %}
     {{ block.super }}
@@ -17,7 +19,7 @@
 
         <!-- Кнопка закрытия карточки -->
         <div class="top-right-btn position-absolute top-0 end-0 m-2">
-            <a href="{{ request.GET.next|default:request.META.HTTP_REFERER }}" class="btn-close" aria-label="Закрыть"></a>
+            <a href="{{ request.GET.next|default:request.META.HTTP_REFERER }}" class="btn-close" aria-label="{% trans 'Закрыть' %}"></a>
         </div>
 
         <div class="row">
@@ -32,7 +34,7 @@
                         <img src="{{ product.image.url }}" class="img-thumbnail" alt="{{ product.name }}" onclick="changeMain(this)">
                     {% endif %}
                     {% if not images and not product.image %}
-                        <img src="{% static 'images/no-image.png' %}" class="img-thumbnail" alt="Нет изображения">
+                        <img src="{% static 'images/no-image.png' %}" class="img-thumbnail" alt="{% trans 'Нет изображения' %}">
                     {% endif %}
                 </div>
 
@@ -45,22 +47,22 @@
                     {% else %}
                         <img src="{% static 'images/no-image.png' %}" class="img-thumbnail" 
                         data-bs-toggle="modal" data-bs-target="#imageModal" 
-                        id="mainProductImage" alt="Нет изображения">
+                        id="mainProductImage" alt="{% trans 'Нет изображения' %}">
                     {% endif %}
                 </div>
             </div>
 
             <!-- Описание товара -->
             <div class="col-md-6">
-                <p class="product_id mt-3">id: {{ product.display_id }}</p>
+                <p class="product_id mt-3">{% trans "id" %}: {{ product.display_id }}</p>
                 {% if product.quantity == 0 %}
-                <p class="product-quantity text-danger">Нет в наличии</p>
+                    <p class="product-quantity text-danger">{% trans "Нет в наличии" %}</p>
                 {% else %}
-                <p class="product-quantity text-success">В наличии: {{ product.quantity }} шт.</p>
+                    <p class="product-quantity text-success">{% blocktrans %}В наличии: {{ product.quantity }} шт.{% endblocktrans %}</p>
                 {% endif %}
 
                 <h3 class="card-title">{{ product.name }}</h3>
-                <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
+                <p class="card-text">{% trans "Цена" %}: <strong>{{ product.sell_price }} $</strong></p>
                 
                 <p class="card-text">
                     {% autoescape off %}
@@ -73,11 +75,12 @@
                    class="btn btn-dark add-to-cart"
                    data-product-id="{{ product.id }}">
                     {% csrf_token %}
-                    Добавить в корзину
+                    {% trans "Добавить в корзину" %}
                 </a>
                 {% endif %}
             </div>
-            <!-- Увеличить изображение в модальном окне -->
+
+            <!-- Модальное окно увеличения изображения -->
             <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -86,10 +89,10 @@
                                 {% autoescape off %}{{ product.name|highlight:query|safe }}{% endautoescape %}
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Закрыть"></button>
+                                aria-label="{% trans 'Закрыть' %}"></button>
                         </div>
                         <div class="modal-body">
-                            <img id="modalImage" src="{{ product.image.url }}" class="img-fluid" alt="Изображение 1">
+                            <img id="modalImage" src="{{ product.image.url }}" class="img-fluid" alt="{% trans 'Изображение' %}">
                         </div>
                     </div>
                 </div>
@@ -111,6 +114,5 @@
         document.querySelectorAll('.thumbnails img').forEach(el => el.classList.remove('active'));
         imgElement.classList.add('active');
     }
-
 </script>
 {% endblock %}

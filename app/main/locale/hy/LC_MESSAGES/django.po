@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-03 22:15+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: main/templates/main/about.html:14 main/templates/main/delivery.html:13
+#, python-format
+msgid "%(content)s"
+msgstr ""
+
+#: main/templates/main/about.html:15 main/templates/main/delivery.html:15
+#, python-format
+msgid "%(text_on_page)s"
+msgstr ""
+
+# #: templates/about.html:7   ...................
+# msgid "content"
+# msgstr "Էջի վերնագիր"
+#
+# #: templates/page.html:8
+# msgid "text_on_page"
+# msgstr "Տեքստ էջում"
+#
+#
+#
+# #: templates/contact.html:9   ...................
+# msgid "{{ content }}"
+# msgstr "{{ content }}"
+#
+# #: templates/contact.html:10
+# msgid "{{ text_on_page }}"
+# msgstr "{{ text_on_page }}"
+#
+#
+#
+# #: templates/delivery.html:11  ....................
+# msgid "{{ content }}"
+# msgstr "{{ content }}"  # Здесь можно заменить на армянский текст, если есть
+#
+# msgid "{{ text_on_page }}"
+# msgstr "{{ text_on_page }}"  # Здесь тоже
+#: main/templates/main/index.html:31
+msgid "Нет изображения"
+msgstr "Չկա նկար"
+
+#: main/templates/main/index.html:48
+msgid "Подробнее"
+msgstr "Մանրամասն"
+
+#: main/templates/main/index.html:55
+msgid "Показать все"
+msgstr "Ցուցադրել բոլորը"
