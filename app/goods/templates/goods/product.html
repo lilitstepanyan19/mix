@@ -3,15 +3,14 @@
 {% load i18n %}
 {% load goods_tags %}
 
-
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'deps/css/product.css' %}">
 {% endblock %}
 
 {% block modal_cart %}
-{% include "includes/cart_button.html" %}
-{% endblock  %}
+    {% include "includes/cart_button.html" %}
+{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -19,12 +18,15 @@
 
         <!-- Кнопка закрытия карточки -->
         <div class="top-right-btn position-absolute top-0 end-0 m-2">
-            <a href="{{ request.GET.next|default:request.META.HTTP_REFERER }}" class="btn-close" aria-label="{% trans 'Закрыть' %}"></a>
+            <a href="{{ request.GET.next|default:request.META.HTTP_REFERER }}" 
+               class="btn-close" 
+               aria-label="{% trans 'Закрыть' %}"></a>
         </div>
 
         <div class="row">
             <!-- Изображения -->
             <div class="col-md-6 product-images">
+
                 <!-- Миниатюры -->
                 <div class="thumbnails">
                     {% for img in images %}
@@ -42,27 +44,36 @@
                 <div class="main-image">
                     {% if product.image %}
                         <img src="{{ product.image.url }}" class="img-thumbnail" 
-                            data-bs-toggle="modal" data-bs-target="#imageModal1"
-                            id="mainProductImage" alt="{{ product.name }}">
+                             data-bs-toggle="modal" data-bs-target="#imageModal1"
+                             id="mainProductImage" alt="{{ product.name }}">
                     {% else %}
                         <img src="{% static 'images/no-image.png' %}" class="img-thumbnail" 
-                        data-bs-toggle="modal" data-bs-target="#imageModal" 
-                        id="mainProductImage" alt="{% trans 'Нет изображения' %}">
+                             data-bs-toggle="modal" data-bs-target="#imageModal1" 
+                             id="mainProductImage" alt="{% trans 'Нет изображения' %}">
                     {% endif %}
                 </div>
             </div>
 
             <!-- Описание товара -->
             <div class="col-md-6">
-                <p class="product_id mt-3">{% trans "id" %}: {{ product.display_id }}</p>
+                <p class="product_id mt-3">
+                    {% trans "id" %}: {{ product.display_id }}
+                </p>
+
                 {% if product.quantity == 0 %}
-                    <p class="product-quantity text-danger">{% trans "Нет в наличии" %}</p>
+                    <p class="product-quantity text-danger">
+                        {% trans "Нет в наличии" %}
+                    </p>
                 {% else %}
-                    <p class="product-quantity text-success">{% blocktrans %}В наличии: {{ product.quantity }} шт.{% endblocktrans %}</p>
+                    {% trans "В наличии: " %}
+                        {% blocktrans with qty=product.quantity %}{{ qty }}{% endblocktrans %}
+                    {% trans "шт." %}
                 {% endif %}
 
                 <h3 class="card-title">{{ product.name }}</h3>
-                <p class="card-text">{% trans "Цена" %}: <strong>{{ product.sell_price }} $</strong></p>
+                <p class="card-text">
+                    {% trans "Цена" %}: <strong>{{ product.sell_price }} $</strong>
+                </p>
                 
                 <p class="card-text">
                     {% autoescape off %}
@@ -71,12 +82,12 @@
                 </p>
 
                 {% if product.quantity > 0 %}
-                <a href="{% url 'cart:cart_add' %}" 
-                   class="btn btn-dark add-to-cart"
-                   data-product-id="{{ product.id }}">
-                    {% csrf_token %}
-                    {% trans "Добавить в корзину" %}
-                </a>
+                    <a href="{% url 'cart:cart_add' %}" 
+                       class="btn btn-dark add-to-cart"
+                       data-product-id="{{ product.id }}">
+                        {% csrf_token %}
+                        {% trans "Добавить в корзину" %}
+                    </a>
                 {% endif %}
             </div>
 
@@ -89,7 +100,7 @@
                                 {% autoescape off %}{{ product.name|highlight:query|safe }}{% endautoescape %}
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="{% trans 'Закрыть' %}"></button>
+                                    aria-label="{% trans 'Закрыть' %}"></button>
                         </div>
                         <div class="modal-body">
                             <img id="modalImage" src="{{ product.image.url }}" class="img-fluid" alt="{% trans 'Изображение' %}">
@@ -104,15 +115,16 @@
 
 {% block scripts %}
 <script>
-    function changeMain(imgElement) {
-        const mainImg = document.getElementById('mainProductImage');
-        const modalImg = document.getElementById('modalImage');
+function changeMain(imgElement) {
+    const mainImg = document.getElementById('mainProductImage');
+    const modalImg = document.getElementById('modalImage');
     
-        mainImg.src = imgElement.src;
-        modalImg.src = imgElement.src;
-    
-        document.querySelectorAll('.thumbnails img').forEach(el => el.classList.remove('active'));
-        imgElement.classList.add('active');
-    }
+    mainImg.src = imgElement.src;
+    modalImg.src = imgElement.src;
+
+    document.querySelectorAll('.thumbnails img').forEach(el => el.classList.remove('active'));
+    imgElement.classList.add('active');
+}
 </script>
 {% endblock %}
+

@@ -18,104 +18,94 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: goods/templates/goods/catalog.html:24
+#: templates/catalog.html
 msgid "Фильтры"
 msgstr "Filters"
 
-#: goods/templates/goods/catalog.html:34
+#: templates/catalog.html
 msgid "Товары по акции"
-msgstr "Sale Items"
+msgstr "Sale items"
 
-#: goods/templates/goods/catalog.html:37
+#: templates/catalog.html
 msgid "Сортировать:"
 msgstr "Sort by:"
 
-#: goods/templates/goods/catalog.html:42
+#: templates/catalog.html
 msgid "По умолчанию"
 msgstr "Default"
 
-#: goods/templates/goods/catalog.html:49
+#: templates/catalog.html
 msgid "От дешевых к дорогим"
-msgstr "Price: Low to High"
+msgstr "From cheap to expensive"
 
-#: goods/templates/goods/catalog.html:56
+#: templates/catalog.html
 msgid "От дорогих к дешевым"
-msgstr "Price: High to Low"
+msgstr "From expensive to cheap"
 
-#: goods/templates/goods/catalog.html:59
+#: templates/catalog.html
 msgid "Применить"
 msgstr "Apply"
 
-#: goods/templates/goods/catalog.html:64
-#, fuzzy, python-format
-#| msgid "Результаты поиска по запросу %(query)s"
-msgid "Результаты поиска по запросу %(request.GET.q)s"
-msgstr "Search results for %(query)s"
+#: templates/catalog.html
+msgid "Результаты поиска по запросу %(request_GET_q)s"
+msgstr "Search results for %(request_GET_q)s"
 
-#: goods/templates/goods/catalog.html:67
+#: templates/catalog.html
 msgid "По запросу ничего не найдено"
 msgstr "No results found"
 
-#: goods/templates/goods/catalog.html:78
+#: templates/catalog.html
 msgid "Изображение не найдено"
 msgstr "Image not found"
 
-#: goods/templates/goods/catalog.html:101
-#, python-format
-msgid "id: %(product.display_id)s"
-msgstr ""
+#: templates/catalog.html
+msgid "id: %(product_display_id)s"
+msgstr "id: %(product_display_id)s"
 
-#: goods/templates/goods/catalog.html:103
+#: templates/catalog.html
 msgid "Нет в наличии."
-msgstr "Out of stock"
+msgstr "Out of stock."
 
-#: goods/templates/goods/catalog.html:105
-#, fuzzy
-#| msgid "В наличии: %(quantity)s штук"
-msgid "В наличии: {{ product.quantity }} штук"
-msgstr "In stock: %(quantity)s pcs"
+#: templates/catalog.html
+msgid "В наличии: %(product_quantity)s штук"
+msgstr "In stock: %(product_quantity)s pcs"
 
-#: goods/templates/goods/catalog.html:120 goods/templates/goods/product.html:78
+#: templates/catalog.html
 msgid "Добавить в корзину"
 msgstr "Add to cart"
 
-#: goods/templates/goods/catalog.html:138
+#: templates/catalog.html
 msgid "Назад"
 msgstr "Previous"
 
-#: goods/templates/goods/catalog.html:149
+#: templates/catalog.html
 msgid "Следующая"
 msgstr "Next"
 
-#: goods/templates/goods/product.html:22 goods/templates/goods/product.html:92
+#..............................................................
+
+#: templates/product.html
 msgid "Закрыть"
 msgstr "Close"
 
-#: goods/templates/goods/product.html:37 goods/templates/goods/product.html:50
 msgid "Нет изображения"
 msgstr "No image"
 
-#: goods/templates/goods/product.html:57
 msgid "id"
 msgstr "ID"
 
-#: goods/templates/goods/product.html:59
 msgid "Нет в наличии"
 msgstr "Out of stock"
 
-#: goods/templates/goods/product.html:61
-#, fuzzy, python-format
-#| msgid "В наличии: %(quantity)s шт."
-msgid "В наличии: %(product.quantity)s шт."
-msgstr "In stock: %(quantity)s pcs"
+msgid "В наличии: "
+msgstr "In stock: "
 
-#: goods/templates/goods/product.html:65
+msgid "шт."
+msgstr "pcs"
+
 msgid "Цена"
 msgstr "Price"
 
-#: goods/templates/goods/product.html:95
+
 msgid "Изображение"
 msgstr "Image"
-
-#~ msgid "id: %(id)s"
-#~ msgstr "id: %(id)s"

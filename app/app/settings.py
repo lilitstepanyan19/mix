@@ -40,36 +40,35 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # 'django.contrib.postgres',
-
+    "modeltranslation",
+    
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.postgres",
     "debug_toolbar",
-
-    'main',
-    'goods',
-    'users',
-    'carts',
-    'orders',
-    'payment',
+    "main",
+    "goods",
+    "users",
+    "carts",
+    "orders",
+    "payment",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
 
-    'django.middleware.locale.LocaleMiddleware',  # dlya raznix yazikov
-
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    "django.middleware.locale.LocaleMiddleware",  # dlya raznix yazikov
+    
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
@@ -155,6 +154,10 @@ LANGUAGES = [
     ('en', 'English'),
     ('hy', 'Հայերեն'),  # армянский
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
+
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -191,7 +194,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = '/'
-
 
 
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')

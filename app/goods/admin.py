@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from modeltranslation.admin import TranslationAdmin
 from goods.models import Categories, Products, ProductImage
 
 # admin.site.register(Categories)
@@ -7,7 +7,7 @@ from goods.models import Categories, Products, ProductImage
 
 
 @admin.register(Categories)
-class CategoriesAdmin(admin.ModelAdmin):
+class CategoriesAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
     list_display = ["name",]
 
@@ -18,7 +18,7 @@ class ProductImageInline(admin.TabularInline):
 
 
 @admin.register(Products)
-class ProductsAdmin(admin.ModelAdmin):
+class ProductsAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
     list_display = ["name", "quantity", "price", "discount"]
     list_editable = ["discount", "quantity", "price"]

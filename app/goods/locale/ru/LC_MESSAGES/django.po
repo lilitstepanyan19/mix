@@ -20,104 +20,96 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: goods/templates/goods/catalog.html:24
+#: templates/catalog.html
 msgid "Фильтры"
 msgstr "Фильтры"
 
-#: goods/templates/goods/catalog.html:34
+#: templates/catalog.html
 msgid "Товары по акции"
 msgstr "Товары по акции"
 
-#: goods/templates/goods/catalog.html:37
+#: templates/catalog.html
 msgid "Сортировать:"
 msgstr "Сортировать:"
 
-#: goods/templates/goods/catalog.html:42
+#: templates/catalog.html
 msgid "По умолчанию"
 msgstr "По умолчанию"
 
-#: goods/templates/goods/catalog.html:49
+#: templates/catalog.html
 msgid "От дешевых к дорогим"
-msgstr "От дешевых к дорогим"
+msgstr "От дешёвых к дорогим"
 
-#: goods/templates/goods/catalog.html:56
+#: templates/catalog.html
 msgid "От дорогих к дешевым"
-msgstr "От дорогих к дешевым"
+msgstr "От дорогих к дешёвым"
 
-#: goods/templates/goods/catalog.html:59
+#: templates/catalog.html
 msgid "Применить"
 msgstr "Применить"
 
-#: goods/templates/goods/catalog.html:64
-#, fuzzy, python-format
-#| msgid "Результаты поиска по запросу %(query)s"
-msgid "Результаты поиска по запросу %(request.GET.q)s"
-msgstr "Результаты поиска по запросу %(query)s"
+#: templates/catalog.html
+msgid "Результаты поиска по запросу %(request_GET_q)s"
+msgstr "Результаты поиска по запросу %(request_GET_q)s"
 
-#: goods/templates/goods/catalog.html:67
+#: templates/catalog.html
 msgid "По запросу ничего не найдено"
 msgstr "По запросу ничего не найдено"
 
-#: goods/templates/goods/catalog.html:78
+#: templates/catalog.html
 msgid "Изображение не найдено"
 msgstr "Изображение не найдено"
 
-#: goods/templates/goods/catalog.html:101
-#, python-format
-msgid "id: %(product.display_id)s"
-msgstr ""
+#: templates/catalog.html
+msgid "id: %(product_display_id)s"
+msgstr "id: %(product_display_id)s"
 
-#: goods/templates/goods/catalog.html:103
+#: templates/catalog.html
 msgid "Нет в наличии."
 msgstr "Нет в наличии."
 
-#: goods/templates/goods/catalog.html:105
-#, fuzzy
-#| msgid "В наличии: %(quantity)s штук"
-msgid "В наличии: {{ product.quantity }} штук"
-msgstr "В наличии: %(quantity)s штук"
+#: templates/catalog.html
+msgid "В наличии: %(product_quantity)s штук"
+msgstr "В наличии: %(product_quantity)s штук"
 
-#: goods/templates/goods/catalog.html:120 goods/templates/goods/product.html:78
+#: templates/catalog.html
 msgid "Добавить в корзину"
 msgstr "Добавить в корзину"
 
-#: goods/templates/goods/catalog.html:138
+#: templates/catalog.html
 msgid "Назад"
 msgstr "Назад"
 
-#: goods/templates/goods/catalog.html:149
+#: templates/catalog.html
 msgid "Следующая"
 msgstr "Следующая"
 
-#: goods/templates/goods/product.html:22 goods/templates/goods/product.html:92
+
+
+
+#: templates/product.html   ....................................
 msgid "Закрыть"
 msgstr "Закрыть"
 
-#: goods/templates/goods/product.html:37 goods/templates/goods/product.html:50
 msgid "Нет изображения"
 msgstr "Нет изображения"
 
-#: goods/templates/goods/product.html:57
 msgid "id"
-msgstr "id"
+msgstr "ID"
 
-#: goods/templates/goods/product.html:59
 msgid "Нет в наличии"
 msgstr "Нет в наличии"
 
-#: goods/templates/goods/product.html:61
-#, fuzzy, python-format
-#| msgid "В наличии: %(quantity)s шт."
-msgid "В наличии: %(product.quantity)s шт."
-msgstr "В наличии: %(quantity)s шт."
+msgid "В наличии: "
+msgstr "В наличии: "
 
-#: goods/templates/goods/product.html:65
+msgid "шт."
+msgstr "шт."
+
 msgid "Цена"
 msgstr "Цена"
 
-#: goods/templates/goods/product.html:95
+
+
 msgid "Изображение"
 msgstr "Изображение"
-
-#~ msgid "id: %(id)s"
-#~ msgstr "id: %(id)s"
