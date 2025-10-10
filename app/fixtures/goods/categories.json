@@ -1,26 +1,46 @@
 [
-{
-  "model": "goods.categories",
-  "pk": 6,
-  "fields": {
-    "name": "Все товары",
-    "slug": "all"
-  }
-},
-{
-  "model": "goods.categories",
-  "pk": 7,
-  "fields": {
-    "name": "Кухня",
-    "slug": "kuhnya"
-  }
-},
-{
-  "model": "goods.categories",
-  "pk": 8,
-  "fields": {
-    "name": "Спальня",
-    "slug": "spalnya"
-  }
-}
+    {
+        "model": "goods.categories",
+        "pk": 6,
+        "fields": {
+            "name": "Все",
+            "name_ru": "Все",
+            "name_en": "All",
+            "name_hy": "Ամբողջը",
+            "slug": "all"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 7,
+        "fields": {
+            "name": "Кухня",
+            "name_ru": "Кухня",
+            "name_en": "Kitchen",
+            "name_hy": "Խոհանոց",
+            "slug": "kuhnya"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 8,
+        "fields": {
+            "name": "Спальня",
+            "name_ru": "Спальня",
+            "name_en": "Bedroom",
+            "name_hy": "Ննջասենյակ",
+            "slug": "spalnya"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 9,
+        "fields": {
+            "name": "Категория",
+            "name_ru": "Категория",
+            "name_en": "category",
+            "name_hy": "Կատեգորիա",
+            "slug": "kategoriya"
+        }
+    }
 ]

@@ -1,1 +1,322 @@
-[{"model": "goods.products", "pk": 1, "fields": {"name": "Чайный столик и три стула", "slug": "chajnyj-stolik-i-tri-stula", "description": "Комплект из трёх стульев и дизайнерский столик для гостинной комнаты.", "image": "goods_images/img-3.jpg", "price": "150.00", "discount": "20.00", "quantity": 0, "category": 8}}, {"model": "goods.products", "pk": 2, "fields": {"name": "Чайный столик и два стула", "slug": "chajnyj-stolik-i-dva-stula", "description": "Набор из стола и двух стульев в минималистическом стиле.", "image": "goods_images/img-1.jpg", "price": "93.00", "discount": "5.00", "quantity": 0, "category": 7}}, {"model": "goods.products", "pk": 3, "fields": {"name": "овать двухспальная с надголовником и вообще очень ортопедичная.'", "slug": "ovat-dvuhspalnaya-s-nadgolovnikom-i-voobshe-ochen-ortopedichnaya", "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная", "image": "goods_images/img-5.jpg", "price": "670.00", "discount": "25.00", "quantity": 0, "category": 7}}, {"model": "goods.products", "pk": 4, "fields": {"name": "Кухонный стол с раковиной", "slug": "kuhonnyj-stol-s-rakovinoj", "description": "Кухонный стол для обеда с встроенной раковиной и стульями.", "image": "goods_images/img-2.jpg", "price": "365.00", "discount": "0.01", "quantity": 10, "category": 8}}, {"model": "goods.products", "pk": 5, "fields": {"name": "cat", "slug": "cat", "description": "bla", "image": "", "price": "50.00", "discount": "0.00", "quantity": 11, "category": 6}}, {"model": "goods.products", "pk": 7, "fields": {"name": "Прикроватный столик", "slug": "prikrovatnyj-stolik", "description": "Прикроватный столик с двумя выдвижными ящиками (цветок не входит в комплект).", "image": "goods_images/bedside_table.jpg", "price": "55.00", "discount": "0.00", "quantity": 39, "category": 8}}, {"model": "goods.products", "pk": 8, "fields": {"name": "Прикроватный столик 2", "slug": "prikrovatnyj-stolik-2", "description": "Столик, довольно странный на вид, но подходит для размещения рядом с кроватью.", "image": "goods_images/strange_table.jpg", "price": "25.00", "discount": "90.00", "quantity": 9, "category": 8}}, {"model": "goods.products", "pk": 9, "fields": {"name": "Чайный столик", "slug": "chajnyj-stolik", "description": "Комплект из трёх стульев и дизайнерский столик для гостинной комнаты.", "image": "goods_images/img-3.jpg", "price": "150.00", "discount": "20.00", "quantity": 0, "category": 8}}, {"model": "goods.products", "pk": 10, "fields": {"name": "два стула", "slug": "dva-stula", "description": "Набор из стола и двух стульев в минималистическом стиле.", "image": "goods_images/img-1.jpg", "price": "93.00", "discount": "5.00", "quantity": 0, "category": 7}}, {"model": "goods.products", "pk": 11, "fields": {"name": "вообще очень ортопедичная.'", "slug": "voobshe-ochen-ortopedichnaya", "description": "Кровать двухспальная с надголовником и вообще очень ортопедичная", "image": "goods_images/img-5.jpg", "price": "670.00", "discount": "25.00", "quantity": 1, "category": 7}}, {"model": "goods.products", "pk": 12, "fields": {"name": "Кухонный стол", "slug": "kuhonnyj-stol", "description": "Кухонный стол для обеда с встроенной раковиной и стульями.", "image": "goods_images/img-2.jpg", "price": "365.00", "discount": "0.01", "quantity": 10, "category": 8}}, {"model": "goods.products", "pk": 13, "fields": {"name": "cat 1", "slug": "cat-1", "description": "bla", "image": "", "price": "50.00", "discount": "0.00", "quantity": 11, "category": 6}}, {"model": "goods.products", "pk": 14, "fields": {"name": "Прикроватный столик 25", "slug": "prikrovatnyj-stolik-25", "description": "Прикроватный столик с двумя выдвижными ящиками (цветок не входит в комплект).", "image": "goods_images/bedside_table.jpg", "price": "55.00", "discount": "0.00", "quantity": 38, "category": 8}}, {"model": "goods.products", "pk": 15, "fields": {"name": "Прикроватный столик 22", "slug": "prikrovatnyj-stolik-22", "description": "Столик, довольно странный на вид, но подходит для размещения рядом с кроватью.", "image": "goods_images/strange_table.jpg", "price": "25.00", "discount": "90.00", "quantity": 9, "category": 8}}, {"model": "goods.products", "pk": 16, "fields": {"name": "slider", "slug": "category-3", "description": "slider", "image": "goods_images/img-5_GcpZSDk.jpg", "price": "10.00", "discount": "0.00", "quantity": 94, "category": 6}}]
+[
+    {
+        "model": "goods.products",
+        "pk": 1,
+        "fields": {
+            "name": "Чайный столик и три стула",
+            "name_ru": "Чайный столик и три стула",
+            "name_en": "Tea table and three chairs",
+            "name_hy": "Թեյի սեղան և երեք աթոռ",
+            "slug": "chajnyj-stolik-i-tri-stula",
+            "description": "Чайный столик и три стула",
+            "description_ru": "Чайный столик и три стула",
+            "description_en": "Tea table and three chairs",
+            "description_hy": "Թեյի սեղան և երեք աթոռ",
+            "image": "goods_images/img-3.jpg",
+            "price": "150.00",
+            "discount": "20.00",
+            "quantity": 0,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 2,
+        "fields": {
+            "name": "Чайный столик и два стула",
+            "name_ru": "Чайный столик и два стула",
+            "name_en": "Тea table and two chairs",
+            "name_hy": "Թեյի սեղան և երկու աթոռ",
+            "slug": "chajnyj-stolik-i-dva-stula",
+            "description": "Чайный столик и два стула",
+            "description_ru": "Чайный столик и два стула",
+            "description_en": "Тea table and two chairs",
+            "description_hy": "Թեյի սեղան և երկու աթոռ",
+            "image": "goods_images/img-1.jpg",
+            "price": "93.00",
+            "discount": "5.00",
+            "quantity": 0,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 3,
+        "fields": {
+            "name": "Кровать двуспальная с надголовником и вообще очень ортопедичная",
+            "name_ru": "Кровать двуспальная с надголовником и вообще очень ортопедичная",
+            "name_en": "Бed double with headboard and very orthopedic in general",
+            "name_hy": "Երկտեղանի մահճակալ գլխի տախտակով և ընդհանրապես շատ օրթոպեդիկ",
+            "slug": "krovat-dvuhspalnaya-s-nadgolovnikom-i-voobshe-ochen-ortopedichnaya",
+            "description": "Кровать двуспальная с надголовником и вообще очень ортопедичная",
+            "description_ru": "Кровать двуспальная с надголовником и вообще очень ортопедичная",
+            "description_en": "Бed double with headboard and very orthopedic in general",
+            "description_hy": "Երկտեղանի մահճակալ գլխի տախտակով և ընդհանրապես շատ օրթոպեդիկ",
+            "image": "goods_images/img-5.jpg",
+            "price": "670.00",
+            "discount": "25.00",
+            "quantity": 0,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 4,
+        "fields": {
+            "name": "Куйхонный стол с раковиной",
+            "name_ru": "Куйхонный стол с раковиной",
+            "name_en": "Кitchen table with sink",
+            "name_hy": "Խոհանոցի սեղան լվացարանով",
+            "slug": "kuhonnyj-stol-s-rakovinoj",
+            "description": "Куйхонный стол с раковиной",
+            "description_ru":"Куйхонный стол с раковиной",
+            "description_en": "Кitchen table with sink",
+            "description_hy": "Խոհանոցի սեղան լվացարանով",
+            "image": "goods_images/img-2.jpg",
+            "price": "365.00",
+            "discount": "0.01",
+            "quantity": 10,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 5,
+        "fields": {
+            "name": "Кошка",
+            "name_ru": "Кошка",
+            "name_en": "Cat",
+            "name_hy": "Կատու",
+            "slug": "cat",
+            "description": "Кошка",
+            "description_ru": "Кошка",
+            "description_en": "Cat",
+            "description_hy": "Կատու",
+            "image": "goods_images/img-2.jpg",
+            "price": "50.00",
+            "discount": "0.00",
+            "quantity": 11,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 7,
+        "fields": {
+            "name": "Прикроватный столик",
+            "name_ru": "Прикроватный столик",
+            "name_en": "Bedside table",
+            "name_hy": "Պատուհանային սեղան",
+            "slug": "prikrovatnyj-stolik",
+            "description": "Прикроватный столик",
+            "description_ru": "Прикроватный столик",
+            "description_en": "Bedside table",
+            "description_hy": "Պատուհանային սեղան",
+            "image": "goods_images/bedside_table.jpg",
+            "price": "55.00",
+            "discount": "0.00",
+            "quantity": 39,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 8,
+        "fields": {
+            "name": "Прикроватный столик-2",
+            "name_ru": "Прикроватный столик-2",
+            "name_en": "Bedside table-2",
+            "name_hy": "Պատուհանային սեղան-2",
+            "slug": "prikrovatnyj-stolik-2",
+            "description": "Прикроватный столик-2",
+            "description_ru": "Прикроватный столик-2",
+            "description_en": "Bedside table-2",
+            "description_hy": "Պատուհանային սեղան-2",
+            "image": "goods_images/strange_table.jpg",
+            "price": "25.00",
+            "discount": "90.00",
+            "quantity": 9,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 9,
+        "fields": {
+            "name": "Чайный столик",
+            "name_ru": "Чайный столик",
+            "name_en": "Тea table",
+            "name_hy": "Թեյի սեղան",
+            "slug": "chajnyj-stolik",
+            "description": "Чайный столик",
+            "description_ru": "Чайный столик",
+            "description_en": "Тea table",
+            "description_hy": "Թեյի սեղան",
+            "image": "goods_images/img-3.jpg",
+            "price": "150.00",
+            "discount": "20.00",
+            "quantity": 0,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 10,
+        "fields": {
+            "name": "Два стула",
+            "name_ru": "Два стула",
+            "name_en": "Two chairs",
+            "name_hy": "Ամեն երկու աթոռ",
+            "slug": "dva-stula",
+            "description": "Два стула",
+            "description_ru": "Два стула",
+            "description_en": "Two chairs",
+            "description_hy": "Ամեն երկու աթոռ",
+            "image": "goods_images/img-1.jpg",
+            "price": "93.00",
+            "discount": "5.00",
+            "quantity": 0,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 11,
+        "fields": {
+            "name": "Вообще очень ортопедичная",
+            "name_ru": "Вообще очень ортопедичная",
+            "name_en": "Very orthopedic in general",
+            "name_hy": "Ընդհանրապես շատ օրթոպեդիկ",
+            "slug": "voobshe-ochen-ortopedichnaya",
+            "description": "Вообще очень ортопедичная",
+            "description_ru": "Вообще очень ортопедичная",
+            "description_en": "Very orthopedic in general",
+            "description_hy": "Ընդհանրապես շատ օրթոպեդիկ",
+            "image": "goods_images/img-5.jpg",
+            "price": "670.00",
+            "discount": "25.00",
+            "quantity": 1,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 12,
+        "fields": {
+            "name": "кухонный стол",
+            "name_ru": "кухонный стол",
+            "name_en": "kitchen table",
+            "name_hy": "խոհանոցի սեղան",
+            "slug": "kuhonnyj-stol",
+            "description": "кухонный стол",
+            "description_ru": "кухонный стол",
+            "description_en": "kitchen table",
+            "description_hy": "խոհանոցի սեղան",
+            "image": "goods_images/img-2.jpg",
+            "price": "365.00",
+            "discount": "0.01",
+            "quantity": 10,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 13,
+        "fields": {
+            "name": "Кошка-1",
+            "name_ru": "Кошка-1",
+            "name_en": "Cat-1",
+            "name_hy": "Կատու-1",
+            "slug": "cat-1",
+            "description": "Кошка-1",
+            "description_ru": "Кошка-1",
+            "description_en": "Cat-1",
+            "description_hy": "Կատու-1",
+            "image": "",
+            "price": "50.00",
+            "discount": "0.00",
+            "quantity": 10,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 14,
+        "fields": {
+            "name": "Прикроватный столик-25",
+            "name_ru": "Прикроватный столик-25",
+            "name_en": "Bedside table-25",
+            "name_hy": "Պատուհանային սեղան-25",
+            "slug": "prikrovatnyj-stolik-25",
+            "description": "Прикроватный столик-25",
+            "description_ru": "Прикроватный столик-25",
+            "description_en": "Bedside table-25",
+            "description_hy": "Պատուհանային սեղան-25",
+            "image": "goods_images/bedside_table.jpg",
+            "price": "55.00",
+            "discount": "0.00",
+            "quantity": 38,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 15,
+        "fields": {
+            "name": "Прикроватный столик-22",
+            "name_ru": "Прикроватный столик-22",
+            "name_en": "Bedside table-22",
+            "name_hy": "Պատուհանային սեղան-22",
+            "slug": "prikrovatnyj-stolik-22",
+            "description": "Прикроватный столик-22",
+            "description_ru": "Прикроватный столик-22",
+            "description_en": "Bedside table-22",
+            "description_hy": "Պատուհանային սեղան-22",
+            "image": "goods_images/strange_table.jpg",
+            "price": "25.00",
+            "discount": "90.00",
+            "quantity": 9,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 16,
+        "fields": {
+            "name": "Категория 3",
+            "name_ru": "Категория 3",
+            "name_en": "Category 3",
+            "name_hy": "Կատեգերիա փ",
+            "slug": "category-3",
+            "description": "Категория 3",
+            "description_ru": "Категория 3",
+            "description_en": "Category 3",
+            "description_hy": "Կատեգերիա փ",
+            "image": "goods_images/img-5_GcpZSDk.jpg",
+            "price": "10.00",
+            "discount": "0.00",
+            "quantity": 94,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 17,
+        "fields": {
+            "name": "Дочка",
+            "name_ru": "Дочка",
+            "name_en": "Douther",
+            "name_hy": "Աղջիկս",
+            "slug": "dochka",
+            "description": "Душа моя",
+            "description_ru": "Душа моя",
+            "description_en": "My soul",
+            "description_hy": "Իմ հոգիս",
+            "image": "goods_images/img-2_Nwx8vF8.jpg",
+            "price": "100.00",
+            "discount": "20.00",
+            "quantity": 100,
+            "category": 9
+        }
+    }
+]
