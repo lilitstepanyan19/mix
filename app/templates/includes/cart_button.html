@@ -7,11 +7,12 @@
 <div>
     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
         aria-expanded="false">
-        <img class="mx-1" src="{% static "deps/icons/basket2-fill.svg" %}" alt="Catalog Icon" width="24"
+        <img class="mx-1" src="{% static 'deps/icons/basket2-fill.svg' %}" alt="{% trans 'Корзина' %}" width="24"
             height="24">
         <span id="goods-in-cart-count">{{ carts.total_quantity }}</span>
     </button>
 </div>
+
 <!-- Разметка модального окна корзины -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -19,10 +20,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                    aria-label="{% trans 'Закрыть' %}"></button>
             </div>
             <div class="modal-body">
-                <h3 class="text-center mb-4">Корзина</h3>
+                <h3 class="text-center mb-4">{% trans 'Корзина' %}</h3>
                 <div class="container" id="cart-items-container">
                     <!-- Разметка корзины -->
                     {% include "carts/includes/included_cart.html" %}
@@ -33,4 +34,4 @@
     </div>
 </div>
 
-{% block footer %}{% endblock  %}
+{% block footer %}{% endblock %}

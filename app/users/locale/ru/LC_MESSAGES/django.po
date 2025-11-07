@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 20:44+0400\n"
+"POT-Creation-Date: 2025-11-07 23:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,241 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: users/templates/users/login.html:14
+msgid "Авторизация"
+msgstr "Авторизация"
 
+#: users/templates/users/login.html:21
+#: users/templates/users/registration.html:39
+msgid "Имя пользователя"
+msgstr "Имя пользователя"
 
-#: templates/cart.html:18  ..............................................
-msgid "Оформить заказ"
-msgstr "Оформить заказ"
+#: users/templates/users/login.html:25 users/templates/users/profile.html:48
+#: users/templates/users/registration.html:43
+msgid "Введите ваше имя пользователя"
+msgstr "Введите ваше имя пользователя"
 
-#: templates/cart.html:12
-msgid "Итого {{ carts.total_quantity }} товар(а) на сумму"
-msgstr "Итого {{ carts.total_quantity }} товар(а) на сумму"
+#: users/templates/users/login.html:29
+#: users/templates/users/registration.html:59
+msgid "Пароль"
+msgstr "Пароль"
 
-#: templates/cart.html:27
-msgid "Удалить"
-msgstr "Удалить"
+#: users/templates/users/login.html:31
+msgid "Введите ваш пароль"
+msgstr "Введите ваш пароль"
 
+#: users/templates/users/login.html:34
+msgid "Войти"
+msgstr "Войти"
 
+#: users/templates/users/login.html:37
+msgid "Забыли пароль?"
+msgstr "Забыли пароль?"
+
+#: users/templates/users/login.html:37
+msgid "Создать аккаунт"
+msgstr "Создать аккаунт"
+
+#: users/templates/users/login.html:41
+msgid "Или авторизуйтесь через:"
+msgstr "Или авторизуйтесь через:"
+
+#: users/templates/users/login.html:44
+msgid "Google"
+msgstr "Google"
+
+#: users/templates/users/login.html:48
+msgid "Facebook"
+msgstr "Facebook"
+
+#: users/templates/users/login.html:52
+msgid "GitHub"
+msgstr "GitHub"
+
+#: users/templates/users/profile.html:14
+msgid "Профиль пользователя"
+msgstr "Профиль пользователя"
+
+#: users/templates/users/profile.html:20 users/templates/users/profile.html:22
+#, fuzzy
+#| msgid "Имя пользователя"
+msgid "Аватар пользователя"
+msgstr "Имя пользователя"
+
+#: users/templates/users/profile.html:31
+msgid "Имя*"
+msgstr ""
+
+#: users/templates/users/profile.html:32
+#: users/templates/users/registration.html:23
+msgid "Введите ваше имя"
+msgstr "Введите ваше имя"
+
+#: users/templates/users/profile.html:39
+#, fuzzy
+#| msgid "Фамилия"
+msgid "Фамилия*"
+msgstr "Фамилия"
+
+#: users/templates/users/profile.html:40
+#: users/templates/users/registration.html:33
+msgid "Введите вашу фамилию"
+msgstr "Введите вашу фамилию"
+
+#: users/templates/users/profile.html:47
+#, fuzzy
+#| msgid "Имя пользователя"
+msgid "Имя пользователя*"
+msgstr "Имя пользователя"
+
+#: users/templates/users/profile.html:56
+#: users/templates/users/registration.html:53
+msgid "Введите ваш email"
+msgstr "Введите ваш email"
+
+#: users/templates/users/profile.html:63
+msgid "Сохранить"
+msgstr "Сохранить"
+
+#: users/templates/users/profile.html:72
+#: users/templates/users/users_cart.html:12
+msgid "Корзина"
+msgstr "Корзина"
+
+#: users/templates/users/profile.html:84
+msgid "Мои заказы"
+msgstr "Мои заказы"
+
+#: users/templates/users/profile.html:91
+msgid "Заказ №"
+msgstr ""
+
+#: users/templates/users/profile.html:91
+msgid "Статус:"
+msgstr ""
+
+#: users/templates/users/profile.html:99
+msgid "Товар"
+msgstr "Товар"
+
+#: users/templates/users/profile.html:100
+msgid "Количество"
+msgstr "Количество"
+
+#: users/templates/users/profile.html:101
+msgid "Цена"
+msgstr "Цена"
+
+#: users/templates/users/profile.html:102
+msgid "Общая стоимость"
+msgstr "Общая стоимость"
+
+#: users/templates/users/registration.html:14
+msgid "Регистрация"
+msgstr "Регистрация"
+
+#: users/templates/users/registration.html:19
+msgid "Имя"
+msgstr "Имя"
+
+#: users/templates/users/registration.html:29
+msgid "Фамилия"
+msgstr "Фамилия"
+
+#: users/templates/users/registration.html:49
+msgid "Email"
+msgstr ""
+
+#: users/templates/users/registration.html:63
+msgid "Введите пароль"
+msgstr "Введите пароль"
+
+#: users/templates/users/registration.html:69
+msgid "Подтверждение пароля"
+msgstr "Подтверждение пароля"
+
+#: users/templates/users/registration.html:73
+msgid "Подтвердите пароль"
+msgstr "Подтвердите пароль"
+
+#: users/templates/users/registration.html:79
+msgid "Зарегистрироваться"
+msgstr "Зарегистрироваться"
+
+#: users/views.py:41 users/views.py:168
+msgid "{user.username}, { _('you are logged in') }"
+msgstr ""
+
+#: users/views.py:46 users/views.py:174
+msgid "Home - Login"
+msgstr ""
+
+#: users/views.py:68 users/views.py:197
+msgid ""
+"{user.username}, { _('you have successfully registered and logged in') }"
+msgstr ""
+
+#: users/views.py:74 users/views.py:204
+msgid "Home - Registration"
+msgstr ""
+
+#: users/views.py:87 users/views.py:217
+msgid "Profile successfully updated"
+msgstr ""
+
+#: users/views.py:91 users/views.py:221
+msgid "An error occurred"
+msgstr ""
+
+#: users/views.py:96 users/views.py:226
+msgid "Home - Profile"
+msgstr ""
+
+#: users/views.py:118 users/views.py:250
+msgid "Home - Cart"
+msgstr ""
+
+#: users/views.py:124 users/views.py:257
+msgid "{request.user.username}, { _('you have logged out') }"
+msgstr ""
+
+#~ msgid "Профайл успешно обновлен"
+#~ msgstr "Профайл успешно обновлен"
+
+#~ msgid "Произошла ошибка"
+#~ msgstr "Произошла ошибка"
+
+#~ msgid "Home - Главная"
+#~ msgstr "Главная"
+
+#~ msgid "Home - О нас"
+#~ msgstr "О нас"
+
+#~ msgid "Home - Кабинет"
+#~ msgstr "Кабинет"
+
+#~ msgid "Home - Авторизация"
+#~ msgstr "Авторизация"
+
+#~ msgid "Home - Регистрация"
+#~ msgstr "Регистрация"
+
+#~ msgid "Home - Корзина"
+#~ msgstr "Корзина"
+
+#~ msgid ""
+#~ "Заказ № %(order.id)s - %(order.created_timestamp)s | Статус: %(order."
+#~ "status)s"
+#~ msgstr ""
+#~ "Заказ № %(order.id)s - %(order.created_timestamp)s | Статус: %(order."
+#~ "status)s"
+
+#~ msgid "Показать все"
+#~ msgstr "Показать все"
+
+#~ msgid "Подробнее"
+#~ msgstr "Подробнее"

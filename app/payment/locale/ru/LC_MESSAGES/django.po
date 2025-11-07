@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 20:44+0400\n"
+"POT-Creation-Date: 2025-11-07 23:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,54 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: payment/views.py:47 payment/views.py:71 payment/views.py:169
+#: payment/views.py:267
+#, python-brace-format
+msgid "Order #{order.id}"
+msgstr ""
 
+#: payment/views.py:182
+msgid "No method"
+msgstr ""
 
-#: templates/cart.html:18  ..............................................
-msgid "Оформить заказ"
-msgstr "Оформить заказ"
+#: payment/views.py:199
+msgid "Bad signature"
+msgstr ""
 
-#: templates/cart.html:12
-msgid "Итого {{ carts.total_quantity }} товар(а) на сумму"
-msgstr "Итого {{ carts.total_quantity }} товар(а) на сумму"
+#: payment/views.py:220
+msgid "Unknown method"
+msgstr ""
 
-#: templates/cart.html:27
-msgid "Удалить"
-msgstr "Удалить"
+#: payment/views.py:240
+msgid "Payment completed"
+msgstr "Оплата успешно завершена"
 
+#: payment/views.py:246
+msgid "Payment canceled"
+msgstr "Оплата отменена"
 
+#: payment/views.py:282
+msgid "Order not found"
+msgstr ""
+
+#: payment/views.py:286
+#, fuzzy, python-brace-format
+#| msgid "Order #%s successfully paid"
+msgid "Order #{order.id} successfully paid"
+msgstr "Ваш заказ №%s успешно оплачен"
+
+#: payment/views.py:287
+#, fuzzy, python-brace-format
+#| msgid "New order #%s created"
+msgid "New order #{order.id} created"
+msgstr "Новый заказ №%s оформлен"
+
+#~ msgid "Checkout session created"
+#~ msgstr "Сессия оплаты создана"
+
+#~ msgid "Order #%s"
+#~ msgstr "Заказ №%s"

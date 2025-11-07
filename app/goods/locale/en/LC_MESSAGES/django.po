@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 22:16+0400\n"
+"POT-Creation-Date: 2025-11-07 20:47+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,94 +18,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:23
 msgid "Фильтры"
 msgstr "Filters"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:36
 msgid "Товары по акции"
 msgstr "Sale items"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:40
 msgid "Сортировать:"
 msgstr "Sort by:"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:47
 msgid "По умолчанию"
 msgstr "Default"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:56
 msgid "От дешевых к дорогим"
 msgstr "From cheap to expensive"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:65
 msgid "От дорогих к дешевым"
 msgstr "From expensive to cheap"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:70
 msgid "Применить"
 msgstr "Apply"
 
-#: templates/catalog.html
-msgid "Результаты поиска по запросу %(request_GET_q)s"
+#: goods/templates/goods/catalog.html:77
+#, fuzzy, python-format
+#| msgid "Результаты поиска по запросу %(request_GET_q)s"
+msgid "Результаты поиска по запросу %(request.GET.q)s"
 msgstr "Search results for %(request_GET_q)s"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:82
 msgid "По запросу ничего не найдено"
 msgstr "No results found"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:93
 msgid "Изображение не найдено"
 msgstr "Image not found"
 
-#: templates/catalog.html
-msgid "id: %(product_display_id)s"
+#: goods/templates/goods/catalog.html:120
+#, fuzzy, python-format
+#| msgid "id: %(product_display_id)s"
+msgid "id: %(product.display_id)s"
 msgstr "id: %(product_display_id)s"
 
-#: templates/catalog.html
+#: goods/templates/goods/catalog.html:124
 msgid "Нет в наличии."
 msgstr "Out of stock."
 
-#: templates/catalog.html
-msgid "В наличии: %(product_quantity)s штук"
-msgstr "In stock: %(product_quantity)s pcs"
-
-#: templates/catalog.html
-msgid "Добавить в корзину"
-msgstr "Add to cart"
-
-#: templates/catalog.html
-msgid "Назад"
-msgstr "Previous"
-
-#: templates/catalog.html
-msgid "Следующая"
-msgstr "Next"
-
-#..............................................................
-
-#: templates/product.html
-msgid "Закрыть"
-msgstr "Close"
-
-msgid "Нет изображения"
-msgstr "No image"
-
-msgid "id"
-msgstr "ID"
-
-msgid "Нет в наличии"
-msgstr "Out of stock"
-
+#: goods/templates/goods/catalog.html:126 goods/templates/goods/product.html:68
 msgid "В наличии: "
 msgstr "In stock: "
 
+#: goods/templates/goods/catalog.html:127 goods/templates/goods/product.html:69
+#, python-format
+msgid "%(qty)s"
+msgstr ""
+
+#: goods/templates/goods/catalog.html:128 goods/templates/goods/product.html:70
 msgid "шт."
 msgstr "pcs"
 
+#: goods/templates/goods/catalog.html:145 goods/templates/goods/product.html:89
+msgid "Добавить в корзину"
+msgstr "Add to cart"
+
+#: goods/templates/goods/catalog.html:164
+msgid "Назад"
+msgstr "Previous"
+
+#: goods/templates/goods/catalog.html:179
+msgid "Следующая"
+msgstr "Next"
+
+#: goods/templates/goods/product.html:23 goods/templates/goods/product.html:103
+msgid "Закрыть"
+msgstr "Close"
+
+#: goods/templates/goods/product.html:39 goods/templates/goods/product.html:52
+msgid "Нет изображения"
+msgstr "No image"
+
+#: goods/templates/goods/product.html:60
+msgid "id"
+msgstr "ID"
+
+#: goods/templates/goods/product.html:65
+msgid "Нет в наличии"
+msgstr "Out of stock"
+
+#: goods/templates/goods/product.html:75
 msgid "Цена"
 msgstr "Price"
 
-
+#: goods/templates/goods/product.html:106
 msgid "Изображение"
 msgstr "Image"
+
+#~ msgid "В наличии: %(product_quantity)s штук"
+#~ msgstr "In stock: %(product_quantity)s pcs"

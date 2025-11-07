@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 20:44+0400\n"
+"POT-Creation-Date: 2025-11-07 23:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,248 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: users/templates/users/login.html:14
+msgid "Авторизация"
+msgstr "Մուտք"
 
-#: templates/cart.html:18   ...................................
-msgid "Оформить заказ"
-msgstr "Պատվիրել"
+#: users/templates/users/login.html:21
+#: users/templates/users/registration.html:39
+msgid "Имя пользователя"
+msgstr "Մուտքանուն"
 
-#: templates/cart.html:12
-msgid "Итого {{ carts.total_quantity }} товар(а) на сумму"
-msgstr "Ընդհանուր {{ carts.total_quantity }} ապրանք գումարով"
+#: users/templates/users/login.html:25 users/templates/users/profile.html:48
+#: users/templates/users/registration.html:43
+msgid "Введите ваше имя пользователя"
+msgstr "Մուտքագրեք ձեր մուտքանունը"
 
-#: templates/cart.html:27
-msgid "Удалить"
-msgstr "Ջնջել"
+#: users/templates/users/login.html:29
+#: users/templates/users/registration.html:59
+msgid "Пароль"
+msgstr "Գաղտնաբառ"
+
+#: users/templates/users/login.html:31
+msgid "Введите ваш пароль"
+msgstr "Մուտքագրեք ձեր գաղտնաբառը"
+
+#: users/templates/users/login.html:34
+msgid "Войти"
+msgstr "Մուտք գործել"
+
+#: users/templates/users/login.html:37
+msgid "Забыли пароль?"
+msgstr "Մոռացե՞լ եք գաղտնաբառը"
+
+#: users/templates/users/login.html:37
+msgid "Создать аккаунт"
+msgstr "Ստեղծել հաշիվ"
+
+#: users/templates/users/login.html:41
+msgid "Или авторизуйтесь через:"
+msgstr "Կամ մուտք գործեք՝ օգտագործելով՝"
+
+#: users/templates/users/login.html:44
+msgid "Google"
+msgstr "Google"
+
+#: users/templates/users/login.html:48
+msgid "Facebook"
+msgstr "Facebook"
+
+#: users/templates/users/login.html:52
+msgid "GitHub"
+msgstr "GitHub"
+
+#: users/templates/users/profile.html:14
+msgid "Профиль пользователя"
+msgstr "Օգտվողի պրոֆիլ"
+
+#: users/templates/users/profile.html:20 users/templates/users/profile.html:22
+#, fuzzy
+#| msgid "Имя пользователя"
+msgid "Аватар пользователя"
+msgstr "Մուտքանուն"
+
+#: users/templates/users/profile.html:31
+msgid "Имя*"
+msgstr ""
+
+#: users/templates/users/profile.html:32
+#: users/templates/users/registration.html:23
+msgid "Введите ваше имя"
+msgstr "Մուտքագրեք ձեր անունը"
+
+#: users/templates/users/profile.html:39
+#, fuzzy
+#| msgid "Фамилия"
+msgid "Фамилия*"
+msgstr "Ազգանուն"
+
+#: users/templates/users/profile.html:40
+#: users/templates/users/registration.html:33
+msgid "Введите вашу фамилию"
+msgstr "Մուտքագրեք ձեր ազգանունը"
+
+#: users/templates/users/profile.html:47
+#, fuzzy
+#| msgid "Имя пользователя"
+msgid "Имя пользователя*"
+msgstr "Մուտքանուն"
+
+#: users/templates/users/profile.html:56
+#: users/templates/users/registration.html:53
+msgid "Введите ваш email"
+msgstr "Մուտքագրեք ձեր էլ. հասցեն"
+
+#: users/templates/users/profile.html:63
+msgid "Сохранить"
+msgstr "Պահպանել"
+
+#: users/templates/users/profile.html:72
+#: users/templates/users/users_cart.html:12
+msgid "Корзина"
+msgstr "Զամբյուղ"
+
+#: users/templates/users/profile.html:84
+msgid "Мои заказы"
+msgstr "Իմ պատվերները"
+
+#: users/templates/users/profile.html:91
+msgid "Заказ №"
+msgstr ""
+
+#: users/templates/users/profile.html:91
+msgid "Статус:"
+msgstr ""
+
+#: users/templates/users/profile.html:99
+msgid "Товар"
+msgstr "Ապրանք"
+
+#: users/templates/users/profile.html:100
+msgid "Количество"
+msgstr "Քանակ"
+
+#: users/templates/users/profile.html:101
+msgid "Цена"
+msgstr "Գին"
+
+#: users/templates/users/profile.html:102
+msgid "Общая стоимость"
+msgstr "Ընդհանուր արժեք"
+
+#: users/templates/users/registration.html:14
+msgid "Регистрация"
+msgstr "Գրանցում"
+
+#: users/templates/users/registration.html:19
+msgid "Имя"
+msgstr "Անուն"
+
+#: users/templates/users/registration.html:29
+msgid "Фамилия"
+msgstr "Ազգանուն"
+
+#: users/templates/users/registration.html:49
+msgid "Email"
+msgstr ""
+
+#: users/templates/users/registration.html:63
+msgid "Введите пароль"
+msgstr "Մուտքագրեք գաղտնաբառը"
+
+#: users/templates/users/registration.html:69
+msgid "Подтверждение пароля"
+msgstr "Գաղտնաբառի հաստատում"
+
+#: users/templates/users/registration.html:73
+msgid "Подтвердите пароль"
+msgstr "Հաստատեք գաղտնաբառը"
+
+#: users/templates/users/registration.html:79
+msgid "Зарегистрироваться"
+msgstr "Գրանցվել"
+
+#: users/views.py:41 users/views.py:168
+msgid "{user.username}, { _('you are logged in') }"
+msgstr ""
+
+#: users/views.py:46 users/views.py:174
+msgid "Home - Login"
+msgstr "Գլխավոր - Մուտք"
+
+#: users/views.py:68 users/views.py:197
+#, fuzzy
+#| msgid "you have successfully registered and logged in"
+msgid ""
+"{user.username}, { _('you have successfully registered and logged in') }"
+msgstr "Դուք հաջողությամբ գրանցվել եք և մուտք գործել համակարգ"
+
+#: users/views.py:74 users/views.py:204
+msgid "Home - Registration"
+msgstr "Գլխավոր - Գրանցում"
+
+#: users/views.py:87 users/views.py:217
+msgid "Profile successfully updated"
+msgstr "Պրոֆիլը հաջողությամբ թարմացվեց"
+
+#: users/views.py:91 users/views.py:221
+msgid "An error occurred"
+msgstr "Սխալ է տեղի ունեցել"
+
+#: users/views.py:96 users/views.py:226
+msgid "Home - Profile"
+msgstr "Գլխավոր - Անձնական էջ"
+
+#: users/views.py:118 users/views.py:250
+msgid "Home - Cart"
+msgstr "Գլխավոր - Զամբյուղ"
+
+#: users/views.py:124 users/views.py:257
+msgid "{request.user.username}, { _('you have logged out') }"
+msgstr ""
+
+#~ msgid "you are logged in"
+#~ msgstr "Դուք մուտք եք գործել համակարգ"
+
+#~ msgid "you have logged out"
+#~ msgstr "Դուք դուրս եք եկել համակարգից"
+
+#~ msgid "Главная"
+#~ msgstr "Գլխավոր"
+
+#~ msgid "О нас"
+#~ msgstr "Մեր մասին"
+
+#~ msgid "Контакты"
+#~ msgstr "Կոնտակտներ"
+
+#~ msgid "Доставка и оплата"
+#~ msgstr "Առաքում և վճարում"
+
+#~ msgid "Подробнее"
+#~ msgstr "Մանրամասն"
+
+#~ msgid "Показать все"
+#~ msgstr "Ցուցադրել բոլորը"
+
+#~ msgid "Удалить"
+#~ msgstr "Ջնջել"
+
+#~ msgid "Итого %(carts.total_quantity)s товар(а) на сумму"
+#~ msgstr "Ընդամենը %(carts.total_quantity)s ապրանք՝ ընդհանուր գումարով"
+
+#~ msgid "Оформить заказ"
+#~ msgstr "Պատվիրել"
+
+#~ msgid "Профайл успешно обновлен"
+#~ msgstr "Պրոֆիլը հաջողությամբ թարմացվեց"
+
+#~ msgid "Произошла ошибка"
+#~ msgstr "Մեկնաբանություն տեղի ունեցավ"
+
+#~ msgid ""
+#~ "Заказ № %(order.id)s - %(order.created_timestamp)s | Статус: %(order."
+#~ "status)s"
+#~ msgstr ""
+#~ "Պատվեր № %(order.id)s - %(order.created_timestamp)s | Կարգավիճակ: %(order."
+#~ "status)s"
