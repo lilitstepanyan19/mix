@@ -3,263 +3,406 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2025-11-12 20:31+0400\n"
+"PO-Revision-Date: 2025-11-09 19:40+0400\n"
+"Last-Translator: ChatGPT <chatgpt@openai.com>\n"
+"Language-Team: Armenian\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: users/templates/users/login.html:14
-msgid "Авторизация"
-msgstr "Մուտք"
-
-#: users/templates/users/login.html:21
-#: users/templates/users/registration.html:39
+#: app/users/admin.py:17 app/users/forms.py:18 app/users/forms.py:37
+#: app/users/forms.py:57 app/users/templates/users/login.html:21
+#: app/users/templates/users/registration.html:39
 msgid "Имя пользователя"
 msgstr "Մուտքանուն"
 
-#: users/templates/users/login.html:25 users/templates/users/profile.html:48
-#: users/templates/users/registration.html:43
-msgid "Введите ваше имя пользователя"
-msgstr "Մուտքագրեք ձեր մուտքանունը"
-
-#: users/templates/users/login.html:29
-#: users/templates/users/registration.html:59
-msgid "Пароль"
-msgstr "Գաղտնաբառ"
-
-#: users/templates/users/login.html:31
-msgid "Введите ваш пароль"
-msgstr "Մուտքագրեք ձեր գաղտնաբառը"
-
-#: users/templates/users/login.html:34
-msgid "Войти"
-msgstr "Մուտք գործել"
-
-#: users/templates/users/login.html:37
-msgid "Забыли пароль?"
-msgstr "Մոռացե՞լ եք գաղտնաբառը"
-
-#: users/templates/users/login.html:37
-msgid "Создать аккаунт"
-msgstr "Ստեղծել հաշիվ"
-
-#: users/templates/users/login.html:41
-msgid "Или авторизуйтесь через:"
-msgstr "Կամ մուտք գործեք՝ օգտագործելով՝"
-
-#: users/templates/users/login.html:44
-msgid "Google"
-msgstr "Google"
-
-#: users/templates/users/login.html:48
-msgid "Facebook"
-msgstr "Facebook"
-
-#: users/templates/users/login.html:52
-msgid "GitHub"
-msgstr "GitHub"
-
-#: users/templates/users/profile.html:14
-msgid "Профиль пользователя"
-msgstr "Օգտվողի պրոֆիլ"
-
-#: users/templates/users/profile.html:20 users/templates/users/profile.html:22
-#, fuzzy
-#| msgid "Имя пользователя"
-msgid "Аватар пользователя"
-msgstr "Մուտքանուն"
-
-#: users/templates/users/profile.html:31
-msgid "Имя*"
-msgstr ""
-
-#: users/templates/users/profile.html:32
-#: users/templates/users/registration.html:23
-msgid "Введите ваше имя"
-msgstr "Մուտքագրեք ձեր անունը"
-
-#: users/templates/users/profile.html:39
-#, fuzzy
-#| msgid "Фамилия"
-msgid "Фамилия*"
-msgstr "Ազգանուն"
-
-#: users/templates/users/profile.html:40
-#: users/templates/users/registration.html:33
-msgid "Введите вашу фамилию"
-msgstr "Մուտքագրեք ձեր ազգանունը"
-
-#: users/templates/users/profile.html:47
-#, fuzzy
-#| msgid "Имя пользователя"
-msgid "Имя пользователя*"
-msgstr "Մուտքանուն"
-
-#: users/templates/users/profile.html:56
-#: users/templates/users/registration.html:53
-msgid "Введите ваш email"
-msgstr "Մուտքագրեք ձեր էլ. հասցեն"
-
-#: users/templates/users/profile.html:63
-msgid "Сохранить"
-msgstr "Պահպանել"
-
-#: users/templates/users/profile.html:72
-#: users/templates/users/users_cart.html:12
-msgid "Корзина"
-msgstr "Զամբյուղ"
-
-#: users/templates/users/profile.html:84
-msgid "Мои заказы"
-msgstr "Իմ պատվերները"
-
-#: users/templates/users/profile.html:91
-msgid "Заказ №"
-msgstr ""
-
-#: users/templates/users/profile.html:91
-msgid "Статус:"
-msgstr ""
-
-#: users/templates/users/profile.html:99
-msgid "Товар"
-msgstr "Ապրանք"
-
-#: users/templates/users/profile.html:100
-msgid "Количество"
-msgstr "Քանակ"
-
-#: users/templates/users/profile.html:101
-msgid "Цена"
-msgstr "Գին"
-
-#: users/templates/users/profile.html:102
-msgid "Общая стоимость"
-msgstr "Ընդհանուր արժեք"
-
-#: users/templates/users/registration.html:14
-msgid "Регистрация"
-msgstr "Գրանցում"
-
-#: users/templates/users/registration.html:19
+#: app/users/admin.py:22 app/users/forms.py:35 app/users/forms.py:55
+#: app/users/templates/users/registration.html:19
 msgid "Имя"
 msgstr "Անուն"
 
-#: users/templates/users/registration.html:29
+#: app/users/admin.py:27 app/users/forms.py:36 app/users/forms.py:56
+#: app/users/templates/users/registration.html:29
 msgid "Фамилия"
 msgstr "Ազգանուն"
 
-#: users/templates/users/registration.html:49
+#: app/users/admin.py:32 app/users/forms.py:38 app/users/forms.py:58
+#: app/users/templates/users/registration.html:49
 msgid "Email"
-msgstr ""
+msgstr "Էլ. փոստ"
 
-#: users/templates/users/registration.html:63
-msgid "Введите пароль"
-msgstr "Մուտքագրեք գաղտնաբառը"
+#: app/users/forms.py:19 app/users/forms.py:39
+#: app/users/templates/users/login.html:29
+#: app/users/templates/users/registration.html:59
+msgid "Пароль"
+msgstr "Գաղտնաբառ"
 
-#: users/templates/users/registration.html:69
+#: app/users/forms.py:40 app/users/templates/users/registration.html:69
 msgid "Подтверждение пароля"
 msgstr "Գաղտնաբառի հաստատում"
 
-#: users/templates/users/registration.html:73
+#: app/users/forms.py:54 app/users/models.py:8
+msgid "Аватар"
+msgstr "Ավատար"
+
+#: app/users/models.py:11
+msgid "Номер телефона"
+msgstr "Հեռախոսահամար"
+
+#: app/users/models.py:16
+msgid "Пользователя"
+msgstr "Օգտվող"
+
+#: app/users/models.py:17
+msgid "Пользователи"
+msgstr "Օգտվողներ"
+
+#: app/users/templates/users/login.html:14
+msgid "Авторизация"
+msgstr "Մուտք"
+
+#: app/users/templates/users/login.html:25
+#: app/users/templates/users/profile.html:51
+#: app/users/templates/users/registration.html:43
+msgid "Введите ваше имя пользователя"
+msgstr "Մուտքագրեք ձեր մուտքանունը"
+
+#: app/users/templates/users/login.html:31
+msgid "Введите ваш пароль"
+msgstr "Մուտքագրեք ձեր գաղտնաբառը"
+
+#: app/users/templates/users/login.html:34
+#: app/users/templates/users/password_reset_complete.html:8
+msgid "Войти"
+msgstr "Մուտք գործել"
+
+#: app/users/templates/users/login.html:37
+msgid "Забыли пароль?"
+msgstr "Մոռացե՞լ եք գաղտնաբառը"
+
+#: app/users/templates/users/login.html:37
+msgid "Создать аккаунт"
+msgstr "Ստեղծել հաշիվ"
+
+#: app/users/templates/users/login.html:41
+msgid "Или авторизуйтесь через:"
+msgstr "Կամ մուտք գործեք՝ օգտագործելով՝"
+
+#: app/users/templates/users/login.html:44
+msgid "Google"
+msgstr "Google"
+
+#: app/users/templates/users/login.html:48
+msgid "Facebook"
+msgstr "Facebook"
+
+#: app/users/templates/users/login.html:52
+msgid "GitHub"
+msgstr "GitHub"
+
+#: app/users/templates/users/password_reset.html:4
+#: app/users/templates/users/password_reset.html:8
+#: app/users/templates/users/password_reset_email.html:4
+#: app/users/templates/users/password_reset_email.html:8 app/users/views.py:171
+msgid "Сброс пароля"
+msgstr "Գաղտնաբառի վերականգնում"
+
+#: app/users/templates/users/password_reset.html:9
+msgid "Введите ваш email, чтобы получить ссылку на сброс пароля."
+msgstr ""
+"Մուտքագրեք ձեր էլ. փոստը՝ գաղտնաբառը վերականգնելու հղումը ստանալու համար։"
+
+#: app/users/templates/users/password_reset.html:16
+msgid "Отправить ссылку"
+msgstr "Ուղարկել հղումը"
+
+#: app/users/templates/users/password_reset_complete.html:3
+msgid "Пароль изменён"
+msgstr "Գաղտնաբառը փոխվել է"
+
+#: app/users/templates/users/password_reset_complete.html:7
+msgid "Пароль успешно изменён!"
+msgstr "Գաղտնաբառը հաջողությամբ փոխվել է!"
+
+#: app/users/templates/users/password_reset_confirm.html:5
+msgid "Новый пароль"
+msgstr "Նոր գաղտնաբառ"
+
+#: app/users/templates/users/password_reset_confirm.html:9
+msgid "Введите новый пароль"
+msgstr "Մուտքագրեք նոր գաղտնաբառը"
+
+#: app/users/templates/users/password_reset_confirm.html:15
+msgid "Сохранить пароль"
+msgstr "Պահպանել գաղտնաբառը"
+
+#: app/users/templates/users/password_reset_done.html:5 app/users/views.py:163
+msgid "Письмо отправлено"
+msgstr "Նամակը ուղարկված է"
+
+#: app/users/templates/users/password_reset_done.html:9
+msgid "Письмо отправлено!"
+msgstr "Նամակը ուղարկված է!"
+
+#: app/users/templates/users/password_reset_done.html:10
+msgid "Если указанный email существует, вы получите ссылку на сброс пароля."
+msgstr ""
+"Եթե մուտքագրած էլ. փոստը գոյություն ունի, դուք կստանաք գաղտնաբառի "
+"վերականգնման հղում։"
+
+#: app/users/templates/users/password_reset_email.html:11
+#: app/users/templates/users/password_reset_email.txt:5
+#, python-format
+msgid ""
+"Вы получили это письмо, потому что запросили сброс пароля для вашей учетной "
+"записи на сайте %(site_name)s."
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.html:15
+msgid "Чтобы установить новый пароль, перейдите по следующей ссылке:"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.html:21
+#, fuzzy
+#| msgid "Сброс пароля"
+msgid "Сбросить пароль"
+msgstr "Գաղտնաբառի վերականգնում"
+
+#: app/users/templates/users/password_reset_email.html:26
+msgid "Если вы не запрашивали сброс пароля, просто проигнорируйте это письмо."
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.html:32
+msgid "Спасибо, что пользуетесь нашим сайтом!"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.txt:3
+#, fuzzy, python-format
+#| msgid "Сброс пароля"
+msgid "Сброс пароля на %(site_name)s"
+msgstr "Գաղտնաբառի վերականգնում"
+
+#: app/users/templates/users/password_reset_email.txt:7
+msgid "Пожалуйста, перейдите по следующей ссылке и установите новый пароль:"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.txt:10
+#, fuzzy
+#| msgid "Введите ваше имя пользователя"
+msgid "Ваше имя пользователя (если вы забыли):"
+msgstr "Մուտքագրեք ձեր մուտքանունը"
+
+#: app/users/templates/users/password_reset_email.txt:12
+msgid "Спасибо, что используете наш сайт!"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.txt:13
+#, python-format
+msgid "Команда сайта %(site_name)s"
+msgstr ""
+
+#: app/users/templates/users/profile.html:14
+msgid "Профиль пользователя"
+msgstr "Օգտվողի պրոֆիլ"
+
+#: app/users/templates/users/profile.html:20
+#: app/users/templates/users/profile.html:22
+msgid "Аватар пользователя"
+msgstr "Օգտվողի ավատար"
+
+#: app/users/templates/users/profile.html:25
+msgid "Выберите файл"
+msgstr "Ընտրեք ֆայլ"
+
+#: app/users/templates/users/profile.html:34
+msgid "Имя*"
+msgstr "Անուն*"
+
+#: app/users/templates/users/profile.html:35
+#: app/users/templates/users/registration.html:23
+msgid "Введите ваше имя"
+msgstr "Մուտքագրեք ձեր անունը"
+
+#: app/users/templates/users/profile.html:42
+msgid "Фамилия*"
+msgstr "Ազգանուն*"
+
+#: app/users/templates/users/profile.html:43
+#: app/users/templates/users/registration.html:33
+msgid "Введите вашу фамилию"
+msgstr "Մուտքագրեք ձեր ազգանունը"
+
+#: app/users/templates/users/profile.html:50
+msgid "Имя пользователя*"
+msgstr "Մուտքանուն*"
+
+#: app/users/templates/users/profile.html:58
+msgid "Email*"
+msgstr "Էլ. փոստ*"
+
+#: app/users/templates/users/profile.html:59
+#: app/users/templates/users/registration.html:53
+msgid "Введите ваш email"
+msgstr "Մուտքագրեք ձեր էլ. հասցեն"
+
+#: app/users/templates/users/profile.html:66
+msgid "Сохранить"
+msgstr "Պահպանել"
+
+#: app/users/templates/users/profile.html:75
+#: app/users/templates/users/users_cart.html:12
+msgid "Корзина"
+msgstr "Զամբյուղ"
+
+#: app/users/templates/users/profile.html:87
+msgid "Мои заказы"
+msgstr "Իմ պատվերները"
+
+#: app/users/templates/users/profile.html:94
+msgid "Заказ №"
+msgstr "Պատվեր №"
+
+#: app/users/templates/users/profile.html:94
+msgid "Статус:"
+msgstr "Կարգավիճակ՝"
+
+#: app/users/templates/users/profile.html:102
+msgid "Товар"
+msgstr "Ապրանք"
+
+#: app/users/templates/users/profile.html:103
+msgid "Количество"
+msgstr "Քանակ"
+
+#: app/users/templates/users/profile.html:104
+msgid "Цена"
+msgstr "Գին"
+
+#: app/users/templates/users/profile.html:105
+msgid "Общая стоимость"
+msgstr "Ընդհանուր արժեք"
+
+#: app/users/templates/users/registration.html:14
+msgid "Регистрация"
+msgstr "Գրանցում"
+
+#: app/users/templates/users/registration.html:63
+msgid "Введите пароль"
+msgstr "Մուտքագրեք գաղտնաբառը"
+
+#: app/users/templates/users/registration.html:73
 msgid "Подтвердите пароль"
 msgstr "Հաստատեք գաղտնաբառը"
 
-#: users/templates/users/registration.html:79
+#: app/users/templates/users/registration.html:79
 msgid "Зарегистрироваться"
 msgstr "Գրանցվել"
 
-#: users/views.py:41 users/views.py:168
-msgid "{user.username}, { _('you are logged in') }"
-msgstr ""
+# ..........................................
+#: app/users/views.py:51
+#, python-format
+msgid "%(username)s, you are logged in"
+msgstr "%(username)s, դուք մտել եք համակարգ"
 
-#: users/views.py:46 users/views.py:174
+#: app/users/views.py:58
 msgid "Home - Login"
-msgstr "Գլխավոր - Մուտք"
-
-#: users/views.py:68 users/views.py:197
-#, fuzzy
-#| msgid "you have successfully registered and logged in"
-msgid ""
-"{user.username}, { _('you have successfully registered and logged in') }"
-msgstr "Դուք հաջողությամբ գրանցվել եք և մուտք գործել համակարգ"
-
-#: users/views.py:74 users/views.py:204
-msgid "Home - Registration"
-msgstr "Գլխավոր - Գրանցում"
-
-#: users/views.py:87 users/views.py:217
-msgid "Profile successfully updated"
-msgstr "Պրոֆիլը հաջողությամբ թարմացվեց"
-
-#: users/views.py:91 users/views.py:221
-msgid "An error occurred"
-msgstr "Սխալ է տեղի ունեցել"
-
-#: users/views.py:96 users/views.py:226
-msgid "Home - Profile"
-msgstr "Գլխավոր - Անձնական էջ"
-
-#: users/views.py:118 users/views.py:250
-msgid "Home - Cart"
-msgstr "Գլխավոր - Զամբյուղ"
-
-#: users/views.py:124 users/views.py:257
-msgid "{request.user.username}, { _('you have logged out') }"
 msgstr ""
 
-#~ msgid "you are logged in"
-#~ msgstr "Դուք մուտք եք գործել համակարգ"
+#: app/users/views.py:81
+#, python-format
+msgid "%(username)s, you have successfully registered and logged in"
+msgstr "%(username)s, դուք հաջողությամբ գրանցվել և մուտք եք գործել համակարգ"
 
-#~ msgid "you have logged out"
-#~ msgstr "Դուք դուրս եք եկել համակարգից"
+#: app/users/views.py:89
+msgid "Home - Registration"
+msgstr ""
 
-#~ msgid "Главная"
-#~ msgstr "Գլխավոր"
+#: app/users/views.py:102
+msgid "Profile successfully updated"
+msgstr "Պրոֆիլը հաջողությամբ թարմացվել է"
 
-#~ msgid "О нас"
-#~ msgstr "Մեր մասին"
+#: app/users/views.py:106
+msgid "An error occurred"
+msgstr "Սխալ տեղի ունեցավ"
 
-#~ msgid "Контакты"
-#~ msgstr "Կոնտակտներ"
+#: app/users/views.py:111
+msgid "Home - Profile"
+msgstr ""
 
-#~ msgid "Доставка и оплата"
-#~ msgstr "Առաքում և վճարում"
+#: app/users/views.py:135
+msgid "Home - Cart"
+msgstr ""
 
-#~ msgid "Подробнее"
-#~ msgstr "Մանրամասն"
+#: app/users/views.py:143
+msgid "Home - Password Change"
+msgstr ""
 
-#~ msgid "Показать все"
-#~ msgstr "Ցուցադրել բոլորը"
+#: app/users/views.py:156
+#, fuzzy
+#| msgid "Подтверждение пароля"
+msgid "Восстановление пароля"
+msgstr "Գաղտնաբառի հաստատում"
 
-#~ msgid "Удалить"
-#~ msgstr "Ջնջել"
+#: app/users/views.py:178
+#, fuzzy
+#| msgid "Пароль успешно изменён!"
+msgid "Пароль успешно изменён"
+msgstr "Գաղտնաբառը հաջողությամբ փոխվել է!"
 
-#~ msgid "Итого %(carts.total_quantity)s товар(а) на сумму"
-#~ msgstr "Ընդամենը %(carts.total_quantity)s ապրանք՝ ընդհանուր գումարով"
+#: app/users/views.py:192
+#, python-format
+msgid "%(username)s, you have logged out"
+msgstr "%(username)s, դուք դուրս եք եկել համակարգից"
 
-#~ msgid "Оформить заказ"
-#~ msgstr "Պատվիրել"
-
-#~ msgid "Профайл успешно обновлен"
-#~ msgstr "Պրոֆիլը հաջողությամբ թարմացվեց"
-
-#~ msgid "Произошла ошибка"
-#~ msgstr "Մեկնաբանություն տեղի ունեցավ"
+#~ msgid "Password reset on %(site_name)s"
+#~ msgstr "Գաղտնաբառի վերականգնում %(site_name)s կայքում"
 
 #~ msgid ""
-#~ "Заказ № %(order.id)s - %(order.created_timestamp)s | Статус: %(order."
-#~ "status)s"
+#~ "You're receiving this email because you requested a password reset for "
+#~ "your user account at %(site_name)s."
 #~ msgstr ""
-#~ "Պատվեր № %(order.id)s - %(order.created_timestamp)s | Կարգավիճակ: %(order."
-#~ "status)s"
+#~ "Դուք ստացել եք այս նամակը, քանի որ գաղտնաբառի վերականգնում եք խնդրել ձեր "
+#~ "%(site_name)s կայքի հաշվի համար։"
+
+#~ msgid "Please go to the following page and choose a new password:"
+#~ msgstr "Խնդրում ենք անցնել հետևյալ հղումով և ընտրել նոր գաղտնաբառ։"
+
+#~ msgid "Your username, in case you've forgotten:"
+#~ msgstr "Ձեր օգտանունը (եթե մոռացել եք)."
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Շնորհակալություն մեր կայքից օգտվելու համար։"
+
+#~ msgid "The %(site_name)s team"
+#~ msgstr "%(site_name)s կայքի թիմը"
+
+#~ msgid "Password reset"
+#~ msgstr "Գաղտնաբառի վերականգնում"
+
+#~ msgid ""
+#~ "You received this email because you requested a password reset for your "
+#~ "account at %(site_name)s."
+#~ msgstr ""
+#~ "Դուք ստացել եք այս նամակը, քանի որ խնդրել եք վերականգնել գաղտնաբառը ձեր "
+#~ "%(site_name)s հաշվի համար։"
+
+#~ msgid "Please click the button below to choose a new password:"
+#~ msgstr ""
+#~ "Խնդրում ենք սեղմել ստորև գտնվող կոճակը նոր գաղտնաբառը ընտրելու համար։"
+
+#~ msgid "Reset password"
+#~ msgstr "Վերականգնել գաղտնաբառը"
+
+#~ msgid "If you didn’t request a password reset, please ignore this email."
+#~ msgstr ""
+#~ "Եթե դուք չեք խնդրել վերականգնել գաղտնաբառը, պարզապես անտեսեք այս նամակը։"
+
+#~ msgid "Thank you for using our site!"
+#~ msgstr "Շնորհակալություն, որ օգտվում եք մեր կայքից։"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
+"POT-Creation-Date: 2025-11-12 20:27+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,99 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: payment/views.py:47 payment/views.py:71 payment/views.py:169
-#: payment/views.py:267
-#, python-brace-format
-msgid "Order #{order.id}"
-msgstr ""
-
-#: payment/views.py:182
-msgid "No method"
-msgstr ""
-
-#: payment/views.py:199
-msgid "Bad signature"
-msgstr ""
-
-#: payment/views.py:220
-msgid "Unknown method"
-msgstr ""
-
-#: payment/views.py:240
-msgid "Payment completed"
-msgstr "Payment completed"
-
-#: payment/views.py:246
+#: app/payment/templates/payment/canceled.html:5 app/payment/views.py:244
 msgid "Payment canceled"
 msgstr "Payment canceled"
 
-#: payment/views.py:282
+#: app/payment/templates/payment/canceled.html:9
+msgid "Payment was canceled"
+msgstr "Payment was canceled"
+
+#: app/payment/templates/payment/completed.html:5
+msgid "Payment successful"
+msgstr "Payment successful"
+
+#: app/payment/templates/payment/completed.html:9
+msgid "Payment was successful"
+msgstr "ayment was successful"
+
+#: app/payment/templates/payment/process.html:5
+#: app/payment/templates/payment/process.html:14
+msgid "Order payment"
+msgstr "Order payment"
+
+#: app/payment/templates/payment/process.html:31
+msgid "Quantity"
+msgstr "Quantity"
+
+#: app/payment/templates/payment/process.html:48
+msgid "Total"
+msgstr "Total"
+
+#: app/payment/templates/payment/process.html:51
+msgid "Choose a payment method:"
+msgstr "Choose a payment method:"
+
+#: app/payment/templates/payment/process.html:53
+msgid "Stripe (online card)"
+msgstr "Stripe (online card)"
+
+#: app/payment/templates/payment/process.html:54
+msgid "UnitPay"
+msgstr "UnitPay"
+
+#: app/payment/templates/payment/process.html:55
+msgid "Idram"
+msgstr "Idram"
+
+#: app/payment/templates/payment/process.html:58
+msgid "Pay now"
+msgstr "Pay now"
+
+#: app/payment/views.py:47 app/payment/views.py:70 app/payment/views.py:167
+#: app/payment/views.py:263
+#, fuzzy, python-format
+#| msgid "Order #%(_order_id)s"
+msgid "Order #%(order_id)s"
+msgstr "Order #%(_order_id)s"
+
+#: app/payment/views.py:119
+msgid "No data"
+msgstr "No data"
+
+#: app/payment/views.py:139 app/payment/views.py:197
+msgid "Bad signature"
+msgstr "Bad signature"
+
+#: app/payment/views.py:180
+#, fuzzy
+#| msgid "Unknown method"
+msgid "No method"
+msgstr "Unknown method"
+
+#: app/payment/views.py:218
+msgid "Unknown method"
+msgstr "Unknown method"
+
+#: app/payment/views.py:238
+msgid "Payment completed"
+msgstr "Payment completed"
+
+#: app/payment/views.py:278
 msgid "Order not found"
-msgstr ""
+msgstr "Order not found"
 
-#: payment/views.py:286
-#, fuzzy, python-brace-format
-#| msgid "Order #%s successfully paid"
-msgid "Order #{order.id} successfully paid"
-msgstr "Order #%s successfully paid"
+#: app/payment/views.py:282
+#, fuzzy, python-format
+#| msgid "Order #%(_order_id)s successfully paid"
+msgid "Order #%(order_id)s successfully paid"
+msgstr "Order #%(_order_id)s successfully paid"
 
-#: payment/views.py:287
-#, fuzzy, python-brace-format
-#| msgid "New order #%s created"
-msgid "New order #{order.id} created"
-msgstr "New order #%s created"
+#: app/payment/views.py:283
+#, fuzzy, python-format
+#| msgid "New order #%(_order_id)s created"
+msgid "New order #%(order_id)s created"
+msgstr "New order #%(_order_id)s created"
 
-#~ msgid "Checkout session created"
-#~ msgstr "Checkout session created"
-
-#~ msgid "Order #%s"
-#~ msgstr "Order #%s"
+#~ msgid "castle"
+#~ msgstr "castle"

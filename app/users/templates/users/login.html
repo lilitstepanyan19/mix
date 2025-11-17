@@ -34,7 +34,7 @@
                     <button type="submit" class="btn btn-dark btn-block">{% trans "Войти" %}</button>
                 </form>
                 <div class="mt-3">
-                    <a href="#">{% trans "Забыли пароль?" %}</a> | <a href="{% url "user:registration" %}">{% trans "Создать аккаунт" %}</a>
+                    <a href="{% url 'user:password_reset' %}">{% trans "Забыли пароль?" %}</a> | <a href="{% url "user:registration" %}">{% trans "Создать аккаунт" %}</a>
                 </div>
                 <hr>
                 <div class="text-center">

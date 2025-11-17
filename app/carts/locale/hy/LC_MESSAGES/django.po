@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
+"POT-Creation-Date: 2025-11-12 20:30+0400\n"
 "PO-Revision-Date: 2025-11-07 21:20+0400\n"
 "Last-Translator: ChatGPT\n"
 "Language-Team: Armenian\n"
@@ -13,27 +13,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: carts/templates/carts/includes/included_cart.html:49
+# ------------------------
+# Admin translations
+# ------------------------
+#: app/carts/admin.py:23
+msgid "Анонимный пользователь"
+msgstr "Անանուն օգտվող"
+
+#: app/carts/admin.py:28 app/carts/models.py:26
+msgid "Пользователь"
+msgstr "Օգտվող"
+
+#: app/carts/admin.py:29 app/carts/models.py:29
+msgid "Товар"
+msgstr "Ապրանք"
+
+#: app/carts/models.py:31
+msgid "Количество"
+msgstr "Քանակ"
+
+#: app/carts/models.py:33
+msgid "Ключ сессии"
+msgstr "Սեսիայի բանալի"
+
+#: app/carts/models.py:36
+msgid "Дата добавления"
+msgstr "Ավելացման ամսաթիվ"
+
+#: app/carts/models.py:41 app/carts/models.py:42
+msgid "Корзина"
+msgstr "Զամբյուղ"
+
+#: app/carts/models.py:52
+#, python-brace-format
+msgid "Корзина {user} | Товар {product} | Количество {quantity}"
+msgstr "{user}-ի զամբյուղ | Ապրանք՝ {product} | Քանակ՝ {quantity}"
+
+#: app/carts/models.py:58
+#, python-brace-format
+msgid "Анонимная корзина | Товар {product} | Количество {quantity}"
+msgstr "Անանուն զամբյուղ | Ապրանք՝ {product} | Քանակ՝ {quantity}"
+
+#: app/carts/templates/carts/includes/included_cart.html:49
 msgid "Удалить"
 msgstr "Հեռացնել"
 
-#: carts/templates/carts/includes/included_cart.html:60
+#: app/carts/templates/carts/includes/included_cart.html:60
 #, python-format
 msgid "Итого %(carts.total_quantity)s товар(а) на сумму"
 msgstr "Ընդհանուր՝ %(carts.total_quantity)s ապրանք՝ ընդհանուր գումարով"
 
-#: carts/templates/carts/includes/included_cart.html:67
+#: app/carts/templates/carts/includes/included_cart.html:67
 msgid "Оформить заказ"
 msgstr "Պատվիրել"
 
-#: carts/views.py:36
+#: app/carts/views.py:36
 msgid "Product added to cart"
 msgstr "Ապրանքը ավելացվել է զամբյուղում"
 
-#: carts/views.py:52
+#: app/carts/views.py:52
 msgid "Quantity updated"
 msgstr "Քանակը փոփոխվել է"
 
-#: carts/views.py:68
+#: app/carts/views.py:68
 msgid "Product removed from cart"
 msgstr "Ապրանքը հեռացվել է զամբյուղից"

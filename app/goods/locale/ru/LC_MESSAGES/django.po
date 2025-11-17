@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 20:47+0400\n"
+"POT-Creation-Date: 2025-11-12 20:31+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,106 +20,194 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: goods/templates/goods/catalog.html:23
+#: app/goods/admin.py:20 app/goods/models.py:74
+msgid "Изображение товара"
+msgstr "Изображение товара"
+
+#: app/goods/admin.py:21 app/goods/models.py:75
+msgid "Изображения товаров"
+msgstr "Изображения товаров"
+
+#: app/goods/admin.py:46 app/goods/models.py:7 app/goods/models.py:23
+msgid "Название"
+msgstr "Название"
+
+#: app/goods/admin.py:51 app/goods/models.py:37
+msgid "Количество"
+msgstr "Количество"
+
+#: app/goods/admin.py:56 app/goods/models.py:32
+#: app/goods/templates/goods/product.html:75
+msgid "Цена"
+msgstr "Цена"
+
+#: app/goods/admin.py:61
+msgid "Скидка"
+msgstr "Скидка"
+
+#: app/goods/models.py:9 app/goods/models.py:25
+msgid "URL"
+msgstr ""
+
+#: app/goods/models.py:14
+#, fuzzy
+#| msgid "Категория"
+msgid "Категорию"
+msgstr "Категория"
+
+#: app/goods/models.py:15
+#, fuzzy
+#| msgid "Категория"
+msgid "Категории"
+msgstr "Категория"
+
+#: app/goods/models.py:27
+msgid "Описание"
+msgstr "Описание"
+
+#: app/goods/models.py:29 app/goods/models.py:70
+#: app/goods/templates/goods/product.html:106
+msgid "Изображение"
+msgstr "Изображение"
+
+#: app/goods/models.py:35
+msgid "Скидка в %"
+msgstr "Скидка в %"
+
+#: app/goods/models.py:39
+msgid "Категория"
+msgstr "Категория"
+
+#: app/goods/models.py:44
+msgid "Продукт"
+msgstr "Продукт"
+
+#: app/goods/models.py:45
+msgid "Продукты"
+msgstr "Продукты"
+
+#: app/goods/models.py:68
+msgid "Товар"
+msgstr ""
+
+#: app/goods/models.py:78
+#, python-brace-format
+msgid "Изображение для {product}"
+msgstr "Изображение для {product}"
+
+#: app/goods/templates/goods/catalog.html:23
 msgid "Фильтры"
 msgstr "Фильтры"
 
-#: goods/templates/goods/catalog.html:36
+#: app/goods/templates/goods/catalog.html:36
 msgid "Товары по акции"
 msgstr "Товары по акции"
 
-#: goods/templates/goods/catalog.html:40
+#: app/goods/templates/goods/catalog.html:40
 msgid "Сортировать:"
 msgstr "Сортировать:"
 
-#: goods/templates/goods/catalog.html:47
+#: app/goods/templates/goods/catalog.html:47
 msgid "По умолчанию"
 msgstr "По умолчанию"
 
-#: goods/templates/goods/catalog.html:56
+#: app/goods/templates/goods/catalog.html:56
 msgid "От дешевых к дорогим"
 msgstr "От дешёвых к дорогим"
 
-#: goods/templates/goods/catalog.html:65
+#: app/goods/templates/goods/catalog.html:65
 msgid "От дорогих к дешевым"
 msgstr "От дорогих к дешёвым"
 
-#: goods/templates/goods/catalog.html:70
+#: app/goods/templates/goods/catalog.html:70
 msgid "Применить"
 msgstr "Применить"
 
-#: goods/templates/goods/catalog.html:77
+#: app/goods/templates/goods/catalog.html:77
 #, fuzzy, python-format
 #| msgid "Результаты поиска по запросу %(request_GET_q)s"
 msgid "Результаты поиска по запросу %(request.GET.q)s"
 msgstr "Результаты поиска по запросу %(request_GET_q)s"
 
-#: goods/templates/goods/catalog.html:82
+#: app/goods/templates/goods/catalog.html:82
 msgid "По запросу ничего не найдено"
 msgstr "По запросу ничего не найдено"
 
-#: goods/templates/goods/catalog.html:93
+#: app/goods/templates/goods/catalog.html:93
 msgid "Изображение не найдено"
 msgstr "Изображение не найдено"
 
-#: goods/templates/goods/catalog.html:120
+#: app/goods/templates/goods/catalog.html:120
 #, fuzzy, python-format
 #| msgid "id: %(product_display_id)s"
 msgid "id: %(product.display_id)s"
 msgstr "id: %(product_display_id)s"
 
-#: goods/templates/goods/catalog.html:124
+#: app/goods/templates/goods/catalog.html:124
 msgid "Нет в наличии."
 msgstr "Нет в наличии."
 
-#: goods/templates/goods/catalog.html:126 goods/templates/goods/product.html:68
+#: app/goods/templates/goods/catalog.html:126
+#: app/goods/templates/goods/product.html:68
 msgid "В наличии: "
 msgstr "В наличии: "
 
-#: goods/templates/goods/catalog.html:127 goods/templates/goods/product.html:69
+#: app/goods/templates/goods/catalog.html:127
+#: app/goods/templates/goods/product.html:69
 #, python-format
 msgid "%(qty)s"
 msgstr ""
 
-#: goods/templates/goods/catalog.html:128 goods/templates/goods/product.html:70
+#: app/goods/templates/goods/catalog.html:128
+#: app/goods/templates/goods/product.html:70
 msgid "шт."
 msgstr "шт."
 
-#: goods/templates/goods/catalog.html:145 goods/templates/goods/product.html:89
+#: app/goods/templates/goods/catalog.html:145
+#: app/goods/templates/goods/product.html:89
 msgid "Добавить в корзину"
 msgstr "Добавить в корзину"
 
-#: goods/templates/goods/catalog.html:164
+#: app/goods/templates/goods/catalog.html:164
 msgid "Назад"
 msgstr "Назад"
 
-#: goods/templates/goods/catalog.html:179
+#: app/goods/templates/goods/catalog.html:179
 msgid "Следующая"
 msgstr "Следующая"
 
-#: goods/templates/goods/product.html:23 goods/templates/goods/product.html:103
+#: app/goods/templates/goods/product.html:23
+#: app/goods/templates/goods/product.html:103
 msgid "Закрыть"
 msgstr "Закрыть"
 
-#: goods/templates/goods/product.html:39 goods/templates/goods/product.html:52
+#: app/goods/templates/goods/product.html:39
+#: app/goods/templates/goods/product.html:52
 msgid "Нет изображения"
 msgstr "Нет изображения"
 
-#: goods/templates/goods/product.html:60
+#: app/goods/templates/goods/product.html:60
 msgid "id"
 msgstr "ID"
 
-#: goods/templates/goods/product.html:65
+#: app/goods/templates/goods/product.html:65
 msgid "Нет в наличии"
 msgstr "Нет в наличии"
 
-#: goods/templates/goods/product.html:75
-msgid "Цена"
-msgstr "Цена"
+#: app/goods/views.py:54
+msgid "Home - Catalog"
+msgstr "Главная - Каталог"
 
-#: goods/templates/goods/product.html:106
-msgid "Изображение"
-msgstr "Изображение"
+#: app/goods/views.py:82
+msgid "Product Details"
+msgstr "Детали товара"
+
+#: app/goods/views.py:83
+msgid "Related Products"
+msgstr "Похожие товары"
 
 #~ msgid "В наличии: %(product_quantity)s штук"
 #~ msgstr "В наличии: %(product_quantity)s штук"
+
+#~ msgid "Без названия"
+#~ msgstr "Без названия"

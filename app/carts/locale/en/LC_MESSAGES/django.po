@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
+"POT-Creation-Date: 2025-11-12 20:27+0400\n"
 "PO-Revision-Date: 2025-11-07 21:20+0400\n"
 "Last-Translator: ChatGPT\n"
 "Language-Team: English\n"
@@ -13,27 +13,92 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: carts/templates/carts/includes/included_cart.html:49
+# ------------------------
+# Admin translations
+# ------------------------
+#: app/carts/admin.py:23
+msgid "Анонимный пользователь"
+msgstr "Anonymous user"
+
+#: app/carts/admin.py:28 app/carts/models.py:26
+msgid "Пользователь"
+msgstr "User"
+
+#: app/carts/admin.py:29 app/carts/models.py:29
+msgid "Товар"
+msgstr "Product"
+
+#: app/carts/models.py:31
+msgid "Количество"
+msgstr "Quantity"
+
+#: app/carts/models.py:33
+msgid "Ключ сессии"
+msgstr "Session key"
+
+#: app/carts/models.py:36
+msgid "Дата добавления"
+msgstr "Date added"
+
+#: app/carts/models.py:41 app/carts/models.py:42
+msgid "Корзина"
+msgstr "Cart"
+
+#: app/carts/models.py:52
+#, python-brace-format
+msgid "Корзина {user} | Товар {product} | Количество {quantity}"
+msgstr "Cart of {user} | Product {product} | Quantity {quantity}"
+
+#: app/carts/models.py:58
+#, python-brace-format
+msgid "Анонимная корзина | Товар {product} | Количество {quantity}"
+msgstr "Anonymous cart | Product {product} | Quantity {quantity}"
+
+#: app/carts/templates/carts/includes/included_cart.html:49
 msgid "Удалить"
 msgstr "Delete"
 
-#: carts/templates/carts/includes/included_cart.html:60
+#: app/carts/templates/carts/includes/included_cart.html:60
 #, python-format
 msgid "Итого %(carts.total_quantity)s товар(а) на сумму"
 msgstr "Total of %(carts.total_quantity)s item(s) for"
 
-#: carts/templates/carts/includes/included_cart.html:67
+#: app/carts/templates/carts/includes/included_cart.html:67
 msgid "Оформить заказ"
 msgstr "Checkout"
 
-#: carts/views.py:36
+#: app/carts/views.py:36
 msgid "Product added to cart"
 msgstr "Product added to cart"
 
-#: carts/views.py:52
+#: app/carts/views.py:52
 msgid "Quantity updated"
 msgstr "Quantity updated"
 
-#: carts/views.py:68
+#: app/carts/views.py:68
 msgid "Product removed from cart"
 msgstr "Product removed from cart"
+
+#~ msgid "User"
+#~ msgstr "User"
+
+#~ msgid "Product"
+#~ msgstr "Product"
+
+#~ msgid "Quantity"
+#~ msgstr "Quantity"
+
+#~ msgid "Session key"
+#~ msgstr "Session key"
+
+#~ msgid "Date added"
+#~ msgstr "Date added"
+
+#~ msgid "Cart"
+#~ msgstr "Cart"
+
+#~ msgid "Cart of {user} | Product {product} | Quantity {quantity}"
+#~ msgstr "Cart of {user} | Product {product} | Quantity {quantity}"
+
+#~ msgid "Anonymous cart | Product {product} | Quantity {quantity}"
+#~ msgstr "Anonymous cart | Product {product} | Quantity {quantity}"

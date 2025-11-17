@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
+"POT-Creation-Date: 2025-11-12 20:31+0400\n"
 "PO-Revision-Date: 2025-11-07 21:20+0400\n"
 "Last-Translator: ChatGPT\n"
 "Language-Team: Russian\n"
@@ -16,27 +16,68 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: carts/templates/carts/includes/included_cart.html:49
+# ------------------------
+# Admin translations
+# ------------------------
+#: app/carts/admin.py:23
+msgid "Анонимный пользователь"
+msgstr "Анонимный пользователь"
+
+#: app/carts/admin.py:28 app/carts/models.py:26
+msgid "Пользователь"
+msgstr "Пользователь"
+
+#: app/carts/admin.py:29 app/carts/models.py:29
+msgid "Товар"
+msgstr "Товар"
+
+#: app/carts/models.py:31
+msgid "Количество"
+msgstr "Количество"
+
+#: app/carts/models.py:33
+msgid "Ключ сессии"
+msgstr "Ключ сессии"
+
+#: app/carts/models.py:36
+msgid "Дата добавления"
+msgstr "Дата добавления"
+
+#: app/carts/models.py:41 app/carts/models.py:42
+msgid "Корзина"
+msgstr "Корзина"
+
+#: app/carts/models.py:52
+#, python-brace-format
+msgid "Корзина {user} | Товар {product} | Количество {quantity}"
+msgstr "Корзина {user} | Товар {product} | Количество {quantity}"
+
+#: app/carts/models.py:58
+#, python-brace-format
+msgid "Анонимная корзина | Товар {product} | Количество {quantity}"
+msgstr "Анонимная корзина | Товар {product} | Количество {quantity}"
+
+#: app/carts/templates/carts/includes/included_cart.html:49
 msgid "Удалить"
 msgstr "Удалить"
 
-#: carts/templates/carts/includes/included_cart.html:60
+#: app/carts/templates/carts/includes/included_cart.html:60
 #, python-format
 msgid "Итого %(carts.total_quantity)s товар(а) на сумму"
 msgstr "Итого %(carts.total_quantity)s товар(а) на сумму"
 
-#: carts/templates/carts/includes/included_cart.html:67
+#: app/carts/templates/carts/includes/included_cart.html:67
 msgid "Оформить заказ"
 msgstr "Оформить заказ"
 
-#: carts/views.py:36
+#: app/carts/views.py:36
 msgid "Product added to cart"
 msgstr "Товар добавлен в корзину"
 
-#: carts/views.py:52
+#: app/carts/views.py:52
 msgid "Quantity updated"
 msgstr "Количество изменено"
 
-#: carts/views.py:68
+#: app/carts/views.py:68
 msgid "Product removed from cart"
 msgstr "Товар удален из корзины"

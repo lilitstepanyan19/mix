@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:51+0400\n"
+"POT-Creation-Date: 2025-11-12 20:30+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,68 +18,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/base.html:38
+#: app/templates/base.html:38
 msgid "Home"
 msgstr "Գլխավոր"
 
-#: templates/base.html:50
+#: app/templates/base.html:50
 msgid "Информация"
 msgstr "Տեղեկատվություն"
 
-#: templates/base.html:53
+#: app/templates/base.html:53
 msgid "Доставка и оплата"
 msgstr "Առաքում և վճարում"
 
-#: templates/base.html:54
+#: app/templates/base.html:54
 msgid "Контактная информация"
 msgstr "Կապ"
 
-#: templates/base.html:55
+#: app/templates/base.html:55
 msgid "Про нас"
 msgstr "Մեր մասին"
 
-#: templates/base.html:60 templates/base.html:74
-#: templates/includes/cart_button.html:10
-#: templates/includes/cart_button.html:26
+#: app/templates/base.html:60 app/templates/base.html:74
+#: app/templates/includes/cart_button.html:10
+#: app/templates/includes/cart_button.html:26
 msgid "Корзина"
 msgstr "Զամբյուղ"
 
-#: templates/base.html:65
+#: app/templates/base.html:65
 msgid "Войти"
 msgstr "Մուտք"
 
-#: templates/base.html:71
+#: app/templates/base.html:71
 msgid "Мой профиль"
 msgstr "Իմ պրոֆիլը"
 
-#: templates/base.html:75
+#: app/templates/base.html:75
 msgid "Личный кабинет"
 msgstr "Անձնական գրասենյակ"
 
-#: templates/base.html:77
+#: app/templates/base.html:77
 msgid "Админ панель"
 msgstr "Ադմին պանել"
 
-#: templates/base.html:80
+#: app/templates/base.html:80
 msgid "Выйти"
 msgstr "Ելք"
 
-#: templates/base.html:90
+#: app/templates/base.html:90
 msgid "Search"
 msgstr "Որոնել"
 
-#: templates/base.html:91
+#: app/templates/base.html:91
 msgid "Поиск"
 msgstr "Որոնում"
 
-#: templates/base.html:120
+#: app/templates/base.html:120
 msgid "Каталог"
 msgstr "Կատալոգ"
 
-#: templates/base.html:167
+#: app/templates/base.html:167
 msgid "Yerevan, Armenia"
 msgstr "Երևան, Հայաստան"
 
-#: templates/includes/cart_button.html:23
+#: app/templates/includes/cart_button.html:23
 msgid "Закрыть"
 msgstr "Փակել"

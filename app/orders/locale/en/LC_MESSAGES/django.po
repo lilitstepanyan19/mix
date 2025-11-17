@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 22:16+0400\n"
+"POT-Creation-Date: 2025-11-12 20:27+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,62 +18,211 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: orders/templates/orders/create_order.html:12
-msgid "Выбранные товары"
-msgstr "Selected products"
+#: app/orders/admin.py:11 app/orders/admin.py:19 app/orders/models.py:84
+msgid "Проданный товар"
+msgstr "Sold product"
 
-#: orders/templates/orders/create_order.html:18
-msgid "Детали заказа"
-msgstr "Order details"
+#: app/orders/admin.py:12 app/orders/admin.py:20 app/orders/models.py:85
+msgid "Проданные товары"
+msgstr "Sold products"
 
-#: orders/templates/orders/create_order.html:23
+#: app/orders/admin.py:25 app/orders/admin.py:45 app/orders/models.py:48
+#: app/orders/models.py:66
+msgid "Заказ"
+msgstr "Order"
+
+#: app/orders/admin.py:46 app/orders/models.py:49
+msgid "Заказы"
+msgstr "Orders"
+
+#: app/orders/admin.py:73
+msgid "Анонимный пользователь"
+msgstr "Anonymous user"
+
+#: app/orders/admin.py:75 app/orders/models.py:26
+msgid "Пользователь"
+msgstr "User"
+
+#: app/orders/forms.py:8 app/orders/templates/orders/create_order.html:23
 msgid "Имя"
 msgstr "First name"
 
-#: orders/templates/orders/create_order.html:33
+#: app/orders/forms.py:12
+msgid "Введите ваше имя"
+msgstr "Enter your first name"
+
+#: app/orders/forms.py:17 app/orders/templates/orders/create_order.html:33
 msgid "Фамилия"
 msgstr "Last name"
 
-#: orders/templates/orders/create_order.html:43
+#: app/orders/forms.py:21
+msgid "Введите вашу фамилию"
+msgstr "Enter your last name"
+
+#: app/orders/forms.py:26 app/orders/forms.py:30 app/orders/models.py:31
+#: app/orders/templates/orders/create_order.html:43
 msgid "Номер телефона"
 msgstr "Phone number"
 
-#: orders/templates/orders/create_order.html:50
-msgid "Неверный формат номера"
-msgstr "Invalid phone number format"
-
-#: orders/templates/orders/create_order.html:54
-msgid "Способ доставки"
-msgstr "Delivery method"
-
-#: orders/templates/orders/create_order.html:58
+#: app/orders/forms.py:35 app/orders/templates/orders/create_order.html:58
 msgid "Нужна доставка"
 msgstr "Delivery required"
 
-#: orders/templates/orders/create_order.html:63
-msgid "Самовывоз"
-msgstr "Pickup"
+#: app/orders/forms.py:38
+msgid "Нет"
+msgstr "No"
 
-#: orders/templates/orders/create_order.html:68
+#: app/orders/forms.py:39
+msgid "Да"
+msgstr "Yes"
+
+#: app/orders/forms.py:44 app/orders/models.py:36
+#: app/orders/templates/orders/create_order.html:68
 msgid "Адрес доставки"
 msgstr "Delivery address"
 
-#: orders/templates/orders/create_order.html:77
+#: app/orders/forms.py:49
+msgid "Введите адрес доставки"
+msgstr "Enter delivery address"
+
+#: app/orders/forms.py:56 app/orders/templates/orders/create_order.html:77
 msgid "Способ оплаты"
 msgstr "Payment method"
 
-#: orders/templates/orders/create_order.html:81
+#: app/orders/forms.py:59 app/orders/templates/orders/create_order.html:81
 msgid "Оплата картой"
 msgstr "Card payment"
 
-#: orders/templates/orders/create_order.html:86
+#: app/orders/forms.py:60 app/orders/templates/orders/create_order.html:86
 msgid "Наличными/картой при получении"
 msgstr "Cash/Card on delivery"
 
-#: orders/templates/orders/create_order.html:94
+#: app/orders/forms.py:69
+msgid "Номер телефона должен содержать только цифры"
+msgstr "Phone number must contain digits only"
+
+#: app/orders/forms.py:74 app/orders/templates/orders/create_order.html:50
+msgid "Неверный формат номера"
+msgstr "Invalid phone number format"
+
+#: app/orders/models.py:29
+msgid "Дата создания заказа"
+msgstr "Order creation date"
+
+#: app/orders/models.py:33
+msgid "Требуется доставка"
+msgstr "Requires delivery"
+
+#: app/orders/models.py:39
+msgid "Оплата при получении"
+msgstr "Payment on delivery"
+
+#: app/orders/models.py:41
+msgid "Оплачено"
+msgstr "Paid"
+
+#: app/orders/models.py:43
+msgid "В обработке"
+msgstr "Processing"
+
+#: app/orders/models.py:43
+msgid "Статус заказа"
+msgstr "Order status"
+
+#: app/orders/models.py:56
+#, python-brace-format
+msgid "Заказ № {num} | Покупатель {first} {last}"
+msgstr "Order № {num} | Customer {first} {last}"
+
+#: app/orders/models.py:73
+msgid "Продукт"
+msgstr "Product"
+
+#: app/orders/models.py:75
+msgid "Название"
+msgstr "Name"
+
+#: app/orders/models.py:76
+msgid "Цена"
+msgstr "Price"
+
+#: app/orders/models.py:77
+msgid "Количество"
+msgstr "Quantity"
+
+#: app/orders/models.py:79
+msgid "Дата продажи"
+msgstr "Sale date"
+
+#: app/orders/models.py:94
+#, python-brace-format
+msgid "Товар {name} | Заказ № {order}"
+msgstr "Product {name} | Order № {order}"
+
+#: app/orders/templates/orders/create_order.html:12
+msgid "Выбранные товары"
+msgstr "Selected products"
+
+#: app/orders/templates/orders/create_order.html:18
+msgid "Детали заказа"
+msgstr "Order details"
+
+#: app/orders/templates/orders/create_order.html:54
+msgid "Способ доставки"
+msgstr "Delivery method"
+
+#: app/orders/templates/orders/create_order.html:63
+msgid "Самовывоз"
+msgstr "Pickup"
+
+#: app/orders/templates/orders/create_order.html:94
 msgid "Оформить заказ"
 msgstr "Place order"
 
-#: orders/templates/orders/create_order.html:109
+#: app/orders/templates/orders/create_order.html:112
 msgid "Выберите хотя бы один товар для оформления заказа."
 msgstr "Please select at least one product to place an order."
+
+#: app/orders/views.py:53
+#, python-brace-format
+msgid ""
+"Недостаточное количество товара {name} на складе. В наличии — {product."
+"quantity}."
+msgstr ""
+
+#: app/orders/views.py:69
+msgid "Заказ оформлен!"
+msgstr ""
+
+#: app/orders/views.py:73
+msgid "Корзина пуста. Невозможно оформить заказ."
+msgstr ""
+
+#: app/orders/views.py:82
+msgid "Заполните все обязательные поля!"
+msgstr ""
+
+#: app/orders/views.py:87
+#, fuzzy
+#| msgid "Оформить заказ"
+msgid "Оформление заказа"
+msgstr "Place order"
+
+#~ msgid "Order created successfully!"
+#~ msgstr "Order created successfully!"
+
+#~ msgid "Cart is empty. Cannot create an order."
+#~ msgstr "Cart is empty. Cannot create an order."
+
+#~ msgid ""
+#~ "Not enough quantity of product %(product)s in stock. Available: "
+#~ "%(available)d."
+#~ msgstr ""
+#~ "Not enough quantity of product %(product)s in stock. Available: "
+#~ "%(available)d."
+
+#~ msgid "Fill in all required fields!"
+#~ msgstr "Fill in all required fields!"
+
+#~ msgid "Order processing"
+#~ msgstr "Order processing"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
+"POT-Creation-Date: 2025-11-12 20:30+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,68 +44,70 @@ msgstr ""
 #
 # msgid "{{ text_on_page }}"
 # msgstr "{{ text_on_page }}"  # Здесь тоже
-#: main/templates/main/about.html:14 main/templates/main/delivery.html:13
+#: app/main/templates/main/about.html:14
+#: app/main/templates/main/delivery.html:13
 #, python-format
 msgid "%(content)s"
 msgstr "%(content)s"
 
-#: main/templates/main/about.html:15 main/templates/main/delivery.html:15
+#: app/main/templates/main/about.html:15
+#: app/main/templates/main/delivery.html:15
 #, python-format
 msgid "%(text_on_page)s"
 msgstr "%(text_on_page)s"
 
-#: main/templates/main/index.html:31
+#: app/main/templates/main/index.html:31
 msgid "Нет изображения"
 msgstr "Չկա նկար"
 
-#: main/templates/main/index.html:48
+#: app/main/templates/main/index.html:48
 msgid "Подробнее"
 msgstr "Մանրամասն"
 
-#: main/templates/main/index.html:55
+#: app/main/templates/main/index.html:55
 msgid "Показать все"
 msgstr "Ցուցադրել բոլորը"
 
-#: main/views.py:11
+#: app/main/views.py:11
 msgid "Home - Главная"
 msgstr "Գլխավոր"
 
-#: main/views.py:21
+#: app/main/views.py:21
 #, fuzzy
 #| msgid "О нас"
 msgid "Home - О нас"
 msgstr "Մեր մասին"
 
-#: main/views.py:22
+#: app/main/views.py:22
 msgid "О нас"
 msgstr "Մեր մասին"
 
-#: main/views.py:24
+#: app/main/views.py:24
 msgid "Текст о том почему этот магазин такой классный, и какой хороший товар."
 msgstr ""
 "Տեքստ այն մասին, թե ինչու է այս խանութը հիանալի և ինչ լավ ապրանքներ ունի։"
 
-#: main/views.py:34
+#: app/main/views.py:34
 msgid "Contact - Контакты"
 msgstr "Կոնտակտներ"
 
-#: main/views.py:35
+#: app/main/views.py:35
 msgid "Our contacts"
 msgstr "Մեր կոնտակտները"
 
-#: main/views.py:36
+#: app/main/views.py:36
 msgid "Email: , Phone: , Address: "
 msgstr "Էլ․ փոստ՝ , Հեռախոս՝ , Հասցե՝ "
 
-#: main/views.py:45
+#: app/main/views.py:45
 msgid "Delivery - Доставка и оплата"
 msgstr "Առաքում և վճարում"
 
-#: main/views.py:46
+#: app/main/views.py:46
 msgid "Delivery and payment"
 msgstr "Առաքում և վճարում"
 
-#: main/views.py:47
+#: app/main/views.py:47
 #, fuzzy
 #| msgid "For delivery call "
 msgid "For delivery call 0000..."

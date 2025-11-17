@@ -6,7 +6,8 @@ body {
 }
 
 body {
-  background-image: url("../images/bg-image.jpg");
+  /* background-image: url("../../../media/logo.png"); */
+  background-color: #a8a9b3;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;

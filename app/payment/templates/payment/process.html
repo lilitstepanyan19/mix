@@ -2,20 +2,19 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}Оплата заказа{% endblock title %}
+{% block title %}{% trans "Order payment" %}{% endblock title %}
 
 {% block css %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'deps/css/payment_process.css' %}">
 {% endblock %}
 
-
 {% block content %}
 <div class="window">
-    <h2 class="pay-title">Оплата заказа</h2>
+    <h2 class="pay-title">{% trans "Order payment" %}</h2>
 
     <div class="pay-card d-flex">
-        <!-- Корзина -->
+        <!-- Cart -->
         <div class="cart-cardsproc">
             {% for item in order.items.all %}
                 {% with product=item.product %}
@@ -29,7 +28,7 @@
                                 <p>{{ product.name }}</p>
                             </div>
                             <div class="cart-card-q">
-                                <p>Количество: <span>{{ item.quantity }}</span></p>
+                                <p>{% trans "Quantity" %}: <span>{{ item.quantity }}</span></p>
                             </div>
                         </div>
                         <div class="cart-card price">
@@ -46,25 +45,28 @@
                 {% endwith %}
             {% endfor %}
 
-            <p class="cart-total">Итого: $ <span>{{ order.get_total_cost }}</span></p>
+            <p class="cart-total">{% trans "Total" %}: $ <span>{{ order.get_total_cost }}</span></p>
 
-            <!-- Выбор способа оплаты -->
-            <h3>Выберите способ оплаты:</h3>
+            <!-- Payment method -->
+            <h3>{% trans "Choose a payment method:" %}</h3>
             <div class="payment-options">
-                <label><input type="radio" name="payment_method" value="stripe" checked> Stripe (картой онлайн)</label><br>
-                <label><input type="radio" name="payment_method" value="unitpay"> UnitPay</label><br>
-                <label><input type="radio" name="payment_method" value="idram"> Idram</label><br>
+                <label><input type="radio" name="payment_method" value="stripe" checked> {% trans "Stripe (online card)" %}</label><br>
+                <label><input type="radio" name="payment_method" value="unitpay"> {% trans "UnitPay" %}</label><br>
+                <label><input type="radio" name="payment_method" value="idram"> {% trans "Idram" %}</label><br>
             </div>
 
-            <button type="button" id="pay-button" class="paynow">Оплатить</button>
+            <button type="button" id="pay-button" class="paynow">{% trans "Pay now" %}</button>
         </div>
 
-        {% comment %} <!-- Картинка справа -->
+        {% comment %} <!-- Right image -->
         <div class="castle-div">
-            <img src="{% static 'img/castle.png' %}" alt="castle" class="castlep">
+            <img src="{% static 'img/castle.png' %}" alt="{% trans 'castle' %}" class="castlep">
         </div> {% endcomment %}
     </div>
 </div>
+
+<!-- JS translations -->
+<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
@@ -101,8 +103,8 @@ fetch("{% url 'payment:create_checkout_session' %}", {
 </script>
 {% endblock content %}
 
+{% block footer %}{% endblock %}
 
-{% block footer %}{% endblock  %}
 
 {% comment %} {% extends 'base.html' %}
 {% load static %}

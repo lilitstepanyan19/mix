@@ -1,11 +1,11 @@
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.views.decorators.http import require_POST
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from urllib.parse import urljoin
 from decimal import Decimal
 import hashlib
+import json
 
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -44,7 +44,7 @@ def payment_process(request, order_id):
                         "unit_amount": int(discounted_price * Decimal("100")),
                         "currency": "usd",
                         "product_data": {
-                            "name": _(f"Order #{order.id}"),
+                            "name": _("Order #%(order_id)s") % {"order_id": order.id},
                         },
                     },
                     "quantity": item.quantity,
@@ -52,8 +52,7 @@ def payment_process(request, order_id):
             )
 
         session = stripe.checkout.Session.create(**session_data)
-        request.session["order_id"] = order.id  # 💡 Сохраняем для последующей обработки
-
+        request.session["order_id"] = order.id
         return redirect(session.url, code=303)
 
     return render(
@@ -68,7 +67,7 @@ def _idram_form_context(order: Order):
     edp_bill_no = str(order.id)
     edp_amount = str(order.get_total_cost())
     edp_currency = "AMD"
-    edp_description = _(f"Order #{order.id}")
+    edp_description = _("Order #%(order_id)s") % {"order_id": order.id}
 
     success_url = urljoin(
         settings.PAYMENT_CALLBACK_HOST, reverse("payment:idram_return_success")
@@ -117,7 +116,7 @@ def idram_start(request, order_id):
 def idram_callback(request):
     data = request.POST or request.GET
     if not data:
-        return HttpResponseBadRequest("no data")
+        return HttpResponseBadRequest(_("No data"))
 
     try:
         bill_no = data.get("EDP_BILL_NO")
@@ -137,7 +136,7 @@ def idram_callback(request):
         )
 
         if my_hash.lower() != (their_hash or "").lower():
-            return HttpResponseBadRequest("bad signature")
+            return HttpResponseBadRequest(_("Bad signature"))
 
         order = get_object_or_404(Order, id=bill_no)
         if not order.paid:
@@ -163,10 +162,9 @@ def idram_return_fail(request):
 
 def unitpay_start(request, order_id):
     order = get_object_or_404(Order, id=order_id, user=request.user)
-
     params = {
         "account": str(order.id),
-        "desc": _(f"Order #{order.id}"),
+        "desc": _("Order #%(order_id)s") % {"order_id": order.id},
     }
     pay_url = unitpay_build_redirect_url(
         settings.UNITPAY_PUBLIC_KEY, settings.UNITPAY_BASE_URL, **params
@@ -249,8 +247,6 @@ def payment_canceled(request):
 @csrf_exempt
 @require_POST
 def create_checkout_session(request):
-    import json
-
     data = json.loads(request.body)
     order_id = data.get("order_id")
 
@@ -264,7 +260,7 @@ def create_checkout_session(request):
                     "price_data": {
                         "currency": "usd",
                         "product_data": {
-                            "name": _(f"Order #{order.id}"),
+                            "name": _("Order #%(order_id)s") % {"order_id": order.id},
                         },
                         "unit_amount": int(order.get_total_cost() * 100),
                     },
@@ -283,8 +279,8 @@ def create_checkout_session(request):
 
 
 def send_order_emails(order):
-    subject_user = _(f"Order #{order.id} successfully paid")
-    subject_admin = _(f"New order #{order.id} created")
+    subject_user = _("Order #%(order_id)s successfully paid") % {"order_id": order.id}
+    subject_admin = _("New order #%(order_id)s created") % {"order_id": order.id}
 
     message_user = render_to_string("emails/order_user.html", {"order": order})
     send_mail(subject_user, message_user, settings.DEFAULT_FROM_EMAIL, [order.email])

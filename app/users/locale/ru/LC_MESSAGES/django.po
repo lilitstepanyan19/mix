@@ -3,15 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 23:46+0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2025-11-12 20:32+0400\n"
+"PO-Revision-Date: 2025-11-09 20:15+0400\n"
+"Last-Translator: ChatGPT <chatgpt@openai.com>\n"
+"Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,237 +19,389 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: users/templates/users/login.html:14
-msgid "Авторизация"
-msgstr "Авторизация"
-
-#: users/templates/users/login.html:21
-#: users/templates/users/registration.html:39
+#: app/users/admin.py:17 app/users/forms.py:18 app/users/forms.py:37
+#: app/users/forms.py:57 app/users/templates/users/login.html:21
+#: app/users/templates/users/registration.html:39
 msgid "Имя пользователя"
 msgstr "Имя пользователя"
 
-#: users/templates/users/login.html:25 users/templates/users/profile.html:48
-#: users/templates/users/registration.html:43
-msgid "Введите ваше имя пользователя"
-msgstr "Введите ваше имя пользователя"
-
-#: users/templates/users/login.html:29
-#: users/templates/users/registration.html:59
-msgid "Пароль"
-msgstr "Пароль"
-
-#: users/templates/users/login.html:31
-msgid "Введите ваш пароль"
-msgstr "Введите ваш пароль"
-
-#: users/templates/users/login.html:34
-msgid "Войти"
-msgstr "Войти"
-
-#: users/templates/users/login.html:37
-msgid "Забыли пароль?"
-msgstr "Забыли пароль?"
-
-#: users/templates/users/login.html:37
-msgid "Создать аккаунт"
-msgstr "Создать аккаунт"
-
-#: users/templates/users/login.html:41
-msgid "Или авторизуйтесь через:"
-msgstr "Или авторизуйтесь через:"
-
-#: users/templates/users/login.html:44
-msgid "Google"
-msgstr "Google"
-
-#: users/templates/users/login.html:48
-msgid "Facebook"
-msgstr "Facebook"
-
-#: users/templates/users/login.html:52
-msgid "GitHub"
-msgstr "GitHub"
-
-#: users/templates/users/profile.html:14
-msgid "Профиль пользователя"
-msgstr "Профиль пользователя"
-
-#: users/templates/users/profile.html:20 users/templates/users/profile.html:22
-#, fuzzy
-#| msgid "Имя пользователя"
-msgid "Аватар пользователя"
-msgstr "Имя пользователя"
-
-#: users/templates/users/profile.html:31
-msgid "Имя*"
-msgstr ""
-
-#: users/templates/users/profile.html:32
-#: users/templates/users/registration.html:23
-msgid "Введите ваше имя"
-msgstr "Введите ваше имя"
-
-#: users/templates/users/profile.html:39
-#, fuzzy
-#| msgid "Фамилия"
-msgid "Фамилия*"
-msgstr "Фамилия"
-
-#: users/templates/users/profile.html:40
-#: users/templates/users/registration.html:33
-msgid "Введите вашу фамилию"
-msgstr "Введите вашу фамилию"
-
-#: users/templates/users/profile.html:47
-#, fuzzy
-#| msgid "Имя пользователя"
-msgid "Имя пользователя*"
-msgstr "Имя пользователя"
-
-#: users/templates/users/profile.html:56
-#: users/templates/users/registration.html:53
-msgid "Введите ваш email"
-msgstr "Введите ваш email"
-
-#: users/templates/users/profile.html:63
-msgid "Сохранить"
-msgstr "Сохранить"
-
-#: users/templates/users/profile.html:72
-#: users/templates/users/users_cart.html:12
-msgid "Корзина"
-msgstr "Корзина"
-
-#: users/templates/users/profile.html:84
-msgid "Мои заказы"
-msgstr "Мои заказы"
-
-#: users/templates/users/profile.html:91
-msgid "Заказ №"
-msgstr ""
-
-#: users/templates/users/profile.html:91
-msgid "Статус:"
-msgstr ""
-
-#: users/templates/users/profile.html:99
-msgid "Товар"
-msgstr "Товар"
-
-#: users/templates/users/profile.html:100
-msgid "Количество"
-msgstr "Количество"
-
-#: users/templates/users/profile.html:101
-msgid "Цена"
-msgstr "Цена"
-
-#: users/templates/users/profile.html:102
-msgid "Общая стоимость"
-msgstr "Общая стоимость"
-
-#: users/templates/users/registration.html:14
-msgid "Регистрация"
-msgstr "Регистрация"
-
-#: users/templates/users/registration.html:19
+#: app/users/admin.py:22 app/users/forms.py:35 app/users/forms.py:55
+#: app/users/templates/users/registration.html:19
 msgid "Имя"
 msgstr "Имя"
 
-#: users/templates/users/registration.html:29
+#: app/users/admin.py:27 app/users/forms.py:36 app/users/forms.py:56
+#: app/users/templates/users/registration.html:29
 msgid "Фамилия"
 msgstr "Фамилия"
 
-#: users/templates/users/registration.html:49
+#: app/users/admin.py:32 app/users/forms.py:38 app/users/forms.py:58
+#: app/users/templates/users/registration.html:49
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: users/templates/users/registration.html:63
-msgid "Введите пароль"
-msgstr "Введите пароль"
+#: app/users/forms.py:19 app/users/forms.py:39
+#: app/users/templates/users/login.html:29
+#: app/users/templates/users/registration.html:59
+msgid "Пароль"
+msgstr "Пароль"
 
-#: users/templates/users/registration.html:69
+#: app/users/forms.py:40 app/users/templates/users/registration.html:69
 msgid "Подтверждение пароля"
 msgstr "Подтверждение пароля"
 
-#: users/templates/users/registration.html:73
+#: app/users/forms.py:54 app/users/models.py:8
+msgid "Аватар"
+msgstr "Аватар"
+
+#: app/users/models.py:11
+msgid "Номер телефона"
+msgstr "Номер телефона"
+
+#: app/users/models.py:16
+msgid "Пользователя"
+msgstr "Пользователя"
+
+#: app/users/models.py:17
+msgid "Пользователи"
+msgstr "Пользователи"
+
+#: app/users/templates/users/login.html:14
+msgid "Авторизация"
+msgstr "Авторизация"
+
+#: app/users/templates/users/login.html:25
+#: app/users/templates/users/profile.html:51
+#: app/users/templates/users/registration.html:43
+msgid "Введите ваше имя пользователя"
+msgstr "Введите ваше имя пользователя"
+
+#: app/users/templates/users/login.html:31
+msgid "Введите ваш пароль"
+msgstr "Введите ваш пароль"
+
+#: app/users/templates/users/login.html:34
+#: app/users/templates/users/password_reset_complete.html:8
+msgid "Войти"
+msgstr "Войти"
+
+#: app/users/templates/users/login.html:37
+msgid "Забыли пароль?"
+msgstr "Забыли пароль?"
+
+#: app/users/templates/users/login.html:37
+msgid "Создать аккаунт"
+msgstr "Создать аккаунт"
+
+#: app/users/templates/users/login.html:41
+msgid "Или авторизуйтесь через:"
+msgstr "Или авторизуйтесь через:"
+
+#: app/users/templates/users/login.html:44
+msgid "Google"
+msgstr "Google"
+
+#: app/users/templates/users/login.html:48
+msgid "Facebook"
+msgstr "Facebook"
+
+#: app/users/templates/users/login.html:52
+msgid "GitHub"
+msgstr "GitHub"
+
+#: app/users/templates/users/password_reset.html:4
+#: app/users/templates/users/password_reset.html:8
+#: app/users/templates/users/password_reset_email.html:4
+#: app/users/templates/users/password_reset_email.html:8 app/users/views.py:171
+msgid "Сброс пароля"
+msgstr "Сброс пароля"
+
+#: app/users/templates/users/password_reset.html:9
+msgid "Введите ваш email, чтобы получить ссылку на сброс пароля."
+msgstr "Введите ваш email, чтобы получить ссылку на сброс пароля."
+
+#: app/users/templates/users/password_reset.html:16
+msgid "Отправить ссылку"
+msgstr "Отправить ссылку"
+
+#: app/users/templates/users/password_reset_complete.html:3
+msgid "Пароль изменён"
+msgstr "Пароль изменён"
+
+#: app/users/templates/users/password_reset_complete.html:7
+msgid "Пароль успешно изменён!"
+msgstr "Пароль успешно изменён!"
+
+#: app/users/templates/users/password_reset_confirm.html:5
+msgid "Новый пароль"
+msgstr "Новый пароль"
+
+#: app/users/templates/users/password_reset_confirm.html:9
+msgid "Введите новый пароль"
+msgstr "Введите новый пароль"
+
+#: app/users/templates/users/password_reset_confirm.html:15
+msgid "Сохранить пароль"
+msgstr "Сохранить пароль"
+
+#: app/users/templates/users/password_reset_done.html:5 app/users/views.py:163
+msgid "Письмо отправлено"
+msgstr "Письмо отправлено"
+
+#: app/users/templates/users/password_reset_done.html:9
+msgid "Письмо отправлено!"
+msgstr "Письмо отправлено!"
+
+#: app/users/templates/users/password_reset_done.html:10
+msgid "Если указанный email существует, вы получите ссылку на сброс пароля."
+msgstr "Если указанный email существует, вы получите ссылку на сброс пароля."
+
+#: app/users/templates/users/password_reset_email.html:11
+#: app/users/templates/users/password_reset_email.txt:5
+#, python-format
+msgid ""
+"Вы получили это письмо, потому что запросили сброс пароля для вашей учетной "
+"записи на сайте %(site_name)s."
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.html:15
+msgid "Чтобы установить новый пароль, перейдите по следующей ссылке:"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.html:21
+#, fuzzy
+#| msgid "Сброс пароля"
+msgid "Сбросить пароль"
+msgstr "Сброс пароля"
+
+#: app/users/templates/users/password_reset_email.html:26
+msgid "Если вы не запрашивали сброс пароля, просто проигнорируйте это письмо."
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.html:32
+msgid "Спасибо, что пользуетесь нашим сайтом!"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.txt:3
+#, fuzzy, python-format
+#| msgid "Сброс пароля"
+msgid "Сброс пароля на %(site_name)s"
+msgstr "Сброс пароля"
+
+#: app/users/templates/users/password_reset_email.txt:7
+msgid "Пожалуйста, перейдите по следующей ссылке и установите новый пароль:"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.txt:10
+#, fuzzy
+#| msgid "Введите ваше имя пользователя"
+msgid "Ваше имя пользователя (если вы забыли):"
+msgstr "Введите ваше имя пользователя"
+
+#: app/users/templates/users/password_reset_email.txt:12
+msgid "Спасибо, что используете наш сайт!"
+msgstr ""
+
+#: app/users/templates/users/password_reset_email.txt:13
+#, python-format
+msgid "Команда сайта %(site_name)s"
+msgstr ""
+
+#: app/users/templates/users/profile.html:14
+msgid "Профиль пользователя"
+msgstr "Профиль пользователя"
+
+#: app/users/templates/users/profile.html:20
+#: app/users/templates/users/profile.html:22
+msgid "Аватар пользователя"
+msgstr "Аватар пользователя"
+
+#: app/users/templates/users/profile.html:25
+msgid "Выберите файл"
+msgstr "Выберите файл"
+
+#: app/users/templates/users/profile.html:34
+msgid "Имя*"
+msgstr "Имя*"
+
+#: app/users/templates/users/profile.html:35
+#: app/users/templates/users/registration.html:23
+msgid "Введите ваше имя"
+msgstr "Введите ваше имя"
+
+#: app/users/templates/users/profile.html:42
+msgid "Фамилия*"
+msgstr "Фамилия*"
+
+#: app/users/templates/users/profile.html:43
+#: app/users/templates/users/registration.html:33
+msgid "Введите вашу фамилию"
+msgstr "Введите вашу фамилию"
+
+#: app/users/templates/users/profile.html:50
+msgid "Имя пользователя*"
+msgstr "Имя пользователя*"
+
+#: app/users/templates/users/profile.html:58
+msgid "Email*"
+msgstr "Email*"
+
+#: app/users/templates/users/profile.html:59
+#: app/users/templates/users/registration.html:53
+msgid "Введите ваш email"
+msgstr "Введите ваш email"
+
+#: app/users/templates/users/profile.html:66
+msgid "Сохранить"
+msgstr "Сохранить"
+
+#: app/users/templates/users/profile.html:75
+#: app/users/templates/users/users_cart.html:12
+msgid "Корзина"
+msgstr "Корзина"
+
+#: app/users/templates/users/profile.html:87
+msgid "Мои заказы"
+msgstr "Мои заказы"
+
+#: app/users/templates/users/profile.html:94
+msgid "Заказ №"
+msgstr "Заказ №"
+
+#: app/users/templates/users/profile.html:94
+msgid "Статус:"
+msgstr "Статус:"
+
+#: app/users/templates/users/profile.html:102
+msgid "Товар"
+msgstr "Товар"
+
+#: app/users/templates/users/profile.html:103
+msgid "Количество"
+msgstr "Количество"
+
+#: app/users/templates/users/profile.html:104
+msgid "Цена"
+msgstr "Цена"
+
+#: app/users/templates/users/profile.html:105
+msgid "Общая стоимость"
+msgstr "Общая стоимость"
+
+#: app/users/templates/users/registration.html:14
+msgid "Регистрация"
+msgstr "Регистрация"
+
+#: app/users/templates/users/registration.html:63
+msgid "Введите пароль"
+msgstr "Введите пароль"
+
+#: app/users/templates/users/registration.html:73
 msgid "Подтвердите пароль"
 msgstr "Подтвердите пароль"
 
-#: users/templates/users/registration.html:79
+#: app/users/templates/users/registration.html:79
 msgid "Зарегистрироваться"
 msgstr "Зарегистрироваться"
 
-#: users/views.py:41 users/views.py:168
-msgid "{user.username}, { _('you are logged in') }"
-msgstr ""
+# ..........................................
+#: app/users/views.py:51
+#, python-format
+msgid "%(username)s, you are logged in"
+msgstr "%(username)s, вы вошли в систему"
 
-#: users/views.py:46 users/views.py:174
+#: app/users/views.py:58
 msgid "Home - Login"
 msgstr ""
 
-#: users/views.py:68 users/views.py:197
-msgid ""
-"{user.username}, { _('you have successfully registered and logged in') }"
-msgstr ""
+#: app/users/views.py:81
+#, python-format
+msgid "%(username)s, you have successfully registered and logged in"
+msgstr "%(username)s, вы успешно зарегистрировались и вошли в систему"
 
-#: users/views.py:74 users/views.py:204
+#: app/users/views.py:89
 msgid "Home - Registration"
 msgstr ""
 
-#: users/views.py:87 users/views.py:217
+#: app/users/views.py:102
 msgid "Profile successfully updated"
-msgstr ""
+msgstr "Профиль успешно обновлён"
 
-#: users/views.py:91 users/views.py:221
+#: app/users/views.py:106
 msgid "An error occurred"
-msgstr ""
+msgstr "Произошла ошибка"
 
-#: users/views.py:96 users/views.py:226
+#: app/users/views.py:111
 msgid "Home - Profile"
 msgstr ""
 
-#: users/views.py:118 users/views.py:250
+#: app/users/views.py:135
 msgid "Home - Cart"
 msgstr ""
 
-#: users/views.py:124 users/views.py:257
-msgid "{request.user.username}, { _('you have logged out') }"
+#: app/users/views.py:143
+msgid "Home - Password Change"
 msgstr ""
 
-#~ msgid "Профайл успешно обновлен"
-#~ msgstr "Профайл успешно обновлен"
+#: app/users/views.py:156
+#, fuzzy
+#| msgid "Подтверждение пароля"
+msgid "Восстановление пароля"
+msgstr "Подтверждение пароля"
 
-#~ msgid "Произошла ошибка"
-#~ msgstr "Произошла ошибка"
+#: app/users/views.py:178
+#, fuzzy
+#| msgid "Пароль успешно изменён!"
+msgid "Пароль успешно изменён"
+msgstr "Пароль успешно изменён!"
 
-#~ msgid "Home - Главная"
-#~ msgstr "Главная"
+#: app/users/views.py:192
+#, python-format
+msgid "%(username)s, you have logged out"
+msgstr "%(username)s, вы вышли из системы"
 
-#~ msgid "Home - О нас"
-#~ msgstr "О нас"
-
-#~ msgid "Home - Кабинет"
-#~ msgstr "Кабинет"
-
-#~ msgid "Home - Авторизация"
-#~ msgstr "Авторизация"
-
-#~ msgid "Home - Регистрация"
-#~ msgstr "Регистрация"
-
-#~ msgid "Home - Корзина"
-#~ msgstr "Корзина"
+#~ msgid "Password reset on %(site_name)s"
+#~ msgstr "Сброс пароля на сайте %(site_name)s"
 
 #~ msgid ""
-#~ "Заказ № %(order.id)s - %(order.created_timestamp)s | Статус: %(order."
-#~ "status)s"
+#~ "You're receiving this email because you requested a password reset for "
+#~ "your user account at %(site_name)s."
 #~ msgstr ""
-#~ "Заказ № %(order.id)s - %(order.created_timestamp)s | Статус: %(order."
-#~ "status)s"
+#~ "Вы получили это письмо, потому что запросили сброс пароля для вашей "
+#~ "учетной записи на сайте %(site_name)s."
 
-#~ msgid "Показать все"
-#~ msgstr "Показать все"
+#~ msgid "Please go to the following page and choose a new password:"
+#~ msgstr ""
+#~ "Пожалуйста, перейдите по следующей ссылке и установите новый пароль:"
 
-#~ msgid "Подробнее"
-#~ msgstr "Подробнее"
+#~ msgid "Your username, in case you've forgotten:"
+#~ msgstr "Ваше имя пользователя (если вы забыли):"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Спасибо, что используете наш сайт!"
+
+#~ msgid "The %(site_name)s team"
+#~ msgstr "Команда сайта %(site_name)s"
+
+#~ msgid "Password reset"
+#~ msgstr "Сброс пароля"
+
+#~ msgid ""
+#~ "You received this email because you requested a password reset for your "
+#~ "account at %(site_name)s."
+#~ msgstr ""
+#~ "Вы получили это письмо, потому что запросили сброс пароля для своей "
+#~ "учетной записи на сайте %(site_name)s."
+
+#~ msgid "Please click the button below to choose a new password:"
+#~ msgstr "Пожалуйста, нажмите на кнопку ниже, чтобы установить новый пароль:"
+
+#~ msgid "Reset password"
+#~ msgstr "Сбросить пароль"
+
+#~ msgid "If you didn’t request a password reset, please ignore this email."
+#~ msgstr ""
+#~ "Если вы не запрашивали сброс пароля, просто проигнорируйте это письмо."
+
+#~ msgid "Thank you for using our site!"
+#~ msgstr "Спасибо, что пользуетесь нашим сайтом!"

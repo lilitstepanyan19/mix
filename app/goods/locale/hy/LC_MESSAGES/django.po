@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 20:48+0400\n"
+"POT-Creation-Date: 2025-11-12 20:30+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,106 +18,196 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: goods/templates/goods/catalog.html:23
+#: app/goods/admin.py:20 app/goods/models.py:74
+msgid "Изображение товара"
+msgstr "Ապրանքի պատկեր"
+
+#: app/goods/admin.py:21 app/goods/models.py:75
+#, fuzzy
+#| msgid "Изображение товара"
+msgid "Изображения товаров"
+msgstr "Ապրանքի պատկեր"
+
+#: app/goods/admin.py:46 app/goods/models.py:7 app/goods/models.py:23
+msgid "Название"
+msgstr "Անվանում"
+
+#: app/goods/admin.py:51 app/goods/models.py:37
+msgid "Количество"
+msgstr "Քանակ"
+
+#: app/goods/admin.py:56 app/goods/models.py:32
+#: app/goods/templates/goods/product.html:75
+msgid "Цена"
+msgstr "Գին"
+
+#: app/goods/admin.py:61
+msgid "Скидка"
+msgstr "Զեղչ"
+
+#: app/goods/models.py:9 app/goods/models.py:25
+msgid "URL"
+msgstr ""
+
+#: app/goods/models.py:14
+#, fuzzy
+#| msgid "Категория"
+msgid "Категорию"
+msgstr "Կատեգորիա"
+
+#: app/goods/models.py:15
+#, fuzzy
+#| msgid "Категория"
+msgid "Категории"
+msgstr "Կատեգորիա"
+
+#: app/goods/models.py:27
+msgid "Описание"
+msgstr "Նկարագրություն"
+
+#: app/goods/models.py:29 app/goods/models.py:70
+#: app/goods/templates/goods/product.html:106
+msgid "Изображение"
+msgstr "Նկար"
+
+#: app/goods/models.py:35
+msgid "Скидка в %"
+msgstr "Զեղչ %"
+
+#: app/goods/models.py:39
+msgid "Категория"
+msgstr "Կատեգորիա"
+
+#: app/goods/models.py:44
+msgid "Продукт"
+msgstr "Ապրանք"
+
+#: app/goods/models.py:45
+msgid "Продукты"
+msgstr "Ապրանքներ"
+
+#: app/goods/models.py:68
+msgid "Товар"
+msgstr ""
+
+#: app/goods/models.py:78
+#, python-brace-format
+msgid "Изображение для {product}"
+msgstr "{product}-ի պատկեր"
+
+#: app/goods/templates/goods/catalog.html:23
 msgid "Фильтры"
 msgstr "Զտիչներ"
 
-#: goods/templates/goods/catalog.html:36
+#: app/goods/templates/goods/catalog.html:36
 msgid "Товары по акции"
 msgstr "Ակցիաներ"
 
-#: goods/templates/goods/catalog.html:40
+#: app/goods/templates/goods/catalog.html:40
 msgid "Сортировать:"
 msgstr "Դասավորել ըստ՝"
 
-#: goods/templates/goods/catalog.html:47
+#: app/goods/templates/goods/catalog.html:47
 msgid "По умолчанию"
 msgstr "Լռելյայն"
 
-#: goods/templates/goods/catalog.html:56
+#: app/goods/templates/goods/catalog.html:56
 msgid "От дешевых к дорогим"
 msgstr "Զեղչովից դեպի թանկը"
 
-#: goods/templates/goods/catalog.html:65
+#: app/goods/templates/goods/catalog.html:65
 msgid "От дорогих к дешевым"
 msgstr "Թանկից դեպի էժանը"
 
-#: goods/templates/goods/catalog.html:70
+#: app/goods/templates/goods/catalog.html:70
 msgid "Применить"
 msgstr "Կիրառել"
 
-#: goods/templates/goods/catalog.html:77
+#: app/goods/templates/goods/catalog.html:77
 #, fuzzy, python-format
 #| msgid "Результаты поиска по запросу %(request_GET_q)s"
 msgid "Результаты поиска по запросу %(request.GET.q)s"
 msgstr "Փնտրման արդյունքներ՝ %(request_GET_q)s"
 
-#: goods/templates/goods/catalog.html:82
+#: app/goods/templates/goods/catalog.html:82
 msgid "По запросу ничего не найдено"
 msgstr "Ոչինչ չի գտնվել"
 
-#: goods/templates/goods/catalog.html:93
+#: app/goods/templates/goods/catalog.html:93
 msgid "Изображение не найдено"
 msgstr "Նկարը չի գտնվել"
 
-#: goods/templates/goods/catalog.html:120
+#: app/goods/templates/goods/catalog.html:120
 #, fuzzy, python-format
 #| msgid "id: %(product_display_id)s"
 msgid "id: %(product.display_id)s"
 msgstr "id՝ %(product_display_id)s"
 
-#: goods/templates/goods/catalog.html:124
+#: app/goods/templates/goods/catalog.html:124
 msgid "Нет в наличии."
 msgstr "Պահեստում չկա։"
 
-#: goods/templates/goods/catalog.html:126 goods/templates/goods/product.html:68
+#: app/goods/templates/goods/catalog.html:126
+#: app/goods/templates/goods/product.html:68
 msgid "В наличии: "
 msgstr "Առկա է՝ "
 
-#: goods/templates/goods/catalog.html:127 goods/templates/goods/product.html:69
+#: app/goods/templates/goods/catalog.html:127
+#: app/goods/templates/goods/product.html:69
 #, python-format
 msgid "%(qty)s"
 msgstr ""
 
-#: goods/templates/goods/catalog.html:128 goods/templates/goods/product.html:70
+#: app/goods/templates/goods/catalog.html:128
+#: app/goods/templates/goods/product.html:70
 msgid "шт."
 msgstr "հատ"
 
-#: goods/templates/goods/catalog.html:145 goods/templates/goods/product.html:89
+#: app/goods/templates/goods/catalog.html:145
+#: app/goods/templates/goods/product.html:89
 msgid "Добавить в корзину"
 msgstr "Ավելացնել զամբյուղին"
 
-#: goods/templates/goods/catalog.html:164
+#: app/goods/templates/goods/catalog.html:164
 msgid "Назад"
 msgstr "Հետ"
 
-#: goods/templates/goods/catalog.html:179
+#: app/goods/templates/goods/catalog.html:179
 msgid "Следующая"
 msgstr "Հաջորդը"
 
-#: goods/templates/goods/product.html:23 goods/templates/goods/product.html:103
+#: app/goods/templates/goods/product.html:23
+#: app/goods/templates/goods/product.html:103
 msgid "Закрыть"
 msgstr "Փակել"
 
-#: goods/templates/goods/product.html:39 goods/templates/goods/product.html:52
+#: app/goods/templates/goods/product.html:39
+#: app/goods/templates/goods/product.html:52
 msgid "Нет изображения"
 msgstr "Նկար չկա"
 
-#: goods/templates/goods/product.html:60
+#: app/goods/templates/goods/product.html:60
 msgid "id"
 msgstr "Նույնականացուցիչ"
 
-#: goods/templates/goods/product.html:65
+#: app/goods/templates/goods/product.html:65
 msgid "Нет в наличии"
 msgstr "Առկա չէ"
 
-#: goods/templates/goods/product.html:75
-msgid "Цена"
-msgstr "Գին"
+#: app/goods/views.py:54
+msgid "Home - Catalog"
+msgstr "Գլխավոր - Kատալոգ"
 
-#: goods/templates/goods/product.html:106
-msgid "Изображение"
-msgstr "Նկար"
+#: app/goods/views.py:82
+msgid "Product Details"
+msgstr "Ապրանքի մանրամասներ"
+
+#: app/goods/views.py:83
+msgid "Related Products"
+msgstr "Առնչվող ապրանքներ"
 
 #~ msgid "В наличии: %(product_quantity)s штук"
 #~ msgstr "Պահեստում՝ %(product_quantity)s հատ"
+
+#~ msgid "Без названия"
+#~ msgstr "Առանց անվանման"
