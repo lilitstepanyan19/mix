@@ -147,9 +147,9 @@ class UserPasswordChangeView(LoginRequiredMixin, TemplateView):
 class UserPasswordResetView(PasswordResetView):
     # Страница запроса сброса пароля
 
-    template_name = "registration/password_reset.html"
-    email_template_name = "registration/password_reset_email.html"
-    subject_template_name = "registration/password_reset_email.txt"
+    template_name = "users/registration/password_reset.html"
+    email_template_name = "users/registration/password_reset_email.html"
+    subject_template_name = "users/registration/password_reset_email.txt"
     success_url = reverse_lazy("users:password_reset_done")
     extra_context = {"title": _("Восстановление пароля")}
 
