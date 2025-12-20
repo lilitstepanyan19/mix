@@ -148,11 +148,13 @@ class UserPasswordResetView(PasswordResetView):
     # Страница запроса сброса пароля
 
     template_name = "users/registration/password_reset.html"
-    email_template_name = "users/registration/password_reset_email.html"
-    subject_template_name = "users/registration/password_reset_email.txt"
+    email_template_name = "users/registration/password_reset_email.txt"
+    html_email_template_name = "users/registration/password_reset_email.html"
+    # subject_template_name = "users/registration/password_reset_subject.txt"
     success_url = reverse_lazy("users:password_reset_done")
     extra_context = {"title": _("Восстановление пароля")}
 
+    
     def get_email_context(self):
         context = super().get_email_context()
         context['protocol'] = 'https' if self.request.is_secure() else 'http'
@@ -164,14 +166,14 @@ class UserPasswordResetView(PasswordResetView):
 class UserPasswordResetDoneView(PasswordResetDoneView):
     # Страница подтверждения отправки email
 
-    template_name = "registration/password_reset_done.html"
+    template_name = "users/registration/password_reset_done.html"
     extra_context = {"title": _("Письмо отправлено")}
 
 
 class UserPasswordResetConfirmView(PasswordResetConfirmView):
     # Страница, где пользователь вводит новый пароль
 
-    template_name = "registration/password_reset_confirm.html"
+    template_name = "users/registration/password_reset_confirm.html"
     success_url = reverse_lazy("users:password_reset_complete")
     extra_context = {"title": _("Сброс пароля")}
 
@@ -179,7 +181,7 @@ class UserPasswordResetConfirmView(PasswordResetConfirmView):
 class UserPasswordResetCompleteView(PasswordResetCompleteView):
     # Страница подтверждения успешного сброса
 
-    template_name = "registration/password_reset_complete.html"
+    template_name = "users/registration/password_reset_complete.html"
     extra_context = {"title": _("Пароль успешно изменён")}
 
 
