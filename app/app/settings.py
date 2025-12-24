@@ -47,9 +47,21 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "django.contrib.sites",
     "django.contrib.staticfiles",
     "django.contrib.postgres",
     "debug_toolbar",
+    # Allauth
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    # провайдеры соц. авторизации
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
+    # "allauth.socialaccount.providers.apple",
+    "allauth.socialaccount.providers.vk",
+    "allauth.socialaccount.providers.mailru",
+    # My apps
     "main",
     "goods",
     "users",
@@ -58,15 +70,68 @@ INSTALLED_APPS = [
     "payment",
 ]
 
+
+SITE_ID = 1
+
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",  # стандартный
+    "allauth.account.auth_backends.AuthenticationBackend",  # для allauth
+]
+
+LOGIN_URL = "/accounts/login/"
+
+LOGIN_REDIRECT_URL = "/"  # куда редирект после входа
+LOGOUT_REDIRECT_URL = "/"  # куда редирект после выхода
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": os.getenv("GOOGLE_CLIENT_ID"),
+            "secret": os.getenv("GOOGLE_CLIENT_SECRET"),
+            "key": "",
+        }
+    },
+    "facebook": {
+        "APP": {
+            "client_id": os.getenv("FACEBOOK_CLIENT_ID"),
+            "secret": os.getenv("FACEBOOK_CLIENT_SECRET"),
+            "key": "",
+        }
+    },
+    "vk": {
+        "APP": {
+            "client_id": os.getenv("VK_CLIENT_ID"),
+            "secret": os.getenv("VK_CLIENT_SECRET"),
+            "key": "",
+        }
+    },
+    "mailru": {
+        "APP": {
+            "client_id": 'os.getenv("MAILRU_CLIENT_ID")',
+            "secret": os.getenv("MAILRU_CLIENT_SECRET"),
+            "key": "",
+        }
+    },
+}
+
+SOCIALACCOUNT_AUTO_SIGNUP = True  # автоматически создаёт пользователя
+SOCIALACCOUNT_QUERY_EMAIL = True  # запрашивает email у провайдера, если не пришёл
+
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-
     "django.middleware.locale.LocaleMiddleware",  # dlya raznix yazikov
-    
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+
+    "allauth.account.middleware.AccountMiddleware",  # ← ВАЖНО
+
+
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",

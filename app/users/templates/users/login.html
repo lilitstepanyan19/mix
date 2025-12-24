@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
+{% load socialaccount %}
 
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
@@ -39,18 +40,10 @@
                 <hr>
                 <div class="text-center">
                     <p>{% trans "Или авторизуйтесь через:" %}</p>
-                    <a href="#" class="btn btn-dark">
-                        <img class="mx-1" src="{% static "deps/icons/google.svg" %}" alt="Google" width="16" height="16">
-                        {% trans "Google" %}
-                    </a>
-                    <a href="#" class="btn btn-dark">
-                        <img class="mx-1" src="{% static "deps/icons/facebook.svg" %}" alt="Facebook" width="16" height="16">
-                        {% trans "Facebook" %}
-                    </a>
-                    <a href="#" class="btn btn-dark">
-                        <img class="mx-1" src="{% static "deps/icons/github.svg" %}" alt="GitHub" width="16" height="16">
-                        {% trans "GitHub" %}
-                    </a>
+                    <a href="{% provider_login_url 'facebook' process='login' %}" class="btn"><img src="{% static 'deps/icons/facebook-logo.png' %}" alt="facebook-logo"></a>
+                    <a href="{% provider_login_url 'google' process='login' %}" class="btn"><img src="{% static 'deps/icons/google-logo.png' %}" alt="google-logo"></a>
+                    <a href="{% provider_login_url 'vk' process='login' %}" class="btn"><img src="{% static 'deps/icons/vk-logo.png' %}" alt="vk-logo"></a>
+                    <a href="{% provider_login_url 'mailru' process='login' %}" class="btn"><img src="{% static 'deps/icons/mailru-logo.png' %}" alt="mailru-logo"></a>
                 </div>
             </div>
         </div>
