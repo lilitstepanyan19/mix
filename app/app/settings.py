@@ -108,7 +108,7 @@ SOCIALACCOUNT_PROVIDERS = {
     },
     "mailru": {
         "APP": {
-            "client_id": 'os.getenv("MAILRU_CLIENT_ID")',
+            "client_id": os.getenv("MAILRU_CLIENT_ID"),
             "secret": os.getenv("MAILRU_CLIENT_SECRET"),
             "key": "",
         }

@@ -42,8 +42,8 @@
                     <p>{% trans "Или авторизуйтесь через:" %}</p>
                     <a href="{% provider_login_url 'facebook' process='login' %}" class="btn"><img src="{% static 'deps/icons/facebook-logo.png' %}" alt="facebook-logo"></a>
                     <a href="{% provider_login_url 'google' process='login' %}" class="btn"><img src="{% static 'deps/icons/google-logo.png' %}" alt="google-logo"></a>
-                    <a href="{% provider_login_url 'vk' process='login' %}" class="btn"><img src="{% static 'deps/icons/vk-logo.png' %}" alt="vk-logo"></a>
-                    <a href="{% provider_login_url 'mailru' process='login' %}" class="btn"><img src="{% static 'deps/icons/mailru-logo.png' %}" alt="mailru-logo"></a>
+                    {% comment %} <a href="{% provider_login_url 'vk' process='login' %}" class="btn"><img src="{% static 'deps/icons/vk-logo.png' %}" alt="vk-logo"></a>
+                    <a href="{% provider_login_url 'mailru' process='login' %}" class="btn"><img src="{% static 'deps/icons/mailru-logo.png' %}" alt="mailru-logo"></a> {% endcomment %}
                 </div>
             </div>
         </div>
